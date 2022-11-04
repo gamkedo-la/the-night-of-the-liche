@@ -49,6 +49,9 @@ function loadImageForWorldCode(worldCode, fileName, locX, locY, width, height, o
 }
 
 function loadImages() {
+		/*
+			Optimize loading for pictures
+		*/
 	
 		var imageList = [
 
