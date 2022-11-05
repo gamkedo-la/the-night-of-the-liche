@@ -128,7 +128,7 @@ function warriorClass() {
 		
 		
 		var walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
-        var walkIntoTileType = TILE_WALL;
+        var walkIntoTileType = TILE_WALL1_TOP;
 
 		if(direction == "north") {
 			walkIntoTileIndex = getTileTypeAtPixelCoord(nextX+(this.width/2),nextY);
@@ -148,147 +148,16 @@ function warriorClass() {
 
 		switch(walkIntoTileType) {
 			case TILE_ROAD:
-				playerMoveSpeed = 3.0;
+				playerMoveSpeed = 5.0;
 				this.x = nextX;
 				this.y = nextY;
 				break;
 			case TILE_GRASS:
-				playerMoveSpeed = 2.0;
+				playerMoveSpeed = 4.0;
 				this.x = nextX;
 				this.y = nextY;
 				break;	
-			case TILE_GRAVE_YARD_PORTAL:
-				loadLevel(graveYard);
-				break;	
-				
-			case TILE_HOME_VILLAGE_PORTAL:
-				loadLevel(levelOne);
-				break;	
-			case TILE_FINISH:
-				console.log(this.name + " WINS!");
-				nextLevel();
-				break;
-			case TILE_SHOP_A:
-				if(walkIntoTileType != this.previousTileType){
-					this.releaseKeys();
-					isInShop = true;
-				}
-				break;
-			case TILE_YELLOW_DOOR:
-				if(this.yellowKeysHeld > 0) {
-					this.yellowKeysHeld--; // one less key
-					this.updateReadout();
-					roomGrid[walkIntoTileIndex] = TILE_ROAD;
-					document.getElementById("debugText").innerHTML = "I've used a yellow key.";
-					doorSound.play();
-				} else {
-					document.getElementById("debugText").innerHTML = "I need a yellow key to open this door.";
-				}
-				break;
-			case TILE_GREEN_DOOR:
-				if(this.greenKeysHeld > 0) {
-					this.greenKeysHeld--; // one less key
-					this.updateReadout();
-					roomGrid[walkIntoTileIndex] = TILE_ROAD;
-					document.getElementById("debugText").innerHTML = "I've used a green key.";
-					doorSound.play();
-				} else {
-					document.getElementById("debugText").innerHTML = "I need a green key to open this door.";
-				}
-				break;
-			case TILE_RED_DOOR:
-				if(this.redKeysHeld > 0) {
-					this.redKeysHeld--; // one less key
-					this.updateReadout();
-					roomGrid[walkIntoTileIndex] = TILE_ROAD;
-					document.getElementById("debugText").innerHTML = "I've used a red key.";
-					doorSound.play();
-				} else {
-					document.getElementById("debugText").innerHTML = "I need a red key to open this door.";
-				}
-				break;
-			case TILE_BLUE_DOOR:
-				if(this.blueKeysHeld > 0) {
-					this.blueKeysHeld--; // one less key
-					this.updateReadout();
-					roomGrid[walkIntoTileIndex] = TILE_ROAD;
-					document.getElementById("debugText").innerHTML = "I've used a blue key.";
-					doorSound.play();
-				} else {
-					document.getElementById("debugText").innerHTML = "I need a blue key to open this door.";
-				}
-				break;	
-			case TILE_YELLOW_KEY:
-				this.yellowKeysHeld++; // one more key
-				this.updateReadout();
-				roomGrid[walkIntoTileIndex] = TILE_ROAD;
-				document.getElementById("debugText").innerHTML = "I've found a yellow key.";
-				keySound.play();
-				break;
-			case TILE_RED_KEY:
-				this.redKeysHeld++; // one more key
-				this.updateReadout();
-				roomGrid[walkIntoTileIndex] = TILE_ROAD;
-				document.getElementById("debugText").innerHTML = "I've found a red key.";
-				keySound.play();
-				break;
-			case TILE_BLUE_KEY:
-				this.blueKeysHeld++; // one more key
-				this.updateReadout();
-				roomGrid[walkIntoTileIndex] = TILE_ROAD;
-				document.getElementById("debugText").innerHTML = "I've found a blue key.";
-				keySound.play();
-				break;
-			case TILE_GREEN_KEY:
-				this.greenKeysHeld++; // one more key
-				this.updateReadout();
-				roomGrid[walkIntoTileIndex] = TILE_ROAD;
-				document.getElementById("debugText").innerHTML = "I've found a green key.";
-				keySound.play();
-				break;
-			case TILE_TREASURE:
-				if(this.yellowKeysHeld > 0) {
-					this.yellowKeysHeld--; // one less key
-					this.goldpieces = this.goldpieces + 50;
-					redWarrior.myArrow.arrowQuantity = redWarrior.myArrow.arrowQuantity + 5;
-					this.updateReadout();
-					roomGrid[walkIntoTileIndex] = TILE_ROAD;
-					document.getElementById("debugText").innerHTML = "I've used a yellow key and found 50 gold pieces, and 5 arrows";
-				} else {
-					document.getElementById("debugText").innerHTML = "I need a yellow key to open this treasure chest.";
-				}
-				break;
-			case TILE_GRAVE:
-					document.getElementById("debugText").innerHTML = "Too many good people have died from the Skeleton King and his army of the dead.";
-					colorText("Too many good people have died from the Skeleton King and his army of the dead.", this.x, this.y - 50, "black");
-				break;
-			case TILE_FRESH_GRAVE:
-					document.getElementById("debugText").innerHTML = "I need to avenge my friend.  The Skeleton King and his army of the dead must be destroyed!.";
-					colorText("I need to avenge my friend.  The Skeleton King and his army of the dead must be destroyed!.", this.x, this.y - 50,"black");
-				break;
-			case TILE_BED:
-					document.getElementById("debugText").innerHTML = "I am not tired.";
-				break;
-			case TILE_CABINET:
-					document.getElementById("debugText").innerHTML = "The bookcase is bare.  One day, I'll have a library of my own.";
-				break;
-			case TILE_SPIKES:
-				var i = 1;
-				this.x = nextX;
-				this.y = nextY;
-				this.health = this.health - 0.5; // Damage to Health
-				this.updateReadout();
-				roomGrid[walkIntoTileIndex] = TILE_SPIKES_BLOODY;
-				spikeSound.play();
-				break;
-			case TILE_SPIKES_BLOODY:
-				var i = 1;
-				this.x = nextX;
-				this.y = nextY;
-				this.updateReadout();
-				document.getElementById("debugText").innerHTML = "OUCH! Bloody Spikes!";
-				break;
-			case TILE_WALL:
+			case TILE_WALL1_TOP:
 			case TILE_BOOKSELF:
 			default:
 				this.x = nextX; // erase

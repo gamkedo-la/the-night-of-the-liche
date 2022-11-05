@@ -38,7 +38,7 @@ var levelOne =   	[
   [
 	//1					  5						  10    				   15						20
 	101, 102, 102, 102, 102, 102, 103, 101, 102, 102, 102, 102, 103,  42,  42,  42,  42,  42,  42,  42,
-	106,  41,  42,  41,  42, 150, 108, 106, 150,  42, 150, 300, 108,  42, 201, 207, 208, 207, 202,  42,
+	106,  41,  42,  41,  42, 150, 108, 106, 150,  42, 150,  42, 108,  42, 201, 207, 208, 207, 202,  42,
 	104,  42,  42,  42,  42,  42, 123, 121,  42,  42,  42,  42, 105,  42, 200,  42,  42,  42, 203,  42,
 	104,  42,  42,  42,  42,  42, 124, 122,  42,  42,  42,  42, 105,  42, 204,  42,  42,  42, 205,  42,
 	 42,  42,  42,  42,  42,  42,  42, 101, 102, 125, 102, 102, 103,  42, 200,  42,  42,  42, 205,  42,	// 5
@@ -112,54 +112,16 @@ const TILE_FENCE1_BOTTOM_POST = 208;
 const TILE_FENCE1_RBCORNER = 209;
 
 // To be sorted or removed
-const TILE_BED1 = 300;
-const TILE_KITCHENTABLE = 213;
 const TILE_SHRUB1 = 214;
-const TILE_KEY = 299;
-const TILE_SPIKES = 298;
-const TILE_SPIKES_BLOODY = 297;
-const TILE_WALL = 296;
-const TILE_PLAYERSTART = 295;
-const TILE_DOOR = 293;
-const TILE_FINISH = 292;
-const TILE_SKELETON = 291;
-const TILE_BAT = 280;
-const TILE_YELLOW_KEY = 280;
-const TILE_GREEN_KEY = 281;
-const TILE_BLUE_KEY = 282;
-const TILE_RED_KEY = 283;
-const TILE_YELLOW_DOOR = 224;
-const TILE_GREEN_DOOR = 215;
-const TILE_BLUE_DOOR = 216;
-const TILE_RED_DOOR = 217;
-const TILE_TREASURE = 219;
-const TILE_WATER = 220;
-const TILE_ZOMBIE = 221;
-const TILE_SHOP_1 = 222;
-const TILE_SHOP_2 = 223;
-const TILE_SHOP_3 = 224;
-const TILE_SHOP_4 = 225;
-const TILE_SHOP_6 = 226;
-const TILE_SHOP_7 = 227;
-const TILE_SHOP_8 = 228;
-const TILE_SHOP_9 = 229;
-const TILE_SHOP_A = 230;
-const TILE_SHOPKEEPER = 31;
-const TILE_TREE = 32;
-const TILE_CABINET = 33;
-const TILE_BED = 34;
-const TILE_GRAVE = 35;
-const TILE_GOBLIN = 36;
-const TILE_ARCHER = 37;
-const TILE_GRAVE_YARD_PORTAL = 38;
-const TILE_HOME_VILLAGE_PORTAL = 39;
-const TILE_FRESH_GRAVE = 40;
 const TILE_BOOKSELF = 41;
 const TILE_BLANK = 42;
 
 const TILE_ALTER = 66;
 const TILE_CHAIR1 = 67;
 const TILE_CHAIR2 = 68;
+const TILE_KITCHENTABLE = 400;
+const TILE_BED1 = 401;
+const TILE_PLAYERSTART = 402;
 
 function returnTileTypeAtColRow(col, row) {
 	if(col >= 0 && col < ROOM_COLS &&

@@ -180,40 +180,9 @@ function loadImages() {
 			{tileType: TILE_BED1,  theFile: "bed1.png", locX: 0, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: 0},
 			{tileType: TILE_SHRUB1,  theFile: "shrub1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_BLANK,  theFile: "blank.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_YELLOW_KEY,  theFile: "yellowkey.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRASS,  theFile: "grass.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 
 			//To Be Deleted 
-			{tileType: TILE_GREEN_KEY,  theFile: "greenkey.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_BLUE_KEY,  theFile: "bluekey.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_RED_KEY,  theFile: "redkey.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_WALL, theFile: "wallEast.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_YELLOW_DOOR, theFile: "yellowdoor.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_BLUE_DOOR, theFile: "bluedoor.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_GREEN_DOOR, theFile: "greendoor.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_RED_DOOR, theFile: "reddoor.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_FINISH, theFile: "world_goal.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SPIKES, theFile: "spikes.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SPIKES_BLOODY, theFile: "spikesBloody.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_GRASS,  theFile: "grass.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_TREASURE,  theFile: "treasure.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_WATER,  theFile: "water.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_1,  theFile: "table1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_2,  theFile: "table2.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_3,  theFile: "table3.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_4,  theFile: "table4.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_6,  theFile: "table6.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_7,  theFile: "table7.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_8,  theFile: "table8.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_9,  theFile: "table9.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOP_A,  theFile: "tablea.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_BED,  theFile: "bed.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_SHOPKEEPER,  theFile: "shopkeeper.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_TREE,  theFile: "tree.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_GRAVE,  theFile: "grave.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_FRESH_GRAVE,  theFile: "freshgrave.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_CABINET,  theFile: "cabinet.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_GRAVE_YARD_PORTAL,  theFile: "worldRoad.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_HOME_VILLAGE_PORTAL,  theFile: "worldRoad.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0}, 
 	
 			{varName: warriorPic, theFile: "alchemist.png"},
 			{varName: swordPic, theFile: "sword.png"},
@@ -229,7 +198,6 @@ function loadImages() {
 			{varName: deadArcherPic, theFile: "deadgoblin.png"},
 			{varName: storeFrontPic, theFile: "storefront.jpg"},
 			{varName: titlepagePic, theFile: "background.png"}
-			
 		];
 			
 	picsToLoad = imageList.length;
