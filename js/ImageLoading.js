@@ -186,16 +186,6 @@ function loadImages() {
 	
 			{varName: warriorPic, theFile: "alchemist.png"},
 			{varName: swordPic, theFile: "sword.png"},
-			{varName: skeletonPic, theFile: "skeleton.png"},
-			{varName: deadSkeletonPic, theFile: "deadSkeleton.png"},
-			{varName: deadZombiePic, theFile: "deadZombie.png"},
-			{varName: batPic, theFile: "bat.png"},
-			{varName: deadBatPic, theFile: "deadbat.png"},
-			{varName: zombiePic, theFile: "zombie.png"},
-			{varName: goblinPic, theFile: "goblin.png"},
-			{varName: deadGoblinPic, theFile: "deadgoblin.png"},
-			{varName: archerPic, theFile: "archer.png"},
-			{varName: deadArcherPic, theFile: "deadgoblin.png"},
 			{varName: storeFrontPic, theFile: "storefront.jpg"},
 			{varName: titlepagePic, theFile: "background.png"}
 		];

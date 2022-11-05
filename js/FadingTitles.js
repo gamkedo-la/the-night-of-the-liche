@@ -1,7 +1,4 @@
-// simple little level transition title that fades out
-// used by LevelsUtilities.js loadMap()
-
-let fadingTitles = new function() {
+var fadingTitles = new function() {
 
 	let title = "";
 	let subtitle = "";
