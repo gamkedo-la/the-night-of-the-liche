@@ -1,5 +1,17 @@
 var audioFormat;
 
+// Sound //
+
+var doorSound = new SoundOverlapsClass("woodDoorOpen");
+var keySound = new SoundOverlapsClass("keys");
+var spikeSound = new SoundOverlapsClass("spikes");
+var zombieHurtSound = new SoundOverlapsClass("zombiehurt");
+var goblinHurtSound = new SoundOverlapsClass("goblinDeath");
+var skeletonHurtSound = new SoundOverlapsClass("skeletonhurt");
+var batHurtSound = new SoundOverlapsClass("bathurt");
+var playerHurtSound = new SoundOverlapsClass("playerHurt");
+var backgroundMusic = new BackgroundMusicClass("background");
+
 function setFormat(){
 	var audio = new Audio();
 	if (audio.canPlayType("audio/mp3")){

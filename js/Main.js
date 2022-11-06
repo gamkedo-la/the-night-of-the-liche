@@ -17,17 +17,7 @@ var archer2 = new archerClass("Archer Aaron", archerPic); */
 var menuScreen = true;
 var isInShop = false;
 
-// Sound //
 
-var doorSound = new SoundOverlapsClass("woodDoorOpen");
-var keySound = new SoundOverlapsClass("keys");
-var spikeSound = new SoundOverlapsClass("spikes");
-var zombieHurtSound = new SoundOverlapsClass("zombiehurt");
-var goblinHurtSound = new SoundOverlapsClass("goblinDeath");
-var skeletonHurtSound = new SoundOverlapsClass("skeletonhurt");
-var batHurtSound = new SoundOverlapsClass("bathurt");
-var playerHurtSound = new SoundOverlapsClass("playerHurt");
-var backgroundMusic = new BackgroundMusicClass("background");
 
 
 window.onload = function() {
@@ -81,6 +71,7 @@ function moveAll() {
 	};
 };
 
+//move to user interface when created
 function health() {
 	
 	if (redWarrior.health <= 0) {
@@ -92,7 +83,7 @@ function drawAll() {
 		if(menuScreen){
 			canvasContext.drawImage(titlepagePic, 0,0);  // blanks out the screen
 			canvasContext.font="30px Georgia";
-			colorText("Welcome to Vince's Warrior Legend!", 120, 100, "white");				
+			colorText("Placeholder for Title Screen", 120, 100, "white");				
 			canvasContext.font="20px Georgia";
 			colorText("This game is still Work in Progress, but playable!", 170, 150, "white");	
 			colorText("Move from level to level by collecting keys.", 170, 200, "white");	
