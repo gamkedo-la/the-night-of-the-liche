@@ -154,10 +154,10 @@ const TILE_ROOF_2 = 252;
 const TILE_ROOF_3 = 253;
 const TILE_ROOF_4 = 254;
 const TILE_ROOF_5 = 255;
-const TILE_ROOF_6 = 266;
-const TILE_ROOF_7 = 267;
-const TILE_ROOF_8 = 268;
-const TILE_ROOF_9 = 269;
+const TILE_ROOF_6 = 256;
+const TILE_ROOF_7 = 257;
+const TILE_ROOF_8 = 258;
+const TILE_ROOF_9 = 259;
 
 // To be sorted or removed
 const TILE_SHRUB1 = 214;
