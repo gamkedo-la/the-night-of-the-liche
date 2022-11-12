@@ -226,7 +226,20 @@ function loadImages() {
 			//OPEN
 			//OPEN
 			//OPEN
-			
+
+			// Roof Tiles
+			//Row 1:  Fence Sprite Sheet
+			{tileType: TILE_ROOF_1,  theFile: "roof.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_ROOF_2,  theFile: "roof.png", locX: 50, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_ROOF_3,  theFile: "roof.png", locX: 100, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			//Row 2:  Fence Sprite Sheet
+			{tileType: TILE_ROOF_4,  theFile: "roof.png", locX: 0, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_ROOF_5,  theFile: "roof.png", locX: 50, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_ROOF_6,  theFile: "roof.png", locX: 100, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			//Row 3:  Fence Sprite Sheet
+			{tileType: TILE_ROOF_7,  theFile: "roof.png", locX: 0, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_ROOF_8,  theFile: "roof.png", locX: 50, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_ROOF_9,  theFile: "roof.png", locX: 100, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 
 
 			//To be sorted

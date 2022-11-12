@@ -2,15 +2,6 @@
 
 var canvas, canvasContext;
 var redWarrior = new warriorClass();
-/*var bat1 = new batClass("Bat Carlos");
-var bat2 = new batClass("Bat Anely");
-var skeleton = new skeletonClass("Skeleton Greg");
-var skeleton2 = new skeletonClass("Skeleton Keith");
-var zombie = new zombieClass("Zombie Mike");
-var zombie2 = new zombieClass("Zombie Bob");
-var goblin = new goblinClass("Goblin Vince");
-var archer = new archerClass("Archer Kevin", archerPic);
-var archer2 = new archerClass("Archer Aaron", archerPic); */
 
 // Game State //
 
@@ -37,7 +28,7 @@ function imageLoadingDoneSoStartGame() {
 	
 	setupInput();
 	
-	loadLevel(levelOne);
+	loadLevel(levelOneBG);
 
 }
 
@@ -106,6 +97,7 @@ function drawAll() {
 				drawRoom();
 				//drawOnlyTilesOnScreen();
 				redWarrior.draw();
+				drawRoof();
 
 			canvasContext.restore();
 			health();

@@ -9,7 +9,7 @@ const PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_X = 150;
 const PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_Y = 100;
 
 
-var levelOne =   	[
+var levelOneBG =   	[
 	//1					  5						  10    				   15						20
 	  2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,   1,   1,   1,   1,   1,   1,
 	  2,   2,   2,   2,   2, 107,   2,   2, 107, 107, 107, 107,   2,   1,   1,   1,   1,   1,   1,   1,
@@ -33,7 +33,7 @@ var levelOne =   	[
 	  1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, //20
 	];
 
-  var levelOneFG =
+  var levelOneML =
   
   [
 	//1					  5						  10    				   15						20
@@ -58,9 +58,38 @@ var levelOne =   	[
 	 42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
 	 42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, //20
 	];
+
+	var levelOneFG = 
+
+	[
+       //1					 5						 10    				  15					20
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, //1
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, //5
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, //10
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, //15
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
+		42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, //20
+
+
+	]
  
 
-var levelList = [levelOne];
+var levelListBG = [levelOneBG];
 var levelNow = 0;
 var roomGrid = [];
 
@@ -125,6 +154,17 @@ const TILE_FENCE1_LBCORNER = 206;
 const TILE_FENCE1_BOTTOM = 207;
 const TILE_FENCE1_BOTTOM_POST = 208;
 const TILE_FENCE1_RBCORNER = 209;
+
+//ROOF 251 TO 300
+const TILE_ROOF_1 = 251;
+const TILE_ROOF_2 = 252;
+const TILE_ROOF_3 = 253;
+const TILE_ROOF_4 = 254;
+const TILE_ROOF_5 = 255;
+const TILE_ROOF_6 = 266;
+const TILE_ROOF_7 = 267;
+const TILE_ROOF_8 = 268;
+const TILE_ROOF_9 = 269;
 
 // To be sorted or removed
 const TILE_SHRUB1 = 214;
@@ -200,7 +240,7 @@ function drawRoom() {
 		for(var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
 
 			var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
-			var tileKindHere = levelOneFG[arrayIndex];
+			var tileKindHere = levelOneML[arrayIndex];
 			var useImg = worldPics[tileKindHere];
 			var spriteX = worldPics[tileKindHere].locX;
 			var spriteY = worldPics[tileKindHere].locY;
@@ -209,14 +249,37 @@ function drawRoom() {
 			var spriteOffSetX = worldPics[tileKindHere].offSetX + tileX;
 			var spriteOffSetY = worldPics[tileKindHere].offSetY + tileY;
 
-			//canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteWidth, 0, 0, spriteWidth, spriteHeight);
 			canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteHeight, spriteOffSetX, spriteOffSetY, spriteWidth, spriteHeight);
 			tileX += TILE_W;
 			arrayIndex++;
 		} // end of for each col
 		tileY += TILE_H;
 		tileX = 0;
-	} // end of for each row 
+	} // end of for each row
+
+	var tileFG_X = 0
+	var tileFG_Y = 0
+
+	for(var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
+		for(var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
+
+			var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
+			var tileKindHere = levelOneML[arrayIndex];
+			var useImg = worldPics[tileKindHere];
+			var spriteX = worldPics[tileKindHere].locX;
+			var spriteY = worldPics[tileKindHere].locY;
+			var spriteWidth = worldPics[tileKindHere].width;
+			var spriteHeight = worldPics[tileKindHere].height;
+			var spriteOffSetX = worldPics[tileKindHere].offSetX + tileFG_X;
+			var spriteOffSetY = worldPics[tileKindHere].offSetY + tileFG_Y;
+
+			canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteHeight, spriteOffSetX, spriteOffSetY, spriteWidth, spriteHeight);
+			tileFG_X += TILE_W;
+			arrayIndex++;
+		} // end of for each col
+		tileFG_Y += TILE_H;
+		tileFG_X = 0;
+	} // end of for each row
 }
 	
 
