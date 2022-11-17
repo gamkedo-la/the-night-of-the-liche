@@ -31,29 +31,27 @@ function drawRoof(){
             var arrayIndex = roofRowColToArrayIndex(eachCol, eachRow); 
             var tileKindHere = roofIndex[arrayIndex];
            // console.log("ER: " + eachRow + " EC: " + eachCol + " AI: " + arrayIndex + " TK: " + tileKindHere );
+            var startX = 50;
+            var startY = 50;
             var useImg = worldPics[tileKindHere];
             var spriteX = worldPics[tileKindHere].locX;
             var spriteY = worldPics[tileKindHere].locY;
             var spriteWidth = worldPics[tileKindHere].width;
             var spriteHeight = worldPics[tileKindHere].height;
-            var spriteOffSetX = worldPics[tileKindHere].offSetX + drawTileX;
-            var spriteOffSetY = worldPics[tileKindHere].offSetY + drawTileY;
+            var spriteOffSetX = worldPics[tileKindHere].offSetX + drawTileX + startX;
+            var spriteOffSetY = worldPics[tileKindHere].offSetY + drawTileY + startY;
             var room1unoccupied = true;
             var room2unoccupied = true;
     
 
-            if(redWarrior.x > 0 && redWarrior.x < 7 * TILE_W &&
-               redWarrior.y > 0 && redWarrior.y < 4 * TILE_H){
+            if(redWarrior.x > 50 && redWarrior.x < 8 * TILE_W &&
+               redWarrior.y > 50 && redWarrior.y < 5 * TILE_H){
                 room1unoccupied = false;
                }
-            if(redWarrior.x > 7 && redWarrior.x < ROOF_COLS * TILE_W &&
-               redWarrior.y > 0 && redWarrior.y < ROOF_ROWS * TILE_H ){
+            if(redWarrior.x > 8 * TILE_W  && redWarrior.x < 50 + ROOF_COLS * TILE_W &&
+               redWarrior.y > 50 && redWarrior.y < 50 + ROOF_ROWS * TILE_H ){
                 room2unoccupied = false;
                }
-
-            console.log("Room 1: " + room1unoccupied);
-            console.log(" Room 2: " + room2unoccupied);
-               
               
             if(room1unoccupied && room2unoccupied){
                 canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteHeight, spriteOffSetX, spriteOffSetY, spriteWidth, spriteHeight);

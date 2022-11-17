@@ -65,6 +65,7 @@ function loadImages() {
 			{tileType: TILE_WALL3_DOOR_TOP,  theFile: "SpriteSheet1.png", locX: 300, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_WALL3_TOP,  theFile: "SpriteSheet1.png", locX: 350, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_WINDOW_1,  theFile: "SpriteSheet1.png", locX: 400, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: -25},
+			{tileType: TILE_FIRE_PLACE,  theFile: "SpriteSheet1.png", locX: 450, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: 20},
 			//OPEN
 			//Row 2:  SpriteSheet1
 			{tileType: TILE_WALL1_BOTTOMLEFT,  theFile: "SpriteSheet1.png", locX: 0, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
@@ -87,7 +88,7 @@ function loadImages() {
 			//OPEN
 			//OPEN
 			//OPEN
-			//OPEN
+			{tileType: TILE_NIGHT_STAND,  theFile: "SpriteSheet1.png", locX: 450, locY: 100, width: 50, height: 100, offSetX: 0, offSetY: 20},
 			//Row 4:  SpriteSheet1
 			{tileType: TILE_WALL1_LEFTSIDE_TOP,  theFile: "SpriteSheet1.png", locX: 0, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_WALL1_DOOR_BOTTOM,  theFile: "SpriteSheet1.png", locX: 50, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
@@ -251,7 +252,7 @@ function loadImages() {
 			{tileType: TILE_CHAIR1,  theFile: "chair1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: -25},
 			{tileType: TILE_CHAIR2,  theFile: "chair2.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: -25},
 			{tileType: TILE_ALTER,  theFile: "alter.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_BED1,  theFile: "bed1.png", locX: 0, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: 0},
+			{tileType: TILE_BED1,  theFile: "bed1.png", locX: 0, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: 10},
 			{tileType: TILE_SHRUB1,  theFile: "shrub1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_BLANK,  theFile: "blank.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRASS,  theFile: "grass.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
@@ -259,8 +260,6 @@ function loadImages() {
 			//To Be Deleted 
 	
 			{varName: warriorPic, theFile: "alchemist.png"},
-			{varName: swordPic, theFile: "sword.png"},
-			{varName: storeFrontPic, theFile: "storefront.jpg"},
 			{varName: titlepagePic, theFile: "background.png"}
 		];
 			
