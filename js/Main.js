@@ -7,6 +7,7 @@ var redWarrior = new warriorClass();
 
 var menuScreen = true;
 var isInShop = false;
+var timeSinceInShop = 0;
 
 
 
@@ -86,18 +87,20 @@ function drawAll() {
 			colorText("Move Right - Right Arrow", 170, 350, "white");
 			colorText("Move Up - Up Arrow", 170, 375, "white");
 			colorText("Sword Attack - Space bar", 170, 400, "white");
-		} else if (isInShop){ 
+		} else if (isInShop){
 			drawShop();
 			
 				
 		
 		} else {
+			if (timeSinceInShop < 15) timeSinceInShop++;
+
 			canvasContext.save();
 			canvasContext.translate(-camPanX,-camPanY);
 				drawRoom();
 				//drawOnlyTilesOnScreen();
 				redWarrior.draw();
-				drawRoof();
+				drawRoof(timeSinceInShop / 15);
 
 			canvasContext.restore();
 			health();

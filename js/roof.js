@@ -20,7 +20,7 @@ function roofRowColToArrayIndex(col, row) {
 	return col + ROOF_COLS * row;
 }
 
-function drawRoof(){
+function drawRoof(alpha){
     var arrayIndex = 0;
     var drawTileX = 0;
     var drawTileY = 0;
@@ -54,7 +54,11 @@ function drawRoof(){
                }
               
             if(room1unoccupied && room2unoccupied){
+                canvasContext.globalAlpha = alpha;
                 canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteHeight, spriteOffSetX, spriteOffSetY, spriteWidth, spriteHeight);
+                canvasContext.globalAlpha = 1;
+            } else {
+                timeSinceInShop = 0;
             }
 
             drawTileX += TILE_W;
