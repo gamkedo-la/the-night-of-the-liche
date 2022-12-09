@@ -148,8 +148,7 @@ function warriorClass() {
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
         if (walkIntoTileIndex != undefined) {
-            walkIntoTileType = roomGrid[walkIntoTileIndex];
-			walkIntoMGTileType = walkIntoMGTileIndex;
+            walkIntoTileType = levelOneML[walkIntoMGTileIndex];
         }
 
         switch (walkIntoTileType) {
@@ -246,49 +245,5 @@ function warriorClass() {
         this.mySword.draw();
 
         this.myArrow.draw();
-
     }
-}
-
-function instantCamFollow() {
-	camPanX = redWarrior.x - canvas.width / 2;
-	camPanY = redWarrior.y - canvas.height / 2;
-}
-
-function cameraFollow() {
-	var cameraFocusCenterX = camPanX + canvas.width / 2;
-	var cameraFocusCenterY = camPanY + canvas.height / 2;
-
-	var playerDistFromCameraFocusX = Math.abs(redWarrior.x - cameraFocusCenterX);
-	var playerDistFromCameraFocusY = Math.abs(redWarrior.y - cameraFocusCenterY);
-
-	if (playerDistFromCameraFocusX > PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_X) {
-		if (cameraFocusCenterX < redWarrior.x) {
-			camPanX += playerMoveSpeed;
-		} else {
-			camPanX -= playerMoveSpeed;
-		}
-	}
-	if (playerDistFromCameraFocusY > PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_Y) {
-		if (cameraFocusCenterY < redWarrior.y) {
-			camPanY += playerMoveSpeed;
-		} else {
-			camPanY -= playerMoveSpeed;
-		}
-	}
-
-	if (camPanX < 0) {
-		camPanX = 0;
-	}
-	if (camPanY < 0) {
-		camPanY = 0;
-	}
-	var maxPanRight = ROOM_COLS * TILE_W - canvas.width;
-	var maxPanTop = ROOM_ROWS * TILE_H - canvas.height;
-	if (camPanX > maxPanRight) {
-		camPanX = maxPanRight;
-	}
-	if (camPanY > maxPanTop) {
-		camPanY = maxPanTop;
-	}
 }
