@@ -31,7 +31,6 @@ function warriorClass() {
     this.ticksPerFrame = 5;
     this.playerMove = false;
 
-
     this.keyHeld_WalkNorth = false;
     this.keyHeld_WalkSouth = false;
     this.keyHeld_WalkWest = false;
@@ -148,7 +147,11 @@ function warriorClass() {
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
         if (walkIntoTileIndex != undefined) {
-            walkIntoTileType = levelOneML[walkIntoMGTileIndex];
+            walkIntoTileType = levelOneML[walkIntoMGTileIndex]; //needs to be update to reflect different maps
+            if(walkIntoTileType == 42){
+                walkIntoTileType = levelOneBG[walkIntoTileIndex];
+            }
+            console.log(walkIntoTileType)
         }
 
         switch (walkIntoTileType) {
@@ -178,7 +181,7 @@ function warriorClass() {
             case TILE_WALL1_TOP:
             case TILE_BOOKSELF:
             default:
-                playerMoveSpeed = 0.0;
+                playerMoveSpeed = 4.0;
                 break;
 
         } // end of switch
