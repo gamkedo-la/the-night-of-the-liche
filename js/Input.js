@@ -87,6 +87,10 @@ function keySet(keyEvent, redWarrior, setTo) {
 }
 
 function keyPressed(evt) {
+	// Hold down ctrl + shift and press a letter to activate a cheat
+	if (evt.ctrlKey && evt.shiftKey) {
+		activateCheatCode(evt.keyCode);
+	}
 	if(isInShop){
 		console.log(evt.keyCode);
 		shopInput(evt.keyCode);
@@ -114,3 +118,12 @@ function handleMouseClick(evt) {
 	}
 }
 
+function activateCheatCode(keyCode) {
+	if (keyCode === KEY_C) {
+		redWarrior.noClipping = !redWarrior.noClipping;
+		console.log(`Cheatcode "noClipping" is ${redWarrior.noClipping ? "active" : "inactive"}`)
+	} else if (keyCode === KEY_I) {
+		redWarrior.invulnerable = !redWarrior.invulnerable;
+		console.log(`Cheatcode "invulnerable" is ${redWarrior.invulnerable ? "active" : "inactive"}`)
+	}
+}

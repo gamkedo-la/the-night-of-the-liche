@@ -66,7 +66,7 @@ function moveAll() {
 //move to user interface when created
 function health() {
 	
-	if (redWarrior.health <= 0) {
+	if (redWarrior.health <= 0 && !redWarrior.invulnerable) {
 		resetLevel();
 	}
 }

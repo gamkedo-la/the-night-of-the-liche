@@ -2,6 +2,8 @@ var playerMoveSpeed = 3.0;
 var direction = "south";
 
 function warriorClass() {
+    this.noClipping = false;
+    this.invulnerable = false;
     this.mySword = new swordClass();
     this.myArrow = new arrowClass();
     this.arrowList = [];
@@ -148,7 +150,7 @@ function warriorClass() {
         }
         if (walkIntoTileIndex != undefined) {
             walkIntoTileType = levelOneML[walkIntoMGTileIndex]; //needs to be update to reflect different maps
-            if(walkIntoTileType == 42){
+            if(walkIntoTileType == TILE_BLANK || this.noClipping){
                 walkIntoTileType = levelOneBG[walkIntoTileIndex];
             }
             console.log(walkIntoTileType)
