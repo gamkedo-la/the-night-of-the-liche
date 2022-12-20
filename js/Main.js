@@ -35,10 +35,10 @@ function imageLoadingDoneSoStartGame() {
 
 function nextLevel() {
 	levelNow++;
-	if(levelNow > levelList.length) {
+	if(levelNow > levelListBG.length) {
 		levelNow = 0;
 	}
-	loadLevel(levelList[levelNow]);
+	loadLevel(levelListBG[levelNow]);
 }
 
 function loadLevel(whichLevel) {	

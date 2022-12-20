@@ -308,5 +308,5 @@ function drawRoom() {
 }
 
 function resetLevel() {
-	loadLevel(levelList[levelNow])
+	loadLevel(levelListBG[levelNow])
 }
