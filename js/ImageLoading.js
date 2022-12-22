@@ -1,23 +1,11 @@
 var titlepagePic = document.createElement("img");
 var storeFrontPic = document.createElement("img");
 
-var warriorPic = document.createElement("img");
+var playerPic = document.createElement("img");
 var swordPic = document.createElement("img");
 
-var skeletonPic = document.createElement("img");
-var deadSkeletonPic = document.createElement("img");
+var alchemistPic = document.createElement("img");
 
-var zombiePic = document.createElement("img");
-var deadZombiePic = document.createElement("img");
- 
-var batPic = document.createElement("img");
-var deadBatPic = document.createElement("img");
-
-var goblinPic = document.createElement("img");
-var deadGoblinPic = document.createElement("img");
-
-var archerPic = document.createElement("img");
-var deadArcherPic = document.createElement("img");
 
 var worldPics = [];
 
@@ -259,7 +247,8 @@ function loadImages() {
 
 			//To Be Deleted 
 	
-			{varName: warriorPic, theFile: "alchemist.png"},
+			{varName: playerPic, theFile: "player.png"},
+			{varName: alchemistPic, theFile: "alchemist.png"},
 			{varName: titlepagePic, theFile: "background.png"}
 		];
 			

@@ -16,7 +16,7 @@ function warriorClass() {
     this.leftArm = this.x + 25;
     this.rightArm = this.x - 25;
     this.speed = 0;
-    this.myWarriorPic = warriorPic; // which picture to use
+    this.myplayerPic = playerPic; // which picture to use
     this.name = "Untitled warrior";
     this.keysHeld = 0;
     this.goldpieces = 10;
@@ -64,7 +64,7 @@ function warriorClass() {
 
     this.reset = function(whichImage, warriorName) {
         this.name = warriorName;
-        this.myWarriorPic;
+        this.myplayerPic;
         this.yellowKeysHeld = 0;
         this.greenKeysHeld = 0;
         this.blueKeysHeld = 0;
@@ -247,7 +247,7 @@ function warriorClass() {
 
         this.sx = this.frameIndex * this.width;
 
-        canvasContext.drawImage(this.myWarriorPic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);
+        canvasContext.drawImage(this.myplayerPic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);
         /*		colorRect(this.x,this.y, 5,5, "white") 
         		colorRect(this.x,this.y+this.height, 5,5, "white")
         		colorRect(this.x+this.width,this.y, 5,5, "white")

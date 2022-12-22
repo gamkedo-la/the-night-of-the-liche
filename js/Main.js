@@ -43,7 +43,7 @@ function nextLevel() {
 
 function loadLevel(whichLevel) {	
 	roomGrid = whichLevel.slice();
-	redWarrior.reset(warriorPic, "Red warrior");
+	redWarrior.reset(playerPic, "Red warrior");
 }
 
 function updateAll() {
