@@ -193,27 +193,27 @@ function archerClass(archerName) {
 				}
 			}
 			
-			var walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
-			var walkIntoTileType = TILE_WALL;
+			var TileIndex = getTileTypeAtPixelCoord(nextX, nextY);
+			var TileType = TILE_WALL;
 			
 			if(archerDirection == "north") {
-				walkIntoTileIndex = getTileTypeAtPixelCoord(nextX,(nextY-25));
+				TileIndex = getTileTypeAtPixelCoord(nextX,(nextY-25));
 			}
 			if(archerDirection == "south") {
-				walkIntoTileIndex = getTileTypeAtPixelCoord(nextX,(nextY+25));
+				TileIndex = getTileTypeAtPixelCoord(nextX,(nextY+25));
 			}
 			if(archerDirection == "west") {
-				walkIntoTileIndex = getTileTypeAtPixelCoord((nextX-25), nextY);
+				TileIndex = getTileTypeAtPixelCoord((nextX-25), nextY);
 			}
 			if(archerDirection == "east") {
-				walkIntoTileIndex = getTileTypeAtPixelCoord((nextX+25), nextY);
+				TileIndex = getTileTypeAtPixelCoord((nextX+25), nextY);
 			}
 
-			if(walkIntoTileIndex != undefined) {
-				walkIntoTileType = roomGrid[walkIntoTileIndex];
+			if(TileIndex != undefined) {
+				TileType = roomGrid[TileIndex];
 			}
 			
-		switch(walkIntoTileType) {
+		switch(TileType) {
 				case TILE_ROAD:
 					this.x = nextX;
 					this.y = nextY;
@@ -269,7 +269,7 @@ function archerClass(archerName) {
 					this.x = nextX;
 					this.y = nextY;
 					this.health = this.health - .5; // Damage to Health
-					roomGrid[walkIntoTileIndex] = TILE_SPIKES_BLOODY;
+					roomGrid[TileIndex] = TILE_SPIKES_BLOODY;
 					spikeSound.play();
 					break;
 				case TILE_SPIKES_BLOODY:

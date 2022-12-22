@@ -150,12 +150,14 @@ function warriorClass() {
         }
         if (walkIntoTileIndex != undefined) {
             walkIntoTileType = levelOneML[walkIntoMGTileIndex]; //needs to be update to reflect different maps
+            console.log(walkIntoTileType)
             if(walkIntoTileType == TILE_BLANK || this.noClipping){
                 walkIntoTileType = levelOneBG[walkIntoTileIndex];
+                console.log(walkIntoTileType)
             }
             console.log(walkIntoTileType)
         }
-
+        
         switch (walkIntoTileType) {
             case TILE_ROAD:
             case TILE_WOOD_FLOOR:
@@ -180,7 +182,13 @@ function warriorClass() {
                 this.x = nextX;
                 this.y = nextY;
                 break;
-            case TILE_WALL1_TOP:
+            case TILE_WALL1_DOOR_TOP:
+            case TILE_WALL1_DOOR_BOTTOM:
+            case TILE_WALL3_DOOR_BOTTOM:
+                this.x = nextX;
+                this.y = nextY;
+                break;
+            case TILE_WALL1_TOP:  
             case TILE_BOOKSELF:
             default:
                 playerMoveSpeed = 4.0;

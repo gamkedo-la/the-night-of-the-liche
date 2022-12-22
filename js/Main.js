@@ -100,6 +100,7 @@ function drawAll() {
 				drawRoom();
 				//drawOnlyTilesOnScreen();
 				redWarrior.draw();
+				drawTopLayer();
 				drawRoof(timeSinceInShop / 15);
 
 			canvasContext.restore();
