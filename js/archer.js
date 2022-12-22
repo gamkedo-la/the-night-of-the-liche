@@ -80,8 +80,8 @@ function archerClass(archerName) {
 		
 		if(this.health > 0){
 							
-			var deltaX = redWarrior.x - this.x;
-			var deltaY = redWarrior.y - this.y;
+			var deltaX = player.x - this.x;
+			var deltaY = player.y - this.y;
 			var dist = Math.sqrt((deltaX*deltaX) + (deltaY*deltaY));
 			var dist = Math.floor(dist);
 			
@@ -139,7 +139,7 @@ function archerClass(archerName) {
 				if(dist > 30) {
 					nextX += moveX;
 					nextY += moveY;
-					if(nextY < redWarrior.y){
+					if(nextY < player.y){
 						this.walkSouth;
 					}
 					else{
@@ -287,7 +287,7 @@ function archerClass(archerName) {
 	this.archerBite = function() {
 
 		if(this.biteReady == true){
-			redWarrior.health = redWarrior.health -1;	
+			player.health = player.health -1;	
 			document.getElementById("debugText").innerHTML = "Ouch! I've been bite by a archer.";	
 			this.biteReady = false;
 		}
@@ -305,9 +305,9 @@ function archerClass(archerName) {
 		}
 	}
 
-	this.isOverlappingPoint = function(testX, testY) {  // textX is redWarrior.x and testY is redWarrior.y
+	this.isOverlappingPoint = function(testX, testY) {  // textX is player.x and testY is player.y
 		
-		//test if redWarrior is inside box of Monster
+		//test if player is inside box of Monster
 				
 		if(this.x < testX && (this.x + this.width) > testX && this.y < testY && (this.y + this.height) > testY){
 			this.archerBite();

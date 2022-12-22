@@ -221,7 +221,7 @@ function zombieClass(zombieName) {
 	
 	this.zombieBite = function() {
 		if(this.biteReady == true){
-			redWarrior.health = redWarrior.health -1;	
+			player.health = player.health -1;	
 			playerHurtSound.play();
 			document.getElementById("debugText").innerHTML = "Ouch! I've been bite by a zombie for 1 point of damage.";	
 			this.biteReady = false;
@@ -240,9 +240,9 @@ function zombieClass(zombieName) {
 		}
 	}
 
-	this.isOverlappingPoint = function(testX, testY) {  // textX is redWarrior.x and testY is redWarrior.y
+	this.isOverlappingPoint = function(testX, testY) {  // textX is player.x and testY is player.y
 		
-		//test if redWarrior is inside box of Monster
+		//test if player is inside box of Monster
 		
 		if(this.x < testX && (this.x + this.width) > testX && this.y < testY && (this.y + this.height) > testY){
 			this.zombieBite();

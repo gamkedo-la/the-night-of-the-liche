@@ -89,7 +89,7 @@ function arrowClass() {
 				document.getElementById("debugText").innerHTML = "That was my last arrow.  I need to find more!";
 			}
 
-			redWarrior.updateReadout();
+			player.updateReadout();
 			
 			if(direction == "north") {
 				this.x = warriorAttack.x+25;
@@ -135,8 +135,8 @@ function arrowClass() {
 	
 	this.draw = function() {
 
-		var arrowXLocation = redWarrior.x;
-		var arrowYLocation = redWarrior.y;
+		var arrowXLocation = player.x;
+		var arrowYLocation = player.y;
 		
 		if(direction == "north") {
 

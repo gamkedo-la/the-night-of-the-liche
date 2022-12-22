@@ -1,7 +1,7 @@
 // Characters //
 
 var canvas, canvasContext;
-var redWarrior = new warriorClass();
+var player = new warriorClass();
 
 // Game State //
 
@@ -43,7 +43,7 @@ function nextLevel() {
 
 function loadLevel(whichLevel) {	
 	roomGrid = whichLevel.slice();
-	redWarrior.reset(playerPic, "Red warrior");
+	player.reset(playerPic, "Red warrior");
 }
 
 function updateAll() {
@@ -57,7 +57,7 @@ function moveAll() {
 	} else if (isInShop){
 		
 	} else { 
-		redWarrior.move();
+		player.move();
 
 		cameraFollow();	
 	};
@@ -66,7 +66,7 @@ function moveAll() {
 //move to user interface when created
 function health() {
 	
-	if (redWarrior.health <= 0 && !redWarrior.invulnerable) {
+	if (player.health <= 0 && !player.invulnerable) {
 		resetLevel();
 	}
 }
@@ -99,11 +99,14 @@ function drawAll() {
 			canvasContext.translate(-camPanX,-camPanY);
 				drawRoom();
 				//drawOnlyTilesOnScreen();
-				redWarrior.draw();
+				player.draw();
 				drawTopLayer();
 				drawRoof(timeSinceInShop / 15);
-
+				if(displayPlayerThoughts){
+					drawPlayerThoughts();
+				}
 			canvasContext.restore();
+			displayQuests();
 			health();
 		}
 }

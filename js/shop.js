@@ -13,18 +13,18 @@ function shopInput(whichKeyCode){
 	switch(whichKeyCode){
 		
 		case NUM_1: 
-			if(redWarrior.goldpieces >= 10){
-				redWarrior.goldpieces = redWarrior.goldpieces - 10;
-				redWarrior.myArrow.arrowQuantity = redWarrior.myArrow.arrowQuantity + 10;
+			if(player.goldpieces >= 10){
+				player.goldpieces = player.goldpieces - 10;
+				player.myArrow.arrowQuantity = player.myArrow.arrowQuantity + 10;
 				shopKeeperFeedback = "Shop Keeper:  Thank you for purchasing the arrows.  Please come again.";
 			} else {
 				shopKeeperFeedback = "Shop Keeper:  You don't have enough gold pieces";
 			}
 				break;
 		case NUM_2:
-			if(redWarrior.goldpieces >= 10){
-				redWarrior.goldpieces = redWarrior.goldpieces - 10;
-				redWarrior.health++;
+			if(player.goldpieces >= 10){
+				player.goldpieces = player.goldpieces - 10;
+				player.health++;
 				shopKeeperFeedback = "Shop Keeper:  Thank you for purchase the heart.  Please come again.";
 			} else {
 				shopKeeperFeedback = "Shop Keeper:  You don't have enough gold pieces";
@@ -38,6 +38,6 @@ function shopInput(whichKeyCode){
 			break;
 	} 
 	isInShop = false;
-	redWarrior.updateReadout();
+	player.updateReadout();
 	document.getElementById("debugText").innerHTML = shopKeeperFeedback;				
 }

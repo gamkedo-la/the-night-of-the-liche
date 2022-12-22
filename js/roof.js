@@ -44,12 +44,12 @@ function drawRoof(alpha){
             var room2unoccupied = true;
     
 
-            if(redWarrior.x > 50 && redWarrior.x < 8 * TILE_W &&
-               redWarrior.y > 50 && redWarrior.y < 5 * TILE_H){
+            if(player.x > 50 && player.x < 8 * TILE_W &&
+               player.y > 50 && player.y < 5 * TILE_H){
                 room1unoccupied = false;
                }
-            if(redWarrior.x > 8 * TILE_W  && redWarrior.x < 50 + ROOF_COLS * TILE_W &&
-               redWarrior.y > 50 && redWarrior.y < 50 + ROOF_ROWS * TILE_H ){
+            if(player.x > 8 * TILE_W  && player.x < 50 + ROOF_COLS * TILE_W &&
+               player.y > 50 && player.y < 50 + ROOF_ROWS * TILE_H ){
                 room2unoccupied = false;
                }
               

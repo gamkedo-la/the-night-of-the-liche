@@ -223,7 +223,7 @@ function skeletonClass(skeletonName) {
 	this.skeletonBite = function() {
 
 		if(this.biteReady == true){
-			redWarrior.health = redWarrior.health -0.5;	
+			player.health = player.health -0.5;	
 			playerHurtSound.play();
 			document.getElementById("debugText").innerHTML = "Ouch! I've been bite by a skeleton for .5 points of damage.";	
 			this.biteReady = false;
@@ -242,9 +242,9 @@ function skeletonClass(skeletonName) {
 		}
 	}
 
-	this.isOverlappingPoint = function(testX, testY) {  // textX is redWarrior.x and testY is redWarrior.y
+	this.isOverlappingPoint = function(testX, testY) {  // textX is player.x and testY is player.y
 		
-		//test if redWarrior is inside box of Monster
+		//test if player is inside box of Monster
 				
 		if(this.x < testX && (this.x + this.width) > testX && this.y < testY && (this.y + this.height) > testY){
 			this.skeletonBite();

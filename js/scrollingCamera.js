@@ -4,55 +4,55 @@
   const PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_Y = 100;
 
   function sliderMove() {
-    var nextX = redWarrior.x;
-    var nextY = redWarrior.y;
+    var nextX = player.x;
+    var nextY = player.y;
 
-    if(redWarrior.keyHeld_WalkWest) {
+    if(player.keyHeld_WalkWest) {
       nextX += -playerMoveSpeed;
     }
-    if(redWarrior.keyHeld_WalkEast) {
+    if(player.keyHeld_WalkEast) {
       nextX += playerMoveSpeed;
     }
-    if(redWarrior.keyHeld_WalkNorth) {
+    if(player.keyHeld_WalkNorth) {
       nextY += -playerMoveSpeed;
     }
-    if(redWarrior.keyHeld_WalkSouth) {
+    if(player.keyHeld_WalkSouth) {
       nextY += playerMoveSpeed;
     }
 	
     if(isBrickAtPixelCoord(nextX,nextY) == false) {
-      redWarrior.x = nextX;
-      redWarrior.y = nextY;
+      player.x = nextX;
+      player.y = nextY;
     }
   }
 
   function sliderReset() {
     // center slider on screen
-    redWarrior.x = canvas.width/2;
-    redWarrior.y = canvas.height/2;
+    player.x = canvas.width/2;
+    player.y = canvas.height/2;
   }
 
   function instantCamFollow() {
-    camPanX = redWarrior.x - canvas.width/2;
-    camPanY = redWarrior.y - canvas.height/2;
+    camPanX = player.x - canvas.width/2;
+    camPanY = player.y - canvas.height/2;
   }
 
   function cameraFollow() {
     var cameraFocusCenterX = camPanX + canvas.width/2;
     var cameraFocusCenterY = camPanY + canvas.height/2;
 
-    var playerDistFromCameraFocusX = Math.abs(redWarrior.x-cameraFocusCenterX);
-    var playerDistFromCameraFocusY = Math.abs(redWarrior.y-cameraFocusCenterY);
+    var playerDistFromCameraFocusX = Math.abs(player.x-cameraFocusCenterX);
+    var playerDistFromCameraFocusY = Math.abs(player.y-cameraFocusCenterY);
 
     if(playerDistFromCameraFocusX > PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_X) {
-      if(cameraFocusCenterX < redWarrior.x)  {
+      if(cameraFocusCenterX < player.x)  {
         camPanX += playerMoveSpeed;
       } else {
         camPanX -= playerMoveSpeed;
       }
     }
     if(playerDistFromCameraFocusY > PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_Y) {
-      if(cameraFocusCenterY < redWarrior.y)  {
+      if(cameraFocusCenterY < player.y)  {
         camPanY += playerMoveSpeed;
       } else {
         camPanY -= playerMoveSpeed;

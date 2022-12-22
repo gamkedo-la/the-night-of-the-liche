@@ -21,8 +21,8 @@ function swordClass() {
 	this.move = function() {
 		if(this.swordLife > 0) {
 			this.swordLife--;
-		this.swX = redWarrior.x;
-		this.swY = redWarrior.y;	  
+		this.swX = player.x;
+		this.swY = player.y;	  
 		}
 	}
 
@@ -108,32 +108,32 @@ function swordClass() {
 
 		var swordWidth = 10;
 		var swordLength = 40;
-		var swordXLocation = redWarrior.x;
-		var swordYLocation = redWarrior.y;
+		var swordXLocation = player.x;
+		var swordYLocation = player.y;
 		
 		if(direction == "north") {
 			swordWidth = 10;
 			swordLength = 20;
-			swordXLocation = redWarrior.centerX+5;
-			swordYLocation = redWarrior.y - swordLength;
+			swordXLocation = player.centerX+5;
+			swordYLocation = player.y - swordLength;
 		}
 		else if(direction == "south") {
 			swordWidth = 10;
 			swordLength = 40;
-			swordXLocation = redWarrior.centerX-10;
-			swordYLocation = redWarrior.centerY+10;
+			swordXLocation = player.centerX-10;
+			swordYLocation = player.centerY+10;
 		}
 		else if(direction == "west") {
 			swordWidth = 40;
 			swordLength = 10;
-			swordXLocation = redWarrior.x - swordWidth + 10;
-			swordYLocation = redWarrior.centerY;
+			swordXLocation = player.x - swordWidth + 10;
+			swordYLocation = player.centerY;
 		}
 		else if(direction == "east") {
 			swordWidth = 40;
 			swordLength = 10;
-			swordXLocation = redWarrior.x + 20;
-			swordYLocation = redWarrior.centerY;
+			swordXLocation = player.x + 20;
+			swordYLocation = player.centerY;
 		
 		} 
 		

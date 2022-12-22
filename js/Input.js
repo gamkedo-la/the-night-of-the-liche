@@ -59,7 +59,7 @@ function setupInput() {
 	document.addEventListener('keydown', keyPressed);
 	document.addEventListener('keyup', keyReleased);
 	
-	redWarrior.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A);
+	player.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A);
 }
 
 function updateMousePos(evt) {
@@ -71,18 +71,18 @@ function updateMousePos(evt) {
 	
 }
 
-function keySet(keyEvent, redWarrior, setTo) {
-	if(keyEvent.keyCode == redWarrior.controlKeyLeft) {
-		redWarrior.keyHeld_WalkWest = setTo;
+function keySet(keyEvent, player, setTo) {
+	if(keyEvent.keyCode == player.controlKeyLeft) {
+		player.keyHeld_WalkWest = setTo;
 	}
-	if(keyEvent.keyCode == redWarrior.controlKeyRight) {
-		redWarrior.keyHeld_WalkEast = setTo;
+	if(keyEvent.keyCode == player.controlKeyRight) {
+		player.keyHeld_WalkEast = setTo;
 	}
-	if(keyEvent.keyCode == redWarrior.controlKeyUp) {
-		redWarrior.keyHeld_WalkNorth = setTo;
+	if(keyEvent.keyCode == player.controlKeyUp) {
+		player.keyHeld_WalkNorth = setTo;
 	}
-	if(keyEvent.keyCode == redWarrior.controlKeyDown) {
-		redWarrior.keyHeld_WalkSouth = setTo;
+	if(keyEvent.keyCode == player.controlKeyDown) {
+		player.keyHeld_WalkSouth = setTo;
 	}	
 }
 
@@ -97,19 +97,19 @@ function keyPressed(evt) {
 		
 	} else {
 		
-		keySet(evt, redWarrior, true);
-		if(evt.keyCode == redWarrior.controlKeySword) {
-			redWarrior.swordSwing(); 
+		keySet(evt, player, true);
+		if(evt.keyCode == player.controlKeySword) {
+			player.swordSwing(); 
 		}
-		else if(evt.keyCode == redWarrior.controlKeyArrow) {
-			redWarrior.shotArrow(); 
+		else if(evt.keyCode == player.controlKeyArrow) {
+			player.shotArrow(); 
 		}
 	}
     evt.preventDefault(); // without this, arrow keys scroll the browser!
 }
 
 function keyReleased(evt) {
-	keySet(evt, redWarrior, false);
+	keySet(evt, player, false);
 }
 
 function handleMouseClick(evt) {
@@ -120,10 +120,10 @@ function handleMouseClick(evt) {
 
 function activateCheatCode(keyCode) {
 	if (keyCode === KEY_C) {
-		redWarrior.noClipping = !redWarrior.noClipping;
-		console.log(`Cheatcode "noClipping" is ${redWarrior.noClipping ? "active" : "inactive"}`)
+		player.noClipping = !player.noClipping;
+		console.log(`Cheatcode "noClipping" is ${player.noClipping ? "active" : "inactive"}`)
 	} else if (keyCode === KEY_I) {
-		redWarrior.invulnerable = !redWarrior.invulnerable;
-		console.log(`Cheatcode "invulnerable" is ${redWarrior.invulnerable ? "active" : "inactive"}`)
+		player.invulnerable = !player.invulnerable;
+		console.log(`Cheatcode "invulnerable" is ${player.invulnerable ? "active" : "inactive"}`)
 	}
 }

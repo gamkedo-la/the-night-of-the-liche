@@ -89,7 +89,7 @@ function warriorClass() {
     } // end of warriorRest func
 
     this.updateReadout = function() {
-        document.getElementById("inventory").innerHTML = "Arrows: " + redWarrior.myArrow.arrowQuantity + "<br>Yellow Keys: " + this.yellowKeysHeld + "<br>Red Keys: " + this.redKeysHeld + "<br>Green Keys: " + this.greenKeysHeld + "<br>Blue Keys: " + this.blueKeysHeld + "<br>Gold Pieces: " + this.goldpieces;
+        document.getElementById("inventory").innerHTML = "Arrows: " + player.myArrow.arrowQuantity + "<br>Yellow Keys: " + this.yellowKeysHeld + "<br>Red Keys: " + this.redKeysHeld + "<br>Green Keys: " + this.greenKeysHeld + "<br>Blue Keys: " + this.blueKeysHeld + "<br>Gold Pieces: " + this.goldpieces;
     }
 
     this.move = function() {
@@ -254,7 +254,7 @@ function warriorClass() {
         		colorRect(this.x+this.width,this.y+this.height, 5,5, "white")
         				
         		colorRect(this.centerX,this.centerY, 5, 5, 'white') */
-
+               
         this.mySword.draw();
 
         this.myArrow.draw();
