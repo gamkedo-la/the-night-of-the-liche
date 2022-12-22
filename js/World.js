@@ -30,7 +30,7 @@ var levelOneBG = [
 	  1,   1,   1,   1,   1,   1,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   1,   1,   1,
 	  1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
 	  1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
-	  1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, 
+	  1,   1,   1,   1, 403,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, 
 	  1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, //20
 	];
 
@@ -178,6 +178,7 @@ const TILE_CHAIR2 = 68;
 const TILE_KITCHENTABLE = 400;
 const TILE_BED1 = 401;
 const TILE_PLAYERSTART = 402;
+const TILE_ALCHEMIST = 403;
 
 function returnTileTypeAtColRow(col, row) {
 	if(col >= 0 && col < ROOM_COLS &&

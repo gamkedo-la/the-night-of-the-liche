@@ -2,6 +2,7 @@
 
 var canvas, canvasContext;
 var player = new warriorClass();
+var alchemist = new alchemistClass();
 
 // Game State //
 
@@ -44,6 +45,7 @@ function nextLevel() {
 function loadLevel(whichLevel) {	
 	roomGrid = whichLevel.slice();
 	player.reset(playerPic, "Red warrior");
+	alchemist.reset();
 }
 
 function updateAll() {
@@ -58,6 +60,7 @@ function moveAll() {
 		
 	} else { 
 		player.move();
+		alchemist.move();
 
 		cameraFollow();	
 	};
@@ -100,6 +103,7 @@ function drawAll() {
 				drawRoom();
 				//drawOnlyTilesOnScreen();
 				player.draw();
+				alchemist.draw();
 				drawTopLayer();
 				drawRoof(timeSinceInShop / 15);
 				if(displayPlayerThoughts){
