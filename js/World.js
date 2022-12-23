@@ -15,8 +15,7 @@ const LEVELS = {
 
 var currentLevelIndex = 0
 // presumably 'levelTwo' will exist eventually too, could also changes these to be 'town', 'forest', 'graveyard', etc
-// the strings in this array have to match the property names in the LEVELS object above
-var levelList = ['levelOne']
+var levelList = Object.keys(LEVELS)
 
 var roomGrid = [];
 

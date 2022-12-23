@@ -47,6 +47,11 @@ function loadLevel(whichLevel) {
 	alchemist.reset();
 }
 
+function loadAreaByName (name) {
+	currentLevelIndex = levelList.findIndex(level => level === name) || 0
+	loadLevel(LEVELS[levelList[currentLevelIndex]])
+}
+
 function updateAll() {
 	moveAll();
 	drawAll();
