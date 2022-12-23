@@ -149,10 +149,10 @@ function warriorClass() {
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
         if (walkIntoTileIndex != undefined) {
-            walkIntoTileType = levelOneML[walkIntoMGTileIndex]; //needs to be update to reflect different maps
+            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoMGTileIndex]
             console.log(walkIntoTileType)
             if(walkIntoTileType == TILE_BLANK || this.noClipping){
-                walkIntoTileType = levelOneBG[walkIntoTileIndex];
+                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex]
                 console.log(walkIntoTileType)
             }
             console.log(walkIntoTileType)

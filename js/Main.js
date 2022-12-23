@@ -30,20 +30,19 @@ function imageLoadingDoneSoStartGame() {
 	
 	setupInput();
 	
-	loadLevel(levelOneBG);
-
+	loadLevel(LEVELS[levelList[currentLevelIndex]])
 }
 
 function nextLevel() {
-	levelNow++;
-	if(levelNow > levelListBG.length) {
-		levelNow = 0;
+	currentLevelIndex++;
+	if (currentLevelIndex >= levelList.length) {
+		currentLevelIndex = 0;
 	}
-	loadLevel(levelListBG[levelNow]);
+	loadLevel(LEVELS[levelList[currentLevelIndex]])
 }
 
-function loadLevel(whichLevel) {	
-	roomGrid = whichLevel.slice();
+function loadLevel(whichLevel) {
+	roomGrid = whichLevel.background
 	player.reset(playerPic, "Red warrior");
 	alchemist.reset();
 }
