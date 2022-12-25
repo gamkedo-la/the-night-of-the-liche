@@ -100,13 +100,13 @@ function warriorClass() {
             nextY -= playerMoveSpeed;
             direction = "north";
             this.sx = 0;
-            this.sy = 0;
+            this.sy = 52*3;
         }
         if (this.keyHeld_WalkSouth) {
             nextY += playerMoveSpeed;
             direction = "south";
             this.sx = 0;
-            this.sy = 52*3;
+            this.sy = 52*0;
         }
         if (this.keyHeld_WalkWest) {
             nextX -= playerMoveSpeed;
