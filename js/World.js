@@ -106,6 +106,16 @@ const TILE_BED1 = 401;
 const TILE_PLAYERSTART = 402;
 const TILE_ALCHEMIST = 403;
 
+var grid = []; // array of GridElement instances, gets initialized based on tileGrid
+const NOTHING = 0;
+const SOURCE = 1;
+const DEST = 2;
+const WALL = 3;
+const VISITED = 4;
+const PATH = 5;
+
+const INFINITY_START_DISTANCE = 999999;
+
 function returnTileTypeAtColRow(col, row) {
 	if(col >= 0 && col < ROOM_COLS &&
 		row >= 0 && row < ROOM_ROWS) {

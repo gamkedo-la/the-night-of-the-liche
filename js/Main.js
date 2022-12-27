@@ -31,6 +31,7 @@ function imageLoadingDoneSoStartGame() {
 	setupInput();
 	
 	loadLevel(LEVELS[levelList[currentLevelIndex]])
+	//SetupPathfindingGridData();  //// WIP for pathfinding
 }
 
 function nextLevel() {
@@ -112,6 +113,9 @@ function drawAll() {
 				drawRoof(timeSinceInShop / 15);
 				if(displayPlayerThoughts){
 					drawPlayerThoughts();
+				}
+				if(pathfindingNow) {
+					PathfindingNextStep();
 				}
 			canvasContext.restore();
 			displayQuests();

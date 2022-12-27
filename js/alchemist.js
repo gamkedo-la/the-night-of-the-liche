@@ -38,6 +38,10 @@ function alchemistClass() {
     this.move = function() {
         var nextX = this.x;
         var nextY = this.y;
+        this.tickCount++;  /*this advances the ticks per frame.  @jiho, use this for random movements
+        You will need to reset the tickCount once a direction gets set. Recommend creating a random function
+        to set 1 through 5 for states (N, S, W, E, stationary).  When state gets selected, make that true and
+        the other states false. */
 
         if (this.walkNorth) {
             nextY -= thithis.speeds.speed;
@@ -134,9 +138,6 @@ function alchemistClass() {
     }
 
     this.draw = function() {
-        if (this.move) {
-            this.tickCount++;
-        }
         if (this.tickCount > this.ticksPerFrame) {
             this.tickCount = 0;
             if (this.frameIndex < this.numberOfFrames - 1) {
