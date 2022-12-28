@@ -44,7 +44,7 @@ function alchemistClass() {
         the other states false. */
 
         if (this.walkNorth) {
-            nextY -= thithis.speeds.speed;
+            nextY -= this.speed;
             direction = "north";
             this.sx = 0;
             this.sy = 0;
