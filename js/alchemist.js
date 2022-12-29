@@ -1,6 +1,8 @@
 function alchemistClass() {
+    this.frame = 0; // which frame it's in
+
     this.x, this.y;
-    this.speed = 0;
+    this.speed = 3.0; // previously 0
     this.characterPic = alchemistPic; // which picture to use
     this.name = "Frank";
     this.waitTime = 0;
@@ -42,6 +44,46 @@ function alchemistClass() {
         You will need to reset the tickCount once a direction gets set. Recommend creating a random function
         to set 1 through 5 for states (N, S, W, E, stationary).  When state gets selected, make that true and
         the other states false. */
+
+        this.frame++;
+
+        this.pickRandomDirection = function() {
+            const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
+            let direction = DIRECTIONS[Math.floor(5 * Math.random())]; // picks out a random direciton
+    
+            this.walkNorth = false;
+            this.walkSouth = false;
+            this.walkWest = false;
+            this.walkEast = false;
+    
+            switch (direction) {
+                case "north":
+                    this.walkNorth = true;
+                    break;
+                case "south":
+                    this.walkSouth = true;
+                    break;
+                case "west":
+                    this.walkWest = true;
+                    break;
+                case "east":
+                    this.walkEast = true;
+                    break;
+                case "stationary":
+                    this.walkNorth = false;
+                    this.walkSouth = false;
+                    this.walkWest = false;
+                    this.walkEast = false;
+                    break;
+            } // end of switch
+    
+            console.log(direction);
+        } // end of func
+
+        // for every 3 seconds (or every 90 frames), pick out a random direction
+        if (this.frame%90 == 0) {
+            this.pickRandomDirection();
+        }
 
         if (this.walkNorth) {
             nextY -= this.speed;
