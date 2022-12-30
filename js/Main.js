@@ -45,6 +45,7 @@ function loadLevel(whichLevel) {
 	roomGrid = whichLevel.background
 	player.reset(playerPic, "Red warrior");
 	alchemist.reset();
+    SetupPathfindingGridData();
 }
 
 function loadAreaByName (name) {
@@ -65,7 +66,9 @@ function moveAll() {
 	} else { 
 		player.move();
 		alchemist.move();
-
+		if(pathfindingNow) {
+			PathfindingNextStep();
+		}
 		cameraFollow();	
 	};
 };
@@ -113,9 +116,7 @@ function drawAll() {
 				if(displayPlayerThoughts){
 					drawPlayerThoughts();
 				}
-				if(pathfindingNow) {
-					PathfindingNextStep();
-				}
+				drawTiles();
 			canvasContext.restore();
 			displayQuests();
 			health();

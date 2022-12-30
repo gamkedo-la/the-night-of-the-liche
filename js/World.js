@@ -2,6 +2,7 @@ const TILE_W = 50;
 const TILE_H = 50;
 const ROOM_COLS = 21; 
 const ROOM_ROWS = 21; 
+const TILE_GAP = 1;
 
 var camPanX = 0.0;
 var camPanY = 0.0;

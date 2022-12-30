@@ -12,8 +12,8 @@ function SetupPathfindingGridData() {
     pathfindingNow = false;
 
     if(grid.length > 0) { // non-zero, copy over player set walls into tileGrid for reset
-        for (var eachCol = 0; eachCol < TILE_COLS; eachCol++) {
-            for (var eachRow = 0; eachRow < TILE_ROWS; eachRow++) {
+        for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
+            for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
                 var idxHere = tileCoordToIndex(eachCol, eachRow);
                 if(grid[idxHere].elementType == VISITED ||
                     grid[idxHere].elementType == PATH) {
@@ -27,14 +27,14 @@ function SetupPathfindingGridData() {
 
     grid = [];
 
-    for (var eachCol = 0; eachCol < TILE_COLS; eachCol++) {
-        for (var eachRow = 0; eachRow < TILE_ROWS; eachRow++) {
-            var idxHere = tileCoordToIndex(eachCol, eachRow);
+    for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
+        for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
+            var idxHere = rowColToArrayIndex(eachCol, eachRow);
 
             grid[idxHere] = new GridElement();
             unvisitedList.push( grid[idxHere] );
 
-            grid[idxHere].setup(eachCol, eachRow, idxHere, tileGrid[idxHere]);
+            grid[idxHere].setup(eachCol, eachRow, idxHere, roomGrid[idxHere]);
 
             if(grid[idxHere].elementType == DEST) { ///// found end!
                 endR = eachRow; ///// save tile coords for use with
@@ -45,9 +45,9 @@ function SetupPathfindingGridData() {
 
      ///// different pass now that endR and endC are set, find h
 
-    for (var eachCol = 0; eachCol < TILE_COLS; eachCol++) { /////
-        for (var eachRow = 0; eachRow < TILE_ROWS; eachRow++) { /////
-            var idxHere = tileCoordToIndex(eachCol, eachRow); /////
+    for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) { /////
+        for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) { /////
+            var idxHere = rowColToArrayIndex(eachCol, eachRow); /////
 
             grid[idxHere].hVal =  /////
               hValCal(eachCol, eachRow, endC,endR, 3); /////
@@ -138,3 +138,12 @@ function arrayRemove(arr, obj) {
       }
   }
 }
+
+function drawTiles() {
+  var tileCount = ROOM_COLS * ROOM_ROWS;
+  canvasContext.globalAlpha = 0.3;
+  for (var eachTil = 0; eachTil < tileCount; eachTil++) {
+      grid[eachTil].display();
+  } // end of for eachTil
+  canvasContext.globalAlpha = 1;
+} // end of drawTiles()
