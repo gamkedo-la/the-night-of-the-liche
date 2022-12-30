@@ -148,50 +148,14 @@ function warriorClass() {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX + this.width, nextY + (this.height / 2));
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
-        if (walkIntoTileIndex != undefined) {
-            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoMGTileIndex]
-            if(walkIntoTileType == TILE_BLANK || this.noClipping){
-                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex]
-            }
-        }
-        
-        switch (walkIntoTileType) {
-            case TILE_ROAD:
-            case TILE_WOOD_FLOOR:
-                playerMoveSpeed = 5.0;
-                this.x = nextX;
-                this.y = nextY;
-                break;
-            case TILE_GARDEN_TOP:
-            case TILE_GARDEN_TR:
-            case TILE_GARDEN_LEFTSIDE:
-            case TILE_GARDEN:
-            case TILE_GARDEN_RIGHTSIDE:
-            case TILE_GARDEN_BL:
-            case TILE_GARDEN_BOTTOM:
-            case TILE_GARDEN_BR:
-                playerMoveSpeed = 3.0;
-                this.x = nextX;
-                this.y = nextY;
-                break;
-            case TILE_GRASS:
-                playerMoveSpeed = 4.0;
-                this.x = nextX;
-                this.y = nextY;
-                break;
-            case TILE_WALL1_DOOR_TOP:
-            case TILE_WALL1_DOOR_BOTTOM:
-            case TILE_WALL3_DOOR_BOTTOM:
-                this.x = nextX;
-                this.y = nextY;
-                break;
-            case TILE_WALL1_TOP:  
-            case TILE_BOOKSELF:
-            default:
-                playerMoveSpeed = 4.0;
-                break;
 
-        } // end of switch
+        walkIntoTileType = getInteractionOrBackgroundTile(walkIntoTileIndex);
+        
+        playerMoveSpeed = isWorldTypeWalkable(walkIntoTileType);
+        if(playerMoveSpeed > 0.0){
+            this.x = nextX;
+            this.y = nextY;  
+        }
 
 		
         this.previousTileType = walkIntoTileType;

@@ -1,3 +1,51 @@
+function worldTileTypeToPathFindingType(worldType){
+  var walkableSpeed = isWorldTypeWalkable(worldType);
+  if(walkableSpeed > 0.0){
+    return NOTHING;
+  } else {
+    return WALL;
+  }
+  
+}
+function getInteractionOrBackgroundTile(walkIntoTileIndex){
+  var walkIntoTileType = undefined;
+  if (walkIntoTileIndex != undefined) {
+    walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoTileIndex]; //removed MG from walkIntoTileIndex
+    if(walkIntoTileType == TILE_BLANK || this.noClipping){
+        walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex];
+    }
+  }
+  return walkIntoTileType;
+}
+
+function isWorldTypeWalkable(walkIntoTileType){  //Walk Speed through it, and 0 means blocked
+  switch (walkIntoTileType) {
+    case TILE_ROAD:
+    case TILE_WOOD_FLOOR:
+      return 5.0;
+    case TILE_GARDEN_TOP:
+    case TILE_GARDEN_TR:
+    case TILE_GARDEN_LEFTSIDE:
+    case TILE_GARDEN:
+    case TILE_GARDEN_RIGHTSIDE:
+    case TILE_GARDEN_BL:
+    case TILE_GARDEN_BOTTOM:
+    case TILE_GARDEN_BR:
+        return 3.0;
+    case TILE_GRASS:
+        return 4.0;
+    case TILE_WALL1_DOOR_TOP:
+    case TILE_WALL1_DOOR_BOTTOM:
+    case TILE_WALL3_DOOR_BOTTOM:
+        return 4.0;
+    case TILE_WALL1_TOP:  
+    case TILE_BOOKSELF:
+    default:
+        return 0.0;
+  } // end of switch
+
+}
+
 function GridElement() {
     this.tilC;
     this.tilR; // so each tile knows its own col and row position in overall grid

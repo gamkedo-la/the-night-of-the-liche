@@ -34,7 +34,9 @@ function SetupPathfindingGridData() {
             grid[idxHere] = new GridElement();
             unvisitedList.push( grid[idxHere] );
 
-            grid[idxHere].setup(eachCol, eachRow, idxHere, roomGrid[idxHere]);
+            var tileTypeFromCorrectGrid = getInteractionOrBackgroundTile(idxHere);
+
+            grid[idxHere].setup(eachCol, eachRow, idxHere, tileTypeFromCorrectGrid);
 
             if(grid[idxHere].elementType == DEST) { ///// found end!
                 endR = eachRow; ///// save tile coords for use with
