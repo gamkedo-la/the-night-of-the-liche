@@ -1,5 +1,5 @@
 function alchemistClass() {
-    this.frame = 0; // which frame it's in
+    this.timer = 0; 
 
     this.x, this.y;
     this.speed = 3.0; // previously 0
@@ -21,6 +21,8 @@ function alchemistClass() {
     this.walkSouth = false;
     this.walkWest = false;
     this.walkEast = false;
+
+    this.prevDirection = "stationary";
     
     this.reset = function() {
         for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
@@ -45,7 +47,7 @@ function alchemistClass() {
         to set 1 through 5 for states (N, S, W, E, stationary).  When state gets selected, make that true and
         the other states false. */
 
-        this.frame++;
+        this.timer = (this.timer + 1) % 90;
 
         this.pickRandomDirection = function() {
             const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
@@ -59,29 +61,44 @@ function alchemistClass() {
             switch (direction) {
                 case "north":
                     this.walkNorth = true;
+                    if (this.prevDirection != "north") {
+                        this.tickCount = 0;
+                    }
                     break;
                 case "south":
                     this.walkSouth = true;
+                    if (this.prevDirection != "south") {
+                        this.tickCount = 0;
+                    }
                     break;
                 case "west":
                     this.walkWest = true;
+                    if (this.prevDirection != "west") {
+                        this.tickCount = 0;
+                    }
                     break;
                 case "east":
                     this.walkEast = true;
+                    if (this.prevDirection != "east") {
+                        this.tickCount = 0;
+                    }
                     break;
                 case "stationary":
                     this.walkNorth = false;
                     this.walkSouth = false;
                     this.walkWest = false;
                     this.walkEast = false;
+                    if (this.prevDirection != "stationary") {
+                        this.tickCount = 0;
+                    }
                     break;
             } // end of switch
-    
-            console.log(direction);
+
+            this.prevDirection = direction;
         } // end of func
 
-        // for every 3 seconds (or every 90 frames), pick out a random direction
-        if (this.frame%90 == 0) {
+        // for every 3 seconds (in 30fps), pick out a random direction
+        if (this.timer == 0) {
             this.pickRandomDirection();
         }
 
