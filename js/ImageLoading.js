@@ -28,7 +28,7 @@ function beginLoadingImage(imgVar, fileName, locX, locY, width, height, offSetX,
 	imgVar.height = height;
 	imgVar.offSetX = offSetX;
 	imgVar.offSetY = offSetY;
-	console.log(imgVar.locX)
+	//console.log(imgVar.locX)
 }
 
 function loadImageForWorldCode(worldCode, fileName, locX, locY, width, height, offSetX, offSetY)  {

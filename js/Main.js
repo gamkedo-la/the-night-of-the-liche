@@ -21,7 +21,6 @@ window.onload = function() {
 	colorText("Loading Images... please wait", 400, 300, 'black');	
 	loadImages();
 	canvas.addEventListener('mousedown',handleMouseClick);
-	//backgroundMusic.loopSong("dungeonbackground");
 }
 
 function imageLoadingDoneSoStartGame() {	

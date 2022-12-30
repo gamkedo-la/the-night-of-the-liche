@@ -150,12 +150,9 @@ function warriorClass() {
         }
         if (walkIntoTileIndex != undefined) {
             walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoMGTileIndex]
-            console.log(walkIntoTileType)
             if(walkIntoTileType == TILE_BLANK || this.noClipping){
                 walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex]
-                console.log(walkIntoTileType)
             }
-            console.log(walkIntoTileType)
         }
         
         switch (walkIntoTileType) {

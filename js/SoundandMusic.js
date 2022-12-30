@@ -2,14 +2,7 @@ var audioFormat;
 
 // Sound //
 
-var doorSound = new SoundOverlapsClass("woodDoorOpen");
-var keySound = new SoundOverlapsClass("keys");
-var spikeSound = new SoundOverlapsClass("spikes");
-var zombieHurtSound = new SoundOverlapsClass("zombiehurt");
-var goblinHurtSound = new SoundOverlapsClass("goblinDeath");
-var skeletonHurtSound = new SoundOverlapsClass("skeletonhurt");
-var batHurtSound = new SoundOverlapsClass("bathurt");
-var playerHurtSound = new SoundOverlapsClass("playerHurt");
+//var playerHurtSound = new SoundOverlapsClass("playerHurt");
 var backgroundMusic = new BackgroundMusicClass("background");
 
 function setFormat(){
@@ -42,7 +35,7 @@ function SoundOverlapsClass(filenameWithPath) {
 	}
 }	
 
-function BackgroundMusicClass(){
+function BackgroundMusicClass(filenameWithPath){
 	
 	var musicSound = null;
 	
@@ -54,6 +47,7 @@ function BackgroundMusicClass(){
 			musicSound = null;
 		}
 		musicSound = new Audio("sound/"+filenameWithPath+audioFormat);
+		console.log("sound/"+filenameWithPath+audioFormat)
 		musicSound.loop = true;
 		musicSound.play();
 	}

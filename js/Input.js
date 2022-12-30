@@ -115,6 +115,7 @@ function keyReleased(evt) {
 function handleMouseClick(evt) {
 	if(menuScreen) {
 		menuScreen = false;
+        backgroundMusic.loopSong("backgroundMusic");
 	}
 }
 

@@ -9,7 +9,6 @@ var displayPlayerThoughts = true;
 
 function drawPlayerThoughts (){
     displayTimer++;
-    console.log(displayTimer)
     if(displayTimer > 25 && displayTimer < 200){
         colorRect(player.x-10,player.y - 40, 530, 30, 'white') 
         colorText(thoughtLine1, player.x, player.y - 20, 'black');
