@@ -149,7 +149,7 @@ function alchemistClass() {
         }
         if (walkIntoTileIndex != undefined) {
             walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoTileIndex]
-            if(walkIntoTileType == TILE_BLANK || this.noClipping){
+            if(walkIntoTileType == TILE_BLANK){
                 walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex]
             }
         }

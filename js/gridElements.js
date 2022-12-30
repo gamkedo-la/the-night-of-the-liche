@@ -11,7 +11,7 @@ function getInteractionOrBackgroundTile(walkIntoTileIndex){
   var walkIntoTileType = undefined;
   if (walkIntoTileIndex != undefined) {
     walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoTileIndex]; //removed MG from walkIntoTileIndex
-    if(walkIntoTileType == TILE_BLANK || this.noClipping){
+    if(walkIntoTileType == TILE_BLANK){
         walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex];
     }
   }

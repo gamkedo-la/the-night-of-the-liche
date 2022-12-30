@@ -161,6 +161,11 @@ function warriorClass() {
         this.previousTileType = walkIntoTileType;
         this.mySword.move();
         this.myArrow.move();
+
+        // Override all other rules for moving when cheat mode noClipping is active
+        if (this.noClipping) {
+            playerMoveSpeed = 5;
+        }
     }
 
     this.checkWarriorandSwordCollisionAgainst = function(thisEnemy) {
