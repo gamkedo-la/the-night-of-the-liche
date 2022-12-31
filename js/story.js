@@ -27,6 +27,13 @@ function drawPlayerThoughts (){
     }
 }
 
+function displayKeyInputs(){
+    if(displayTimer < 300){
+        colorText("M:  Pause/Un-pauses music", 10, 30, "black")
+    }
+
+}
+
 function displayQuests(){
     if(quest1Active){
         colorRect(5, 0, 260, 30, "white");

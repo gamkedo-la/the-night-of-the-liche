@@ -8,6 +8,7 @@ var alchemist = new alchemistClass();
 
 var menuScreen = true;
 var isInShop = false;
+var inGame = false;
 var timeSinceInShop = 0;
 
 
@@ -63,7 +64,7 @@ function moveAll() {
 		// no movement
 	} else if (isInShop){
 		
-	} else { 
+	} else if (inGame) { 
 		player.move();
 		alchemist.move();
 		if(pathfindingNow) {
@@ -102,7 +103,7 @@ function drawAll() {
 			
 				
 		
-		} else {
+		} else if (inGame){
 			if (timeSinceInShop < 15) timeSinceInShop++;
 
 			canvasContext.save();
@@ -119,6 +120,9 @@ function drawAll() {
 				drawTiles();
 			canvasContext.restore();
 			displayQuests();
+			displayKeyInputs();
 			health();
+		} else {
+			console.log("No Game State");
 		}
 }

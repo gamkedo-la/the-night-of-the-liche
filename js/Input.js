@@ -53,6 +53,8 @@ const ENTER = 13;
 var mouseX = 0;
 var mouseY = 0;
 
+var pauseMusic = KEY_M;
+
 function setupInput() {
 	canvas.addEventListener('mousemove', updateMousePos);
 	
@@ -87,23 +89,24 @@ function keySet(keyEvent, player, setTo) {
 }
 
 function keyPressed(evt) {
-	// Hold down ctrl + shift and press a letter to activate a cheat
-	if (evt.ctrlKey && evt.shiftKey) {
-		activateCheatCode(evt.keyCode);
-	}
 	if(isInShop){
-		console.log(evt.keyCode);
 		shopInput(evt.keyCode);
-		
-	} else {
-		
+	} else if(inGame) {
 		keySet(evt, player, true);
-		if(evt.keyCode == player.controlKeySword) {
+		// Hold down ctrl + shift and press a letter to activate a cheat
+	    if (evt.ctrlKey && evt.shiftKey) {
+		activateCheatCode(evt.keyCode);
+	    }
+        if(evt.keyCode == pauseMusic){
+            backgroundMusic.startOrStopMusic();
+        }
+        if(evt.keyCode == player.controlKeySword) {
 			player.swordSwing(); 
 		}
 		else if(evt.keyCode == player.controlKeyArrow) {
 			player.shotArrow(); 
 		}
+
 	}
     evt.preventDefault(); // without this, arrow keys scroll the browser!
 }
@@ -115,6 +118,7 @@ function keyReleased(evt) {
 function handleMouseClick(evt) {
 	if(menuScreen) {
 		menuScreen = false;
+        inGame = true;
         backgroundMusic.loopSong("backgroundMusic");
 	}
 }
