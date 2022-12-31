@@ -152,7 +152,13 @@ function warriorClass() {
         walkIntoTileType = getInteractionOrBackgroundTile(walkIntoTileIndex);
         
         playerMoveSpeed = isWorldTypeWalkable(walkIntoTileType);
+        // Override all other rules for moving when cheat mode noClipping is active
+        if (this.noClipping) {
+            playerMoveSpeed = 5;
+        }
         if(playerMoveSpeed > 0.0){
+            console.log(`here`);
+
             this.x = nextX;
             this.y = nextY;  
         }
@@ -162,10 +168,6 @@ function warriorClass() {
         this.mySword.move();
         this.myArrow.move();
 
-        // Override all other rules for moving when cheat mode noClipping is active
-        if (this.noClipping) {
-            playerMoveSpeed = 5;
-        }
     }
 
     this.checkWarriorandSwordCollisionAgainst = function(thisEnemy) {
