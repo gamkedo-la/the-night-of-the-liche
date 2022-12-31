@@ -101,6 +101,7 @@ function warriorClass() {
             direction = "north";
             this.sx = 0;
             this.sy = 52*3;
+            this.moving = true;
         }
         if (this.keyHeld_WalkSouth) {
             nextY += playerMoveSpeed;
@@ -199,15 +200,21 @@ function warriorClass() {
     }
 
     this.draw = function() {
-        if (this.playerMove) {
-            this.tickCount++;
-        }
+        this.tickCount++;
         if (this.tickCount > this.ticksPerFrame) {
             this.tickCount = 0;
-            if (this.frameIndex < this.numberOfFrames - 1) {
-                this.frameIndex += 1;
+            if(this.playerMove){
+                if (this.frameIndex < this.numberOfFrames - 1) {
+                    this.frameIndex += 1;
+                } else {
+                    this.frameIndex = 0;
+                }
             } else {
-                this.frameIndex = 0;
+                if(this.frameIndex < 6) {
+                    this.frameIndex += 1;
+                } else {
+                    this.frameIndex = 4;
+                }
             }
         }
 
