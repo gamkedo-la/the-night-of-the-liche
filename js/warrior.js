@@ -157,8 +157,6 @@ function warriorClass() {
             playerMoveSpeed = 5;
         }
         if(playerMoveSpeed > 0.0){
-            console.log(`here`);
-
             this.x = nextX;
             this.y = nextY;  
         }
