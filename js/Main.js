@@ -109,7 +109,6 @@ function drawAll() {
 			canvasContext.save();
 			canvasContext.translate(-camPanX,-camPanY);
 				drawRoom();
-				//drawOnlyTilesOnScreen();
 				player.draw();
 				alchemist.draw();
 				drawTopLayer();
@@ -117,7 +116,9 @@ function drawAll() {
 				if(displayPlayerThoughts){
 					drawPlayerThoughts();
 				}
-				drawTiles();
+				if(displayPathfinding){
+					drawTiles();
+				}
 			canvasContext.restore();
 			displayQuests();
 			displayKeyInputs();

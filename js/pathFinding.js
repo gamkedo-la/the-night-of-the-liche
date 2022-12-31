@@ -1,6 +1,7 @@
 var unvisitedList = [];
 var endTile = null;
 var pathfindingNow = false;
+var displayPathfinding = false;
 
 function SetupPathfindingGridData() {
     ///// new variables we'll use in heuristic calculation

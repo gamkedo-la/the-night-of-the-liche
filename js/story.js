@@ -29,9 +29,12 @@ function drawPlayerThoughts (){
 
 function displayKeyInputs(){
     if(displayTimer < 300){
-        colorText("M:  Pause/Un-pauses music", 10, 30, "black")
+        colorRect(5, 10, 200, 30, 'white') 
+        colorText("M:  Pause/Un-pauses music", 10, 30, "black");
+    } else if (displayTimer > 305 && displayTimer < 600){
+        colorRect(5, 10, 200, 30, 'white')
+        colorText("N:  Displays Pathfinding", 10, 30, "black");
     }
-
 }
 
 function displayQuests(){

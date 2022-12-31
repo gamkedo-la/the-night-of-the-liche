@@ -53,7 +53,8 @@ const ENTER = 13;
 var mouseX = 0;
 var mouseY = 0;
 
-var pauseMusic = KEY_M;
+var pauseMusic = KEY_M; 
+var showPathFinding = KEY_N;
 
 function setupInput() {
 	canvas.addEventListener('mousemove', updateMousePos);
@@ -99,6 +100,9 @@ function keyPressed(evt) {
 	    }
         if(evt.keyCode == pauseMusic){
             backgroundMusic.startOrStopMusic();
+        }
+        if(evt.keyCode == showPathFinding){
+            displayPathfinding = !displayPathfinding;
         }
         if(evt.keyCode == player.controlKeySword) {
 			player.swordSwing(); 
