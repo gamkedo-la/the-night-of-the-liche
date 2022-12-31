@@ -2,7 +2,10 @@ var audioFormat;
 
 // Sound //
 
-//var playerHurtSound = new SoundOverlapsClass("playerHurt");
+var alchemistIntro_1 = new SoundOverlapsClass("alchemist_intro1");
+var alchemistIntro_2 = new SoundOverlapsClass("alchemist_intro2");
+var alchemistIntro_3 = new SoundOverlapsClass("alchemist_intro3");
+
 var backgroundMusic = new BackgroundMusicClass("background");
 
 function setFormat(){

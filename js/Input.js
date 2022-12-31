@@ -55,6 +55,10 @@ var mouseY = 0;
 
 var pauseMusic = KEY_M; 
 var showPathFinding = KEY_N;
+var playAlchemistIntro = KEY_B; //temporary using this
+var alchemistIntro1Play = true;
+var alchemistIntro2Play = false;
+var alchemistIntro3Play = false;
 
 function setupInput() {
 	canvas.addEventListener('mousemove', updateMousePos);
@@ -107,6 +111,24 @@ function keyPressed(evt) {
         if(evt.keyCode == player.controlKeySword) {
 			player.swordSwing(); 
 		}
+        if(evt.keyCode == playAlchemistIntro){
+            if(alchemistIntro1Play){
+                alchemistIntro_1.play();
+                alchemistIntro1Play = false;
+                alchemistIntro2Play = true;
+                alchemistIntro3Play = false;
+            } else if (alchemistIntro2Play){
+                alchemistIntro_2.play();
+                alchemistIntro1Play = false;
+                alchemistIntro2Play = false;
+                alchemistIntro3Play = true;
+            } else {
+                alchemistIntro_3.play();
+                alchemistIntro1Play = true;
+                alchemistIntro2Play = false;
+                alchemistIntro3Play = false;
+            }
+        }
 		else if(evt.keyCode == player.controlKeyArrow) {
 			player.shotArrow(); 
 		}
