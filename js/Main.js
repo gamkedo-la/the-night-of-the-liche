@@ -59,6 +59,10 @@ function updateAll() {
 	drawAll();
 }
 
+function checkCollisions(){
+	player.checkWarriorandSwordCollisionAgainst(alchemist)
+}
+
 function moveAll() {
 	if(menuScreen){
 		// no movement
@@ -70,6 +74,7 @@ function moveAll() {
 		if(pathfindingNow) {
 			PathfindingNextStep();
 		}
+		checkCollisions();
 		cameraFollow();	
 	};
 };

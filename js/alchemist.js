@@ -16,6 +16,8 @@ function alchemistClass() {
     this.height = 48;
     this.ticksPerFrame = 5;
     this.alchemistMove = false;
+    this.voiceReady = true;
+    this.voiceTimer = 0;
 
     this.walkNorth = false;
     this.walkSouth = false;
@@ -203,6 +205,42 @@ function alchemistClass() {
 		
         this.previousTileType = walkIntoTileType;
     }
+
+    this.isOverlappingPoint = function(testX, testY) {  // textX is player.x and testY is player.y
+		console.log("Timer: " + this.voiceTimer + " Voice Ready: " + this.voiceReady)
+        this.voiceTimer++;
+        if(this.voiceTimer > 200){
+            this.voiceTimer = 0;
+            this.voiceReady = true;    
+        }
+
+
+		//test if player is inside box of Alchemist
+		if(this.x < testX && (this.x + this.width) > testX && this.y < testY && (this.y + this.height) > testY){
+            if(alchemistIntro1Play && this.voiceReady){
+                alchemistIntro_1.play();
+                alchemistIntro1Play = false;
+                alchemistIntro2Play = true;
+                alchemistIntro3Play = false;
+                this.voiceReady = false;
+                this.voiceTimer = 0;
+            } else if (alchemistIntro2Play && this.voiceReady){
+                alchemistIntro_2.play();
+                alchemistIntro1Play = false;
+                alchemistIntro2Play = false;
+                alchemistIntro3Play = true;
+                this.voiceReady = false;
+                this.voiceTimer = 0;
+            } else if (alchemistIntro3Play && this.voiceReady){
+                alchemistIntro_3.play() 
+                alchemistIntro1Play = true;
+                alchemistIntro2Play = false;
+                alchemistIntro3Play = false;
+                this.voiceReady = false;
+                this.voiceTimer = 0;
+            }
+		}		
+	};
 
     this.draw = function() {
         if (this.alchemistMove) {
