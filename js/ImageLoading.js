@@ -109,24 +109,21 @@ function loadImages() {
 			{tileType: TILE_VEGETABLE2,  theFile: "ground.png", locX: 200, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_VEGETABLE3,  theFile: "ground.png", locX: 250, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_VEGETABLE4,  theFile: "ground.png", locX: 300, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_VEGETABLE5,  theFile: "ground.png", locX: 350, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_VEGETABLE6,  theFile: "ground.png", locX: 400, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
-			//OPEN
-			//OPEN
-			//OPEN
-			//OPEN
+			{tileType: TILE_POND_TL,  theFile: "ground.png", locX: 350, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_POND_TOP,  theFile: "ground.png", locX: 400, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_POND_TR,  theFile: "ground.png", locX: 450, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//Row 2:  Ground Sprite Sheet
 			{tileType: TILE_GARDEN_LEFTSIDE,  theFile: "ground.png", locX: 0, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GARDEN,  theFile: "ground.png", locX: 50, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GARDEN_RIGHTSIDE,  theFile: "ground.png", locX: 100, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			//OPEN
-			//OPEN			
-			//OPEN
-			//OPEN
+			{tileType: TILE_VEGETABLE5,  theFile: "ground.png", locX: 150, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_VEGETABLE6,  theFile: "ground.png", locX: 200, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			//OPEN
-			//OPEN
+			{tileType: TILE_POND_LEFTSIDE,  theFile: "ground.png", locX: 350, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_POND,  theFile: "ground.png", locX: 400, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_POND_RIGHTSIDE,  theFile: "ground.png", locX: 450, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//Row 3:  Ground Sprite Sheet			
 			{tileType: TILE_GARDEN_BL,  theFile: "ground.png", locX: 0, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GARDEN_BOTTOM,  theFile: "ground.png", locX: 50, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
@@ -135,9 +132,9 @@ function loadImages() {
 			//OPEN
 			//OPEN
 			//OPEN
-			//OPEN
-			//OPEN
-			//OPEN
+			{tileType: TILE_POND_BL,  theFile: "ground.png", locX: 350, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_POND_BOTTOM,  theFile: "ground.png", locX: 400, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_POND_BR,  theFile: "ground.png", locX: 450, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//Row 4:  Ground Sprite Sheet
 			//OPEN
 			//OPEN

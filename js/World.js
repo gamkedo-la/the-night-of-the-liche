@@ -39,6 +39,16 @@ const TILE_VEGETABLE3 = 21;
 const TILE_VEGETABLE4 = 22;
 const TILE_VEGETABLE5 = 23;
 const TILE_VEGETABLE6 = 24;
+//
+const TILE_POND_TL = 30;
+const TILE_POND_TOP = 31;
+const TILE_POND_TR = 32;
+const TILE_POND_LEFTSIDE = 33;
+const TILE_POND = 34;
+const TILE_POND_RIGHTSIDE = 35;
+const TILE_POND_BL = 36;
+const TILE_POND_BOTTOM = 37;
+const TILE_POND_BR = 38;
 
 //Walls 101 through 200
 const TILE_WALL1_TOPLEFT = 101;
