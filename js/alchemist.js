@@ -1,3 +1,7 @@
+var alchemistIntro1Play = true;
+var alchemistIntro2Play = false;
+var alchemistIntro3Play = false;
+
 function alchemistClass() {
     this.timer = 0; 
 
@@ -207,8 +211,7 @@ function alchemistClass() {
     }
 
     this.isOverlappingPoint = function(testX, testY) {  // textX is player.x and testY is player.y
-		console.log("Timer: " + this.voiceTimer + " Voice Ready: " + this.voiceReady)
-        this.voiceTimer++;
+	    this.voiceTimer++;
         if(this.voiceTimer > 200){
             this.voiceTimer = 0;
             this.voiceReady = true;    

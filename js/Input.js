@@ -55,28 +55,16 @@ var mouseY = 0;
 
 var pauseMusic = KEY_M; 
 var showPathFinding = KEY_N;
-var playAlchemistIntro = KEY_B; //temporary using this
-var alchemistIntro1Play = true;
-var alchemistIntro2Play = false;
-var alchemistIntro3Play = false;
 
 function setupInput() {
-	canvas.addEventListener('mousemove', updateMousePos);
-	
 	document.addEventListener('keydown', keyPressed);
 	document.addEventListener('keyup', keyReleased);
-	
-	player.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A);
-}
+    document.addEventListener("mousemove", mousemoved);
+    document.addEventListener("mousedown", handleMouseClick);
+    document.addEventListener("mouseup", mousereleased); 
 
-function updateMousePos(evt) {
-	var rect = canvas.getBoundingClientRect();
-	var root = document.documentElement;
-	
-	mouseX = evt.clientX - rect.left - root.scrollLeft;
-	mouseY = evt.clientY - rect.top - root.scrollTop;
-	
-}
+	player.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A);
+};
 
 function keySet(keyEvent, player, setTo) {
 	if(keyEvent.keyCode == player.controlKeyLeft) {
@@ -111,24 +99,7 @@ function keyPressed(evt) {
         if(evt.keyCode == player.controlKeySword) {
 			player.swordSwing(); 
 		}
-        if(evt.keyCode == playAlchemistIntro){
-            if(alchemistIntro1Play){
-                alchemistIntro_1.play();
-                alchemistIntro1Play = false;
-                alchemistIntro2Play = true;
-                alchemistIntro3Play = false;
-            } else if (alchemistIntro2Play){
-                alchemistIntro_2.play();
-                alchemistIntro1Play = false;
-                alchemistIntro2Play = false;
-                alchemistIntro3Play = true;
-            } else {
-                alchemistIntro_3.play();
-                alchemistIntro1Play = true;
-                alchemistIntro2Play = false;
-                alchemistIntro3Play = false;
-            }
-        }
+
 		else if(evt.keyCode == player.controlKeyArrow) {
 			player.shotArrow(); 
 		}
@@ -146,7 +117,28 @@ function handleMouseClick(evt) {
 		menuScreen = false;
         inGame = true;
         backgroundMusic.loopSong("backgroundMusic");
-	}
+	} else {
+        if(mouseOverSidebar) {
+            pathfindingNow = !pathfindingNow;
+            if(endTile != null) {
+                pathfindingNow = false;
+            }
+            if(pathfindingNow == false) {
+                SetupPathfindingGridData();
+            }
+            return;
+        }
+    
+        if (tileOverIdx < 0 || tileOverIdx >= grid.length) { // invalid or off board
+            return;
+        }
+    
+        if (tileOverIdx != -1) {
+            grid[tileOverIdx].wallToggle();
+            mouseDragging = true; 
+            mouseSettingWalls = (grid[tileOverIdx].elementType == WALL);  
+        }
+    }
 }
 
 function activateCheatCode(keyCode) {
@@ -165,37 +157,9 @@ var mouseOverSidebar = false;
 var mouseDragging = false;
 var mouseSettingWalls = false;
 
-function initInput() {
-    document.addEventListener("mousemove", mousemoved);
-    document.addEventListener("mousedown", mouseclicked);
-    document.addEventListener("mouseup", mousereleased); /////
-}
 
 function mousereleased(evt) {
     mouseDragging = false;
-}
-
-function mouseclicked(evt) {
-    if(mouseOverSidebar) {
-        pathfindingNow = !pathfindingNow;
-        if(endTile != null) {
-            pathfindingNow = false;
-        }
-        if(pathfindingNow == false) {
-            SetupPathfindingGridData();
-        }
-        return;
-    }
-
-    if (tileOverIdx < 0 || tileOverIdx >= tileGrid.length) { // invalid or off board
-        return;
-    }
-
-    if (tileOverIdx != -1) {
-        grid[tileOverIdx].wallToggle();
-        mouseDragging = true; 
-        mouseSettingWalls = (grid[tileOverIdx].elementType == WALL);  
-    }
 }
 
 function mousemoved(evt) {
@@ -209,11 +173,11 @@ function mousemoved(evt) {
     var tileOverCol = Math.floor(mouseX / TILE_W);
     var tileOverRow = Math.floor(mouseY / TILE_H);
 
-    mouseOverSidebar = (tileOverCol >= TILE_COLS);
+    mouseOverSidebar = (tileOverCol >= ROOM_COLS);
     if(mouseOverSidebar) {
         tileOverIdx = -1;
     } else {
-        tileOverIdx = tileCoordToIndex(tileOverCol, tileOverRow);
+        tileOverIdx = rowColToArrayIndex(tileOverCol, tileOverRow);
     }
 
     if(mouseDragging && tileOverIdx != -1) { 
