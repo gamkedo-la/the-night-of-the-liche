@@ -57,6 +57,7 @@ var pauseMusic = KEY_M;
 var showPathFinding = KEY_N;
 var pathingFindingSource = KEY_V;
 var pathingFindingDestination = KEY_B;
+var evaluatePathFinding = KEY_C;
 
 function setupInput() {
 	document.addEventListener('keydown', keyPressed);
@@ -104,10 +105,14 @@ function keyPressed(evt) {
         if(evt.keyCode == pathingFindingDestination){
             removePathfindingType(DEST);
             grid[tileOverIdx].setTile(DEST);
+            updatehVals();
         }
         if(evt.keyCode == pathingFindingSource){
             removePathfindingType(SOURCE);
             grid[tileOverIdx].setTile(SOURCE);
+        }
+        if(evt.keyCode == evaluatePathFinding){
+            PathfindingNextStep();
         }
 
 		if(evt.keyCode == player.controlKeyArrow) {

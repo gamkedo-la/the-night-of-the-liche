@@ -142,7 +142,7 @@ function GridElement() {
     }
   
     function GetGridAtCR(atC,atR) {
-      return grid[atC + atR * TILE_COLS];
+      return grid[atC + atR * ROOM_COLS];
     }
     
     this.myUnvisitedNeighbors = function() {

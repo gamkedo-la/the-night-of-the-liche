@@ -5,58 +5,65 @@ var displayPathfinding = false;
 const PATHFINDING_DUBUGGING_OPACITY = 0.8;
 
 function SetupPathfindingGridData() {
-    ///// new variables we'll use in heuristic calculation
-    var endR = -1;
-    var endC = -1;
+  
+  unvisitedList = [];
+  endTile = null;
+  pathfindingNow = false;
 
-    unvisitedList = [];
-    endTile = null;
-    pathfindingNow = false;
+  if(grid.length > 0) { // non-zero, copy over player set walls into tileGrid for reset
+      for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
+          for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
+              var idxHere = tileCoordToIndex(eachCol, eachRow);
+              if(grid[idxHere].elementType == VISITED ||
+                  grid[idxHere].elementType == PATH) {
+                  tileGrid[idxHere] = NOTHING;
+              } else {
+                  tileGrid[idxHere] = grid[idxHere].elementType;
+              }
+          }
+      }
+  }
 
-    if(grid.length > 0) { // non-zero, copy over player set walls into tileGrid for reset
-        for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
-            for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
-                var idxHere = tileCoordToIndex(eachCol, eachRow);
-                if(grid[idxHere].elementType == VISITED ||
-                    grid[idxHere].elementType == PATH) {
-                    tileGrid[idxHere] = NOTHING;
-                } else {
-                    tileGrid[idxHere] = grid[idxHere].elementType;
-                }
-            }
-        }
+  grid = [];
+
+  for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
+      for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
+          var idxHere = rowColToArrayIndex(eachCol, eachRow);
+
+          grid[idxHere] = new GridElement();
+          unvisitedList.push( grid[idxHere] );
+
+          var tileTypeFromCorrectGrid = getInteractionOrBackgroundTile(idxHere);
+
+          grid[idxHere].setup(eachCol, eachRow, idxHere, tileTypeFromCorrectGrid);
+      }
+  }
+  updatehVals();
+}
+
+function updatehVals(){
+  ///// new variables we'll use in heuristic calculation
+  var endR = -1;
+  var endC = -1;
+
+  for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
+    for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
+        var idxHere = rowColToArrayIndex(eachCol, eachRow);
+        if(grid[idxHere].elementType == DEST) { ///// found end!
+          endR = eachRow; ///// save tile coords for use with
+          endC = eachCol; ///// computing h value of each tiles
+      } /////
     }
+  }
 
-    grid = [];
+  for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) { /////
+      for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) { /////
+          var idxHere = rowColToArrayIndex(eachCol, eachRow); /////
 
-    for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
-        for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
-            var idxHere = rowColToArrayIndex(eachCol, eachRow);
-
-            grid[idxHere] = new GridElement();
-            unvisitedList.push( grid[idxHere] );
-
-            var tileTypeFromCorrectGrid = getInteractionOrBackgroundTile(idxHere);
-
-            grid[idxHere].setup(eachCol, eachRow, idxHere, tileTypeFromCorrectGrid);
-
-            if(grid[idxHere].elementType == DEST) { ///// found end!
-                endR = eachRow; ///// save tile coords for use with
-                endC = eachCol; ///// computing h value of each tiles
-            } /////
-        }
-    }
-
-     ///// different pass now that endR and endC are set, find h
-
-    for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) { /////
-        for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) { /////
-            var idxHere = rowColToArrayIndex(eachCol, eachRow); /////
-
-            grid[idxHere].hVal =  /////
-              hValCal(eachCol, eachRow, endC,endR, 3); /////
-        } /////
-    } /////
+          grid[idxHere].hVal =  /////
+            hValCal(eachCol, eachRow, endC,endR, 3); /////
+      } /////
+  } /////
 }
 
 function hValCal(atC,atR, toC,toR, multWeight) { /////
