@@ -152,3 +152,12 @@ function drawTiles() {
   } // end of for eachTil
   canvasContext.globalAlpha = 1.0;
 } // end of drawTiles()
+
+function removePathfindingType(typeToRemove){
+  var tileCount = ROOM_COLS * ROOM_ROWS;
+  for (var eachTil = 0; eachTil < tileCount; eachTil++) {
+    if(grid[eachTil].elementType == typeToRemove){
+      grid[eachTil].setTile(NOTHING);
+    }
+  } 
+} // end of for eachTil

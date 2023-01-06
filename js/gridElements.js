@@ -127,6 +127,7 @@ function GridElement() {
     }
     
     this.wallToggle = function () {
+      console.log("Grid: " + this.elementType)
       if(this.elementType == SOURCE || this.elementType == DEST) {
           return; // do nothing, no support yet for placing source or dest in-game, use grid init
       } else if (this.elementType == WALL) {

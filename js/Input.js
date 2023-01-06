@@ -55,6 +55,8 @@ var mouseY = 0;
 
 var pauseMusic = KEY_M; 
 var showPathFinding = KEY_N;
+var pathingFindingSource = KEY_V;
+var pathingFindingDestination = KEY_B;
 
 function setupInput() {
 	document.addEventListener('keydown', keyPressed);
@@ -99,8 +101,16 @@ function keyPressed(evt) {
         if(evt.keyCode == player.controlKeySword) {
 			player.swordSwing(); 
 		}
+        if(evt.keyCode == pathingFindingDestination){
+            removePathfindingType(DEST);
+            grid[tileOverIdx].setTile(DEST);
+        }
+        if(evt.keyCode == pathingFindingSource){
+            removePathfindingType(SOURCE);
+            grid[tileOverIdx].setTile(SOURCE);
+        }
 
-		else if(evt.keyCode == player.controlKeyArrow) {
+		if(evt.keyCode == player.controlKeyArrow) {
 			player.shotArrow(); 
 		}
 
@@ -135,6 +145,7 @@ function handleMouseClick(evt) {
     
         if (tileOverIdx != -1) {
             grid[tileOverIdx].wallToggle();
+            console.log("Tile over Inx: " + tileOverIdx);
             mouseDragging = true; 
             mouseSettingWalls = (grid[tileOverIdx].elementType == WALL);  
         }
