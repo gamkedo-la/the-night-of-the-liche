@@ -105,7 +105,8 @@ function keyPressed(evt) {
         if(evt.keyCode == pathingFindingDestination){
             removePathfindingType(DEST);
             grid[tileOverIdx].setTile(DEST);
-            updatehVals();
+           // updatehVals();
+           SetupPathfindingGridData();
         }
         if(evt.keyCode == pathingFindingSource){
             removePathfindingType(SOURCE);

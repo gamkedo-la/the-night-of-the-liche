@@ -3,22 +3,35 @@ var endTile = null;
 var pathfindingNow = false;
 var displayPathfinding = false;
 const PATHFINDING_DUBUGGING_OPACITY = 0.8;
-
+//// Need to call at the start of each new pathfinding since it clears the visited list
 function SetupPathfindingGridData() {
   
   unvisitedList = [];
   endTile = null;
   pathfindingNow = false;
+  var wasSourceC = -1;
+  var wasSourceR = -1;
+  var wasDestC = -1;
+  var wasDestR = -1;
 
   if(grid.length > 0) { // non-zero, copy over player set walls into tileGrid for reset
       for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
           for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
-              var idxHere = tileCoordToIndex(eachCol, eachRow);
+              var idxHere = rowColToArrayIndex(eachCol, eachRow);
+              if(grid[idxHere].elementType == DEST){
+                wasDestC = eachCol;
+                wasDestR = eachRow;
+              }
+              if(grid[idxHere].elementType == SOURCE){
+                wasSourceC = eachCol;
+                wasSourceR = eachRow;
+              }
               if(grid[idxHere].elementType == VISITED ||
                   grid[idxHere].elementType == PATH) {
-                  tileGrid[idxHere] = NOTHING;
+                //  tileGrid[idxHere] = NOTHING;
+                // ?????? Not sure required 1/6/2022 VJM
               } else {
-                  tileGrid[idxHere] = grid[idxHere].elementType;
+                //  tileGrid[idxHere] = grid[idxHere].elementType;
               }
           }
       }
@@ -27,7 +40,7 @@ function SetupPathfindingGridData() {
   grid = [];
 
   for (var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
-      for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
+      for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) { 
           var idxHere = rowColToArrayIndex(eachCol, eachRow);
 
           grid[idxHere] = new GridElement();
@@ -36,6 +49,12 @@ function SetupPathfindingGridData() {
           var tileTypeFromCorrectGrid = getInteractionOrBackgroundTile(idxHere);
 
           grid[idxHere].setup(eachCol, eachRow, idxHere, tileTypeFromCorrectGrid);
+          if(eachCol == wasSourceC && eachRow == wasSourceR){
+            grid[idxHere].elementType = SOURCE;
+          }
+          if(eachCol == wasDestC && eachRow == wasDestR){
+            grid[idxHere].elementType = DEST;
+          }
       }
   }
   updatehVals();
