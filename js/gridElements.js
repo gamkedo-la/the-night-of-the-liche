@@ -62,7 +62,11 @@ function GridElement() {
       this.tilC=myC;
       this.tilR=myR;
       this.tilIdx=myIdx;
-      this.elementType=myElement;
+      if(isWorldTypeWalkable(myElement) == 0.0){
+        this.elementType = WALL;
+      } else {
+        this.elementType = NOTHING;
+      }
       if(this.elementType == SOURCE) {
           this.setDistIfLess(0,null);
       }

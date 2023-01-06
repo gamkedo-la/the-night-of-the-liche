@@ -2,6 +2,7 @@ var unvisitedList = [];
 var endTile = null;
 var pathfindingNow = false;
 var displayPathfinding = false;
+const PATHFINDING_DUBUGGING_OPACITY = 0.8;
 
 function SetupPathfindingGridData() {
     ///// new variables we'll use in heuristic calculation
@@ -144,9 +145,10 @@ function arrayRemove(arr, obj) {
 
 function drawTiles() {
   var tileCount = ROOM_COLS * ROOM_ROWS;
-  canvasContext.globalAlpha = 0.3;
+  canvasContext.globalAlpha =   canvasContext.globalAlpha = PATHFINDING_DUBUGGING_OPACITY;
+  ;
   for (var eachTil = 0; eachTil < tileCount; eachTil++) {
       grid[eachTil].display();
   } // end of for eachTil
-  canvasContext.globalAlpha = 1;
+  canvasContext.globalAlpha = 1.0;
 } // end of drawTiles()
