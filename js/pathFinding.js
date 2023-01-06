@@ -51,6 +51,7 @@ function SetupPathfindingGridData() {
           grid[idxHere].setup(eachCol, eachRow, idxHere, tileTypeFromCorrectGrid);
           if(eachCol == wasSourceC && eachRow == wasSourceR){
             grid[idxHere].elementType = SOURCE;
+            grid[idxHere].distance = 0;
           }
           if(eachCol == wasDestC && eachRow == wasDestR){
             grid[idxHere].elementType = DEST;
