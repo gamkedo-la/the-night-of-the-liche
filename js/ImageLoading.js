@@ -5,6 +5,7 @@ var playerPic = document.createElement("img");
 var swordPic = document.createElement("img");
 
 var alchemistPic = document.createElement("img");
+var thoughtBubblePic = document.createElement("img");
 
 
 var worldPics = [];
@@ -246,7 +247,9 @@ function loadImages() {
 	
 			{varName: playerPic, theFile: "player.png"},
 			{varName: alchemistPic, theFile: "alchemist.png"},
-			{varName: titlepagePic, theFile: "background.png"}
+			{varName: titlepagePic, theFile: "background.png"},
+            {varName: thoughtBubblePic, theFile: "thoughtBubble.png"}
+
 		];
 			
 	picsToLoad = imageList.length;
