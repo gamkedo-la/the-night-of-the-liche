@@ -44,7 +44,7 @@ function nextLevel() {
 }
 
 function loadLevel(whichLevel) {
-	roomGrid = whichLevel.background
+	roomGrid = whichLevel.layers.background
 	player.reset(playerPic, "Red warrior");
 	alchemist.reset();
 	skeleton.reset();
@@ -66,25 +66,17 @@ function checkCollisions(){
 }
 
 function moveAll() {
-	if(menuScreen){
+	if(menuScreen) {
 		// no movement
-	} else if (isInShop){
+	} else if (isInShop) {
 		
-	} else if (inGame) { 
-		player.move();
-		alchemist.move();
-		//skeleton.move();
-		if(pathfindingNow) {
-			PathfindingNextStep();
-		}
-		checkCollisions();
-		cameraFollow();	
-	};
+	} else if (inGame) {
+		LEVELS[levelList[currentLevelIndex]].moveAll();
+	}
 };
 
 //move to user interface when created
 function health() {
-	
 	if (player.health <= 0 && !player.invulnerable) {
 		resetLevel();
 	}
@@ -108,31 +100,28 @@ function drawAll() {
 			colorText("Sword Attack - Space bar", 170, 400, "white");
 		} else if (isInShop){
 			drawShop();
-			
-				
-		
 		} else if (inGame){
-			if (timeSinceInShop < 15) timeSinceInShop++;
-
 			canvasContext.save();
-			canvasContext.translate(-camPanX,-camPanY);
-				drawRoom();
-				player.draw();
-				alchemist.draw();
-				//skeleton.draw();
-				drawTopLayer();
-				drawRoof(timeSinceInShop / 15);
-				if(displayPlayerThoughts){
-					drawPlayerThoughts();
-				}
-				if(displayPathfinding){
-					drawTiles();
-				}
+
+			drawLevelSpecifics();
+
+			if(displayPlayerThoughts){
+				drawPlayerThoughts();
+			}
+			if(displayPathfinding){
+				drawTiles();
+			}
+
 			canvasContext.restore();
+
 			displayQuests();
 			displayKeyInputs();
 			health();
 		} else {
 			console.log("No Game State");
 		}
+}
+
+function drawLevelSpecifics () {
+	LEVELS[levelList[currentLevelIndex]].drawAll();
 }

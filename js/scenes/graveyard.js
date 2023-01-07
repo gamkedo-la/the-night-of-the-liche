@@ -2,7 +2,7 @@
 // Don't forget to add your new file as a script in index.html
 // Also need to add your level to the LEVELS variable in World.js
 
-function getLevelOneLayers () {
+function getGraveyardLayers () {
   return {
 		//background are tiles like dirt, grass, water, and farm land.  It's not meant to be interactive with
 		background: [
@@ -11,6 +11,7 @@ function getLevelOneLayers () {
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
+			13,   1,   1, 402,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
@@ -21,8 +22,7 @@ function getLevelOneLayers () {
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
-			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
-			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
+			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, 403,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
@@ -82,3 +82,37 @@ function getLevelOneLayers () {
 		]
 	}
 }
+
+
+function graveyardMoveAll () {
+	player.move();
+	alchemist.move();
+	//skeleton.move();
+	if(pathfindingNow) {
+		PathfindingNextStep();
+	}
+	checkCollisions();
+	cameraFollow();	
+}
+
+function graveyardDrawAll () {
+	canvasContext.translate(-camPanX,-camPanY);
+	drawRoom();
+	player.draw();
+	alchemist.draw();
+	//skeleton.draw();
+}
+
+const graveyardPlayerThoughts = [
+	// See levelOne.js for proper format
+	/*
+	{
+		startTime: 25,
+		endTime: 200,
+		thought: "here's a thought"
+	}
+	*/
+];
+
+// should be the time we want to stop displaying thoughts and transition to displaying the quest
+const graveyardPlayerThoughtEndDisplayTime = 0;

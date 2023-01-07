@@ -10,9 +10,9 @@ function worldTileTypeToPathFindingType(worldType){
 function getInteractionOrBackgroundTile(walkIntoTileIndex){
   var walkIntoTileType = undefined;
   if (walkIntoTileIndex != undefined) {
-    walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoTileIndex]; //removed MG from walkIntoTileIndex
+    walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex]; //removed MG from walkIntoTileIndex
     if(walkIntoTileType == TILE_BLANK){
-        walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex];
+        walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.background)[walkIntoTileIndex];
     }
   }
   return walkIntoTileType;

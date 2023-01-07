@@ -10,7 +10,20 @@ const PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_X = 150;
 const PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_Y = 100;
 
 const LEVELS = {
-	levelOne: getLevelOneLayers(),
+	levelOne: {
+		layers: getLevelOneLayers(),
+		moveAll: levelOneMoveAll,
+		drawAll: levelOneDrawAll,
+		playerThoughts: levelOnePlayerThoughts,
+		playerThoughtEndTime: levelOnePlayerThoughtEndDisplayTime
+	},
+	graveyard: {
+		layers: getGraveyardLayers(),
+		moveAll: graveyardMoveAll,
+		drawAll: graveyardDrawAll,
+		playerThoughts: graveyardPlayerThoughts,
+		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
+	}
 	// levelTwo: getLevelTwoLayers() // this doesn't exist yet, but this is how it would be added
 }
 
@@ -216,7 +229,7 @@ function drawRoom() {
 
 			var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
 			// var tileKindHere = levelOneML[arrayIndex];
-			var tileKindHere = (LEVELS[levelList[currentLevelIndex]].interactive)[arrayIndex];
+			var tileKindHere = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[arrayIndex];
 			var useImg = worldPics[tileKindHere];
 			var spriteX = worldPics[tileKindHere].locX;
 			var spriteY = worldPics[tileKindHere].locY;
@@ -243,7 +256,7 @@ function drawTopLayer() {
 		for(var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
 
 			var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
-			var tileKindHere = (LEVELS[levelList[currentLevelIndex]].foreground)[arrayIndex];
+			var tileKindHere = (LEVELS[levelList[currentLevelIndex]].layers.foreground)[arrayIndex];
 			var useImg = worldPics[tileKindHere];
 			var spriteX = worldPics[tileKindHere].locX;
 			var spriteY = worldPics[tileKindHere].locY;

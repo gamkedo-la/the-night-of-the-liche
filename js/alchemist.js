@@ -162,9 +162,9 @@ function alchemistClass() {
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
         if (walkIntoTileIndex != undefined) {
-            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoTileIndex]
+            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex]
             if(walkIntoTileType == TILE_BLANK){
-                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex]
+                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.background)[walkIntoTileIndex]
             }
         }
         

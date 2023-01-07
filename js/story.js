@@ -1,9 +1,6 @@
 var quest1Active = false;
 var quest1 = "Investigate missing Supply Wagons";
-var thoughtLine1 = "It’s been several weeks since the\nlast supply wagon has\nmade it to our village."; 
-var thoughtLine2 = "I’m not one to worry,\nbut I’m starting to\nget concerned."; 
-var thoughtLine3 = "I’ve been trying to make\nthe best out of my garden,\nbut I’m starting to low on food.";   
-var thoughtLine4 = "I should head to our\nneighboring village of\nDagger Fall and investigate.";
+
 var displayTimer = 0;
 var displayPlayerThoughts = true;
 
@@ -27,23 +24,14 @@ function thoughtBubble(txt,x,y) {
 
 function drawPlayerThoughts (){
     displayTimer++;
-    if(displayTimer > 25 && displayTimer < 200){
-        //colorRect(player.x-10,player.y - 40, 530, 30, 'white') 
-        //colorText(thoughtLine1, player.x, player.y - 20, 'black');
-        thoughtBubble(thoughtLine1,player.x,player.y);
-    } else if (displayTimer > 225 && displayTimer < 400){
-        //colorRect(player.x-10,player.y - 40, 390, 30, 'white') 
-        //colorText(thoughtLine2, player.x, player.y - 20, 'black');
-        thoughtBubble(thoughtLine2,player.x,player.y);
-    } else if (displayTimer > 425 && displayTimer < 600){
-        //colorRect(player.x-10,player.y - 40, 580, 30, 'white') 
-        //colorText(thoughtLine3, player.x, player.y - 20, 'black');
-        thoughtBubble(thoughtLine3,player.x,player.y);
-    } else if (displayTimer > 625 && displayTimer < 800){
-        //colorRect(player.x-10,player.y - 40, 490, 30, 'white') 
-        //colorText(thoughtLine4, player.x, player.y - 20,  'black');
-        thoughtBubble(thoughtLine4,player.x,player.y);
-    } else if (displayTimer == 900){
+    for (const playerThought of LEVELS[levelList[currentLevelIndex]].playerThoughts) {
+        if (displayTimer > playerThought.startTime && displayTimer < playerThought.endTime) {
+            thoughtBubble(playerThought.thought,player.x,player.y);
+            break;
+        }
+    }
+
+    if (displayTimer >= LEVELS[levelList[currentLevelIndex]].playerThoughtEndTime) {
         quest1Active = true;
         displayPlayerThoughts = false;
     }

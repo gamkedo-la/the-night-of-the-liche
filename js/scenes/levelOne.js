@@ -82,3 +82,51 @@ function getLevelOneLayers () {
 		]
 	}
 }
+
+function levelOneMoveAll () {
+	player.move();
+	alchemist.move();
+	//skeleton.move();
+	if(pathfindingNow) {
+		PathfindingNextStep();
+	}
+	checkCollisions();
+	cameraFollow();	
+}
+
+function levelOneDrawAll () {
+	if (timeSinceInShop < 15) timeSinceInShop++;
+
+	canvasContext.translate(-camPanX,-camPanY);
+	drawRoom();
+	player.draw();
+	alchemist.draw();
+	//skeleton.draw();
+	drawTopLayer();
+	drawRoof(timeSinceInShop / 15);
+}
+
+const levelOnePlayerThoughts = [
+	{
+		startTime: 25,
+		endTime: 200,
+		thought: 	"It's been several weeks since the\nlast supply wagon has\nmade it to our village."	
+	},
+	{
+		startTime: 225,
+		endTime: 400,
+		thought: 	"I'm not one to worry,\nbut I'm starting to\nget concerned."
+	},
+	{
+		startTime: 425,
+		endTime: 600,
+		thought: 	"I've been trying to make\nthe best out of my garden,\nbut I'm starting to low on food."
+	},
+	{
+		startTime: 625,
+		endTime: 800,
+		thought: 	"I should head to our\nneighboring village of\nDagger Fall and investigate."
+	}
+];
+
+const levelOnePlayerThoughtEndDisplayTime = 900;
