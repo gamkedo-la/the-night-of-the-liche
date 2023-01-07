@@ -2,7 +2,8 @@
 
 var canvas, canvasContext;
 var player = new warriorClass();
-var alchemist = new alchemistClass();
+var alchemist = new alchemistClass();  //need to make this based on the map
+var skeleton = new skeletonClass(); //need to make skeletons based on the map.  Also, make them in a list.
 
 // Game State //
 
@@ -46,6 +47,7 @@ function loadLevel(whichLevel) {
 	roomGrid = whichLevel.background
 	player.reset(playerPic, "Red warrior");
 	alchemist.reset();
+	skeleton.reset();
     SetupPathfindingGridData();
 }
 
@@ -71,6 +73,7 @@ function moveAll() {
 	} else if (inGame) { 
 		player.move();
 		alchemist.move();
+		//skeleton.move();
 		if(pathfindingNow) {
 			PathfindingNextStep();
 		}
@@ -116,6 +119,7 @@ function drawAll() {
 				drawRoom();
 				player.draw();
 				alchemist.draw();
+				//skeleton.draw();
 				drawTopLayer();
 				drawRoof(timeSinceInShop / 15);
 				if(displayPlayerThoughts){

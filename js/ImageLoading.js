@@ -3,6 +3,7 @@ var storeFrontPic = document.createElement("img");
 
 var playerPic = document.createElement("img");
 var swordPic = document.createElement("img");
+var skeletonPic = document.createElement('img');
 
 var alchemistPic = document.createElement("img");
 var thoughtBubblePic = document.createElement("img");
@@ -247,6 +248,7 @@ function loadImages() {
 	
 			{varName: playerPic, theFile: "player.png"},
 			{varName: alchemistPic, theFile: "alchemist.png"},
+			{varName: skeletonPic, theFile: "skeleton.png"},
 			{varName: titlepagePic, theFile: "background.png"},
             {varName: thoughtBubblePic, theFile: "thoughtBubble.png"}
 
