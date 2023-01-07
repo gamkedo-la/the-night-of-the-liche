@@ -4,7 +4,6 @@ var storeFrontPic = document.createElement("img");
 var playerPic = document.createElement("img");
 var swordPic = document.createElement("img");
 var skeletonPic = document.createElement('img');
-
 var alchemistPic = document.createElement("img");
 var thoughtBubblePic = document.createElement("img");
 
@@ -14,10 +13,10 @@ var worldPics = [];
 var picsToLoad = 0;
 
 function countLoadedImagesAndLaunchIfReady(){
-		picsToLoad--;
-		//console.log(picsToLoad);
-		if(picsToLoad == 0) {
-			imageLoadingDoneSoStartGame();
+	picsToLoad--;
+	//console.log(picsToLoad);
+	if(picsToLoad == 0) {
+		imageLoadingDoneSoStartGame();
 	}
 }
 
@@ -150,7 +149,7 @@ function loadImages() {
 			//OPEN
 			//Row 5:  Ground Sprite Sheet
 			//OPEN
-			{tileType: TILE_GRASS,  theFile: "ground.png", locX: 100, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRASS,  theFile: "ground.png", locX: 50, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			//OPEN
 			//OPEN
@@ -242,7 +241,6 @@ function loadImages() {
 			{tileType: TILE_BED1,  theFile: "bed1.png", locX: 0, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: 10},
 			{tileType: TILE_SHRUB1,  theFile: "shrub1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_BLANK,  theFile: "blank.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_GRASS,  theFile: "grass.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 
 			//To Be Deleted 
 	

@@ -19,7 +19,7 @@ function getLevelOneLayers () {
 			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  30,  31,  32, 
 			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  33,  34,  35, //10
 			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  33,  34,  35,
-			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  36,  37,  38,
+			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1, 404,   1,   3,  36,  37,  38,
 			1,  16,  17,  17,  18,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1,
 			1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, 
 			1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, //15	
@@ -86,7 +86,7 @@ function getLevelOneLayers () {
 function levelOneMoveAll () {
 	player.move();
 	alchemist.move();
-	//skeleton.move();
+	skeleton.move();
 	if(pathfindingNow) {
 		PathfindingNextStep();
 	}
@@ -101,7 +101,7 @@ function levelOneDrawAll () {
 	drawRoom();
 	player.draw();
 	alchemist.draw();
-	//skeleton.draw();
+	skeleton.draw();
 	drawTopLayer();
 	drawRoof(timeSinceInShop / 15);
 }

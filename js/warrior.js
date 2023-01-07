@@ -1,7 +1,7 @@
 var playerMoveSpeed = 3.0;
 var direction = "south";
 
-function warriorClass() {
+function WarriorClass() {
     this.noClipping = false;
     this.invulnerable = false;
     this.mySword = new swordClass();

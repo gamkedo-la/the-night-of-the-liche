@@ -2,7 +2,7 @@ var alchemistIntro1Play = true;
 var alchemistIntro2Play = false;
 var alchemistIntro3Play = false;
 
-function alchemistClass() {
+function AlchemistClass() {
     this.timer = 0; 
 
     this.x, this.y;
@@ -162,9 +162,9 @@ function alchemistClass() {
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
         if (walkIntoTileIndex != undefined) {
-            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex]
+            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoMGTileIndex]
             if(walkIntoTileType == TILE_BLANK){
-                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.background)[walkIntoTileIndex]
+                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.background)[walkIntoMGTileIndex]
             }
         }
         

@@ -1,4 +1,4 @@
-function skeletonClass() {
+function SkeletonClass() {
     this.timer = 0; 
 
     this.x, this.y;
@@ -11,9 +11,9 @@ function skeletonClass() {
     this.sy = 0;
     this.tickCount = 0;
     this.frameIndex = 0;
-    this.width = 48;
+    this.width = 50;
     this.numberOfFrames = 4;
-    this.height = 48;
+    this.height = 50;
     this.ticksPerFrame = 5;
     this.move = false;
     this.voiceReady = true;
@@ -111,31 +111,31 @@ function skeletonClass() {
             nextY -= this.speed;
             direction = "north";
             this.sx = 0;
-            this.sy = 0*48;
+            this.sy = 3*this.height;
         }
         if (this.walkSouth) {
             nextY += this.speed;
             direction = "south";
             this.sx = 0;
-            this.sy = 1*48;
+            this.sy = 0*this.height;
         }
         if (this.walkWest) {
             nextX -= this.speed;
             direction = "west";
             this.sx = 0;
-            this.sy = 2*48;
+            this.sy = 1*this.height;
         }
         if (this.walkEast) {
             nextX += this.speed;
             direction = "east";
             this.sx = 0;
-            this.sy = 3*48;
+            this.sy = 2*this.height;
         }
 
         if (this.walkNorth || this.walkSouth || this.walkWest || this.walkEast) {
-            this.move = true;
+            this.alchemistMove = true;
         } else {
-            this.move = false;
+            this.alchemistMove = false;
         }
 
         var walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
@@ -159,9 +159,9 @@ function skeletonClass() {
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
         if (walkIntoTileIndex != undefined) {
-            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].interactive)[walkIntoTileIndex]
+            walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoMGTileIndex]
             if(walkIntoTileType == TILE_BLANK){
-                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].background)[walkIntoTileIndex]
+                walkIntoTileType = (LEVELS[levelList[currentLevelIndex]].layers.background)[walkIntoMGTileIndex]
             }
         }
         
