@@ -1,4 +1,5 @@
 var unvisitedList = [];
+var PathFindingPathToTake = [];
 var endTile = null;
 var pathfindingNow = false;
 var displayPathfinding = false;
@@ -112,14 +113,14 @@ function PathfindingNextStep() {
           }
         }
         
-        arrayRemove(unvisitedList,currentTile); //// remove u from Q
+        arrayRemove(unvisitedList,currentTile); // remove u from Q
      
-        //// "for each neighbor v of u: //// where v has not yet been removed from Q"
+        // "for each neighbor v of u: where v has not yet been removed from Q"
         var neighborsStillInUnvisitedList = currentTile.myUnvisitedNeighbors();
         for (var i=0; i<neighborsStillInUnvisitedList.length; i++) {
           var neighborTile = neighborsStillInUnvisitedList[i];
           
-          ///// A* note: hVal is NOT part of these calls, would accumulate
+          // A* note: hVal is NOT part of these calls, would accumulate
           if (neighborTile.isTileType(NOTHING)) {
             tentativeDistance = currentTile.distance+1;
             neighborTile.setDistIfLess(tentativeDistance, currentTile);
@@ -131,20 +132,18 @@ function PathfindingNextStep() {
             unvisitedList = []; //// empty the unvisitedList since we've found the end
           }
         }
-      
       } 
       
-      else { //// all nodes have been accounted for, work backward from end's tiles for path
-             //// terminate the algorithm from taking further steps since we found what we needed
+      else { // all nodes have been accounted for, work backward from end's tiles for path
+             
         if (endTile!=null) {
-          console.log("Best distance found: " + endTile.distance);
-         
           // walk backward from destination to create the path
           var previousTile = endTile.cameFrom;
           
           for (var pathIndex = endTile.distance; pathIndex>1; pathIndex--) {
+            PathFindingPathToTake.push(previousTile);
             previousTile.setTile(PATH);
-            previousTile = previousTile.cameFrom;  
+            previousTile = previousTile.cameFrom;
           }
         }
         pathfindingNow = false;
@@ -172,7 +171,7 @@ function arrayRemove(arr, obj) {
 
 function drawTiles() {
   var tileCount = ROOM_COLS * ROOM_ROWS;
-  canvasContext.globalAlpha =   canvasContext.globalAlpha = PATHFINDING_DUBUGGING_OPACITY;
+  canvasContext.globalAlpha = PATHFINDING_DUBUGGING_OPACITY;
   ;
   for (var eachTil = 0; eachTil < tileCount; eachTil++) {
       grid[eachTil].display();

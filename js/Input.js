@@ -58,6 +58,7 @@ var showPathFinding = KEY_N;
 var pathingFindingSource = KEY_V;
 var pathingFindingDestination = KEY_B;
 var evaluatePathFinding = KEY_C;
+var showPathToTake = KEY_P;
 
 function setupInput() {
 	document.addEventListener('keydown', keyPressed);
@@ -112,6 +113,12 @@ function keyPressed(evt) {
             removePathfindingType(SOURCE);
             grid[tileOverIdx].setTile(SOURCE);
         }
+        if(evt.keyCode == showPathToTake){
+            for (var i=0; i<PathFindingPathToTake.length; i++) {
+                console.log(PathFindingPathToTake[i].tilIdx);
+            }
+        }
+
         if(evt.keyCode == evaluatePathFinding){
             PathfindingNextStep();
         }

@@ -82,6 +82,7 @@ function GridElement() {
     
     this.display = function() {
       var pieceName = "";
+      var tileIDnumber = this.tilIdx;
       var tileBGColor = '#FF0000';
   
       switch (this.elementType) {
@@ -90,22 +91,22 @@ function GridElement() {
               pieceName += "" + (this.hVal).toFixed(1); ///// showing hVal
               break;
           case SOURCE:
-              pieceName += "S";
+              pieceName += "S ";
               tileBGColor = '#55ff55';
               break;
           case DEST:
-              pieceName += "D";
+              pieceName += "D ";
               tileBGColor = '#aaaaff';
               break;
           case WALL:
               pieceName += "W";
               tileBGColor = '#555555';
               break;
-          case VISITED: ///// updated to include hVal
+          case VISITED: // include hVal
               pieceName += ""+this.distance + " " + this.hVal.toFixed(1);
               tileBGColor = '#bbbbbb';
               break;
-          case PATH: ///// updated to include hVal
+          case PATH: // include hVal
               pieceName += "" + this.distance + " " + this.hVal.toFixed(1);
               tileBGColor = '#000000';
               break;
@@ -114,12 +115,10 @@ function GridElement() {
       var tileLeftEdgeX = this.tilC * TILE_W;
       var tileTopEdgeY = this.tilR * TILE_H;
   
-      colorRect(tileLeftEdgeX, tileTopEdgeY,
-          TILE_W - TILE_GAP, TILE_H - TILE_GAP, tileBGColor);
+      colorRect(tileLeftEdgeX, tileTopEdgeY,TILE_W - TILE_GAP, TILE_H - TILE_GAP, tileBGColor);
       canvasContext.fillStyle = 'white';
-      canvasContext.fillText(pieceName,
-          tileLeftEdgeX + TILE_W / 2, tileTopEdgeY + TILE_H / 2);
-  
+      canvasContext.fillText(pieceName, tileLeftEdgeX + TILE_W / 2, tileTopEdgeY + TILE_H / 2);
+      canvasContext.fillText(tileIDnumber, tileLeftEdgeX + TILE_W / 2, tileTopEdgeY + TILE_H-5);
       if (tileOverIdx == this.tilIdx) { // mouseover?
           outlineRect(tileLeftEdgeX, tileTopEdgeY,
               TILE_W - TILE_GAP, TILE_H - TILE_GAP, 'green');
