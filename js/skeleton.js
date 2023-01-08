@@ -208,8 +208,13 @@ function SkeletonClass() {
     }
 
     this.isOverlappingPoint = function(testX, testY) {  // textX is player.x and testY is player.y
-	
-	};
+       if(testX > this.x && 
+          testX < this.x + this.width &&
+          testY > this.y &&
+          testY < this.y + this.height){
+            console.log("collision with player from skeleton")
+       };
+    };
 
     this.draw = function() {
         if (this.move) {

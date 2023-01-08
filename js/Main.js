@@ -59,7 +59,8 @@ function updateAll() {
 }
 
 function checkCollisions(){
-	player.checkWarriorandSwordCollisionAgainst(alchemist)
+	player.checkWarriorandSwordCollisionAgainst(alchemist);
+	player.checkWarriorandSwordCollisionAgainst(skeleton);
 }
 
 function moveAll() {
