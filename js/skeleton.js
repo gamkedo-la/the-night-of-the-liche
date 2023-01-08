@@ -165,7 +165,7 @@ function SkeletonClass() {
             }
         }
         
-        switch (walkIntoTileType) {
+        switch (walkIntoTileType) {   //VJM 1/7/23  Each character uses switch cases.  Need to refactor classes to share a parent class.
             case TILE_ROAD:
             case TILE_WOOD_FLOOR:
                 playerMoveSpeed = 5.0;
@@ -207,11 +207,11 @@ function SkeletonClass() {
         this.previousTileType = walkIntoTileType;
     }
 
-    this.isOverlappingPoint = function(testX, testY) {  // textX is player.x and testY is player.y
-       if(testX > this.x && 
-          testX < this.x + this.width &&
-          testY > this.y &&
-          testY < this.y + this.height){
+    this.isOverlappingPoint = function(testX, testY) {  
+       if(testX > this.x && testX < this.x + this.width && testY > this.y && testY < this.y + this.height){
+            //VJM 1/7/23:  Need to code the player can't pass through skeleton and vice versa
+            //VJM 1/7/23:  Need to code Skeleton to attack at a close range
+            //VJM 1/7/23:  Need to improve code to collide from different sides and not the center of the player
             console.log("collision with player from skeleton")
        };
     };
