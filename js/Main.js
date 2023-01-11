@@ -5,6 +5,8 @@ var player = new WarriorClass();
 var alchemist = new AlchemistClass();  //VJM 1/7/23:  need to make this based on the map
 var skeleton = new SkeletonClass(); // VJM 1/7/23: need to make skeletons based on the map.  Also, make them in a list.
 
+//practice commit - will remove
+
 // Game State //
 
 var menuScreen = true;
