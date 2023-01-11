@@ -137,9 +137,9 @@ function loadImages() {
 			{tileType: TILE_POND_BOTTOM,  theFile: "ground.png", locX: 400, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_POND_BR,  theFile: "ground.png", locX: 450, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//Row 4:  Ground Sprite Sheet
-			//OPEN
-			//OPEN
-			//OPEN
+			{tileType: TILE_GRASSTODIRT_TL,  theFile: "ground.png", locX: 0, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRASSTODIRT_TOP,  theFile: "ground.png", locX: 50, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRASSTODIRT_TR,  theFile: "ground.png", locX: 100, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			//OPEN
 			//OPEN
@@ -148,8 +148,9 @@ function loadImages() {
 			//OPEN
 			//OPEN
 			//Row 5:  Ground Sprite Sheet
-			//OPEN
+			{tileType: TILE_GRASSTODIRT_LEFTSIDE,  theFile: "ground.png", locX: 0, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRASS,  theFile: "ground.png", locX: 50, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRASSTODIRT_RIGHTSIDE,  theFile: "ground.png", locX: 100, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			//OPEN
 			//OPEN
@@ -157,8 +158,37 @@ function loadImages() {
 			//OPEN
 			//OPEN
 			//OPEN
+			//Row 6:  Ground Sprite Sheet
+			{tileType: TILE_GRASSTODIRT_BL,  theFile: "ground.png", locX: 0, locY: 250, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRASSTODIRT_BOTTOM,  theFile: "ground.png", locX: 50, locY: 250, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRASSTODIRT_BR,  theFile: "ground.png", locX: 100, locY: 250, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
-			
+			//OPEN
+			//OPEN
+			//OPEN
+			//OPEN
+			//OPEN
+			//OPEN
+			//Row 7:  Ground Sprite Sheet
+			//
+			//Row 8:  Ground Sprite Sheet
+			//
+			//Row 9:  Ground Sprite Sheet
+			//
+			//Row 10:  Ground Sprite Sheet
+			{tileType: TILE_BROKEN_WAGONWHEEL,  theFile: "ground.png", locX: 0, locY: 450, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			//*************************************************************** */
+			//Row 1:  Rocks Sprite Sheet
+			{tileType: TILE_SMALL_ROCK_1,  theFile: "rocks.png", locX: 0, locY: 0, width: 16, height: 16, offSetX: 0, offSetY: 0},
+			{tileType: TILE_SMALL_ROCK_2,  theFile: "rocks.png", locX: 16, locY: 0, width: 16, height: 16, offSetX: 0, offSetY: 0},
+			{tileType: TILE_SMALL_ROCK_3,  theFile: "rocks.png", locX: 32, locY: 0, width: 16, height: 16, offSetX: 0, offSetY: 0},
+			{tileType: TILE_SMALL_ROCK_4,  theFile: "rocks.png", locX: 48, locY: 0, width: 16, height: 16, offSetX: 0, offSetY: 0},
+			{tileType: TILE_SMALL_ROCK_5,  theFile: "rocks.png", locX: 60, locY: 0, width: 16, height: 16, offSetX: 0, offSetY: 0},
+			//Row 2:  Rocks Sprite Sheet
+			{tileType: TILE_LARGE_ROCK_1,  theFile: "rocks.png", locX: 0, locY: 16, width: 32, height: 32, offSetX: 0, offSetY: 0},
+			{tileType: TILE_LARGE_ROCK_2,  theFile: "rocks.png", locX: 32, locY: 16, width: 32, height: 32, offSetX: 0, offSetY: 0},
+
+			//*************************************************************** */
 			//Row 1:  Fence Sprite Sheet
 			{tileType: TILE_FENCE1_LS_POST,  theFile: "Fence.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_FENCE1_LTCORNER,  theFile: "Fence.png", locX: 50, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
