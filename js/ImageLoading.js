@@ -6,7 +6,7 @@ var swordPic = document.createElement("img");
 var skeletonPic = document.createElement('img');
 var alchemistPic = document.createElement("img");
 var thoughtBubblePic = document.createElement("img");
-
+var heartPic = document.createElement("img");
 
 var worldPics = [];
 
@@ -43,7 +43,6 @@ function loadImages() {
 		*/
 	
 		var imageList = [
-
 			//Row 1:  SpriteSheet1
 			{tileType: TILE_WALL1_TOPLEFT,  theFile: "SpriteSheet1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_WALL1_TOP,  theFile: "SpriteSheet1.png", locX: 50, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
@@ -272,13 +271,14 @@ function loadImages() {
 			{tileType: TILE_SHRUB1,  theFile: "shrub1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_BLANK,  theFile: "blank.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 
-			//To Be Deleted 
-	
+
+			//characters and misc
 			{varName: playerPic, theFile: "player.png"},
 			{varName: alchemistPic, theFile: "alchemist.png"},
 			{varName: skeletonPic, theFile: "skeleton.png"},
 			{varName: titlepagePic, theFile: "background.png"},
-            {varName: thoughtBubblePic, theFile: "thoughtBubble.png"}
+            {varName: thoughtBubblePic, theFile: "thoughtBubble.png"},
+			{varName: heartPic, theFile: "hearts.png"},
 
 		];
 			

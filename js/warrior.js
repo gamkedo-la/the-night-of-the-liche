@@ -21,7 +21,8 @@ function WarriorClass() {
     this.name = "Untitled warrior";
     this.keysHeld = 0;
     this.goldpieces = 10;
-    this.health = 4;
+    this.health = 1;
+    this.maxHealth = 3;
     this.waitTime = 0;
     this.previousTileType = -1;
     this.sx = 40;
@@ -70,7 +71,8 @@ function WarriorClass() {
         this.greenKeysHeld = 0;
         this.blueKeysHeld = 0;
         this.redKeysHeld = 0;
-        this.health = 4;
+        this.health = 1;
+        this.maxHealth = 3;
         this.updateReadout();
 
         for (var eachRow = 0; eachRow < ROOM_ROWS; eachRow++) {
@@ -144,7 +146,6 @@ function WarriorClass() {
 
         var walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
         var walkIntoTileType = TILE_WALL1_TOP;
-        var walkIntoMGTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
 
         if (direction == "north") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX + (this.width / 2), nextY);

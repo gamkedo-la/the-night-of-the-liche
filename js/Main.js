@@ -114,7 +114,7 @@ function drawAll() {
 
 			displayQuests();
 			displayKeyInputs();
-			health();
+			displayHealth();
 		} else {
 			console.log("No Game State");
 		}
