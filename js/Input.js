@@ -140,18 +140,7 @@ function handleMouseClick(evt) {
 		menuScreen = false;
         inGame = true;
         backgroundMusic.loopSong("backgroundMusic");
-	} else {
-        if(mouseOverSidebar) {
-            pathfindingNow = !pathfindingNow;
-            if(endTile != null) {
-                pathfindingNow = false;
-            }
-            if(pathfindingNow == false) {
-                SetupPathfindingGridData();
-            }
-            return;
-        }
-    
+	} else {    
         if (tileOverIdx < 0 || tileOverIdx >= grid.length) { // invalid or off board
             return;
         }

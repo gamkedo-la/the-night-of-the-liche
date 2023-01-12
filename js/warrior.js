@@ -5,6 +5,7 @@ function WarriorClass() {
     this.noClipping = false;
     this.invulnerable = false;
     this.mySword = new swordClass();
+    this.sword = true;
     this.myArrow = new arrowClass();
     this.arrowList = [];
     this.x = 65;
@@ -101,6 +102,9 @@ function WarriorClass() {
             direction = "north";
             this.sx = 0;
             this.sy = 52*3;
+            if(this.sword = true){
+                this.sy = 52*7;
+            }
             this.moving = true;
         }
         if (this.keyHeld_WalkSouth) {
@@ -108,18 +112,27 @@ function WarriorClass() {
             direction = "south";
             this.sx = 0;
             this.sy = 52*0;
+            if(this.sword = true){
+                this.sy = 52*4;
+            }
         }
         if (this.keyHeld_WalkWest) {
             nextX -= playerMoveSpeed;
             direction = "west";
             this.sx = 0;
             this.sy = 52*1;
+            if(this.sword = true){
+                this.sy = 52*5;
+            }
         }
         if (this.keyHeld_WalkEast) {
             nextX += playerMoveSpeed;
             direction = "east";
             this.sx = 0;
             this.sy = 52*2;
+            if(this.sword = true){
+                this.sy = 52*6;
+            }
         }
 
         if (this.keyHeld_WalkNorth || this.keyHeld_WalkSouth || this.keyHeld_WalkWest || this.keyHeld_WalkEast) {
