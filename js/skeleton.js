@@ -36,11 +36,11 @@ function SkeletonClass() {
                     this.y = eachRow * TILE_H + TILE_H / 2;
 					console.log("Skeleton created")
                     return;
-                } // end of Player Start if
-            } //end of col row for
-        } // end of row for
+                } 
+            } 
+        } 
         console.log("Skeleton not found!");
-    } // end of func
+    } 
 
     this.move = function() {
         var nextX = this.x;

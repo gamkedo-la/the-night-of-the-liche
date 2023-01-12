@@ -2,7 +2,6 @@ const TILE_W = 50;
 const TILE_H = 50;
 const ROOM_COLS = 21; 
 const ROOM_ROWS = 21; 
-const TILE_GAP = 1;
 
 var camPanX = 0.0;
 var camPanY = 0.0;
@@ -34,7 +33,6 @@ var levelList = Object.keys(LEVELS)
 var roomGrid = [];
 
 //Floor Tiles 1 through 100
-const TILE_GRASS = 1;
 const TILE_WOOD_FLOOR = 2;
 const TILE_ROAD = 3; 
 const TILE_GARDEN_TL = 10;
@@ -52,7 +50,11 @@ const TILE_VEGETABLE3 = 21;
 const TILE_VEGETABLE4 = 22;
 const TILE_VEGETABLE5 = 23;
 const TILE_VEGETABLE6 = 24;
-//
+const TILE_SMALL_ROCK_1 = 25;
+const TILE_SMALL_ROCK_2 = 26;
+const TILE_SMALL_ROCK_3 = 27;
+const TILE_SMALL_ROCK_4 = 28;
+const TILE_SMALL_ROCK_5 = 29;
 const TILE_POND_TL = 30;
 const TILE_POND_TOP = 31;
 const TILE_POND_TR = 32;
@@ -62,6 +64,17 @@ const TILE_POND_RIGHTSIDE = 35;
 const TILE_POND_BL = 36;
 const TILE_POND_BOTTOM = 37;
 const TILE_POND_BR = 38;
+const TILE_GRASSTODIRT_TL = 39;
+const TILE_GRASSTODIRT_TOP = 40;
+const TILE_GRASSTODIRT_TR = 41;
+const TILE_GRASSTODIRT_LEFTSIDE = 43;
+const TILE_GRASS = 1;
+const TILE_GRASSTODIRT_RIGHTSIDE = 44;
+const TILE_GRASSTODIRT_BL = 45;
+const TILE_GRASSTODIRT_BOTTOM = 46;
+const TILE_GRASSTODIRT_BR = 47;
+const TILE_LARGE_ROCK_1 = 48;
+const TILE_LARGE_ROCK_2 = 49;
 
 //Walls 101 through 200
 const TILE_WALL1_TOPLEFT = 101;
@@ -93,6 +106,7 @@ const TILE_WALL2_BOTTOMLEFT = 120;
 const TILE_WINDOW_1 = 150;
 const TILE_FIRE_PLACE = 151;
 const TILE_NIGHT_STAND = 152;
+const TILE_BROKEN_WAGONWHEEL = 153;
 
 //FENCES 201 to 250
 const TILE_FENCE1_LS_POST = 200;
@@ -119,7 +133,7 @@ const TILE_ROOF_9 = 259;
 
 // To be sorted or removed
 const TILE_SHRUB1 = 214;
-const TILE_BOOKSELF = 41;
+const TILE_BOOKSELF = 599;
 const TILE_BLANK = 42;
 
 const TILE_ALTER = 66;
