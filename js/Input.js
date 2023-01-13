@@ -183,8 +183,8 @@ function mousemoved(evt) {
     mouseX = evt.clientX - rect.left - root.scrollLeft;
     mouseY = evt.clientY - rect.top - root.scrollTop;
 
-    var tileOverCol = Math.floor(mouseX / TILE_W);
-    var tileOverRow = Math.floor(mouseY / TILE_H);
+    var tileOverCol = Math.floor((mouseX+camPanX) / TILE_W);
+    var tileOverRow = Math.floor((mouseY+camPanY) / TILE_H);
 
     mouseOverSidebar = (tileOverCol >= ROOM_COLS);
     if(mouseOverSidebar) {
