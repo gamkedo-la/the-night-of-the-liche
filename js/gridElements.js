@@ -182,7 +182,7 @@ function GridElement() {
     
     // function to update distance, do so only if less than previously found best distance
     this.setDistIfLess = function(newDistToConsider, comingFrom) {
-      console.log("comparing " + newDistToConsider + " vs " + this.distance);
+      //console.log("comparing " + newDistToConsider + " vs " + this.distance);
       if(newDistToConsider < this.distance) {
         this.distance = newDistToConsider;
         this.cameFrom = comingFrom;

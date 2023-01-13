@@ -155,6 +155,14 @@ const PATH = 5;
 
 const INFINITY_START_DISTANCE = 999999;
 
+function idxToRow(idx){
+	return Math.floor(idx/ROOM_COLS);
+}
+
+function idxToCol(idx){
+	return idx%ROOM_COLS;
+}
+
 function returnTileTypeAtColRow(col, row) {
 	if(col >= 0 && col < ROOM_COLS &&
 		row >= 0 && row < ROOM_ROWS) {

@@ -142,7 +142,7 @@ function PathfindingNextStep() {
           var previousTile = endTile.cameFrom;
           
           for (var pathIndex = endTile.distance; pathIndex>1; pathIndex--) {
-            console.log(previousTile.tilIdx);
+     //       console.log(previousTile.tilIdx);
             PathFindingPathToTake.push(previousTile.tilIdx);
             previousTile.setTile(PATH);PathFindingPathToTake
             previousTile = previousTile.cameFrom;
@@ -200,4 +200,5 @@ function generatePathFromTo(from, to){
   // updatehVals();
   SetupPathfindingGridData();
   PathfindingNextStep();
+  return PathFindingPathToTake.slice();
 }

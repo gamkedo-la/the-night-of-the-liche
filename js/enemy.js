@@ -31,6 +31,7 @@ function characterClass() {
     this.move = false;
     this.voiceReady = true;
     this.voiceTimer = 0;
+    this.myPathList = [];
 
     this.walkNorth = false;
     this.walkSouth = false;
@@ -54,23 +55,13 @@ function characterClass() {
         } 
         console.log("Skeleton not found!");
     } 
-
-    this.pickRandomDirection = function() {
-
-        const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
-
-        // picks out a random direction that is not opposite direction to previous direction
-        let direction = DIRECTIONS[Math.floor(5 * Math.random())];
-        while (direction == oppositeDirectionOf(this.prevDirection)) {
-            direction = DIRECTIONS[Math.floor(5 * Math.random())];
-        }
-
+    this.setDirection = function(toDir){
         this.walkNorth = false;
         this.walkSouth = false;
         this.walkWest = false;
         this.walkEast = false;
 
-        switch (direction) {
+        switch (toDir) {
             case "north":
                 this.walkNorth = true;
                 this.prevDirection = "north";
@@ -94,6 +85,19 @@ function characterClass() {
                 this.walkEast = false;
                 break;
         } // end of switch
+    }
+
+    this.pickRandomDirection = function() {
+
+        const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
+
+        // picks out a random direction that is not opposite direction to previous direction
+        let direction = DIRECTIONS[Math.floor(5 * Math.random())];
+        while (direction == oppositeDirectionOf(this.prevDirection)) {
+            direction = DIRECTIONS[Math.floor(5 * Math.random())];
+        }
+
+        this.setDirection(direction);
     } // end of func
 
 
@@ -104,9 +108,30 @@ function characterClass() {
         this.timer = (this.timer + 1) % (this.ticksPerFrame * 6);
 
         
-        if (this.timer == 0) {
+       /* if (this.timer == 0) {
             this.pickRandomDirection();
-            generatePathFromTo(this, player);
+            this.myPathList = generatePathFromTo(this,player);
+        } */
+
+        if(this.myPathList.length > 0){
+           var goalTile = this.myPathList[this.myPathList.length-1];
+           var goalC = idxToCol(goalTile);
+           var goalR = idxToRow(goalTile);
+           var currentC = Math.floor(this.x/ROOM_COLS);
+           var currentR = Math.floor(this.y/ROOM_ROWS);
+           if(currentC < goalC){
+                this.setDirection("east");
+            } else if (currentC > goalC){
+                this.setDirection("west");
+            } else if(currentR < goalR){
+                this.setDirection("south");
+            } else if (currentR > goalR){
+                this.setDirection("north");
+            } else {
+                console.log("Reached Goal!")
+            }
+        } else {
+            this.myPathList = generatePathFromTo(this,player);
         }
 
         if (this.walkNorth) {
