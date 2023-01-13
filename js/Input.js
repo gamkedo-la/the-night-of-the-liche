@@ -147,7 +147,7 @@ function handleMouseClick(evt) {
     
         if (tileOverIdx != -1) {
             grid[tileOverIdx].wallToggle();
-            console.log("Tile over Inx: " + tileOverIdx);
+            console.log("Tile over Idx: " + tileOverIdx);
             mouseDragging = true; 
             mouseSettingWalls = (grid[tileOverIdx].elementType == WALL);  
         }
