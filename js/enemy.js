@@ -1,3 +1,17 @@
+function oppositeDirectionOf(direction) {
+    if (direction == "north") {
+        return "south";
+    } else if (direction == "south") {
+        return "north";
+    } else if (direction == "west") {
+        return "east";
+    } else if (direction == "east") {
+        return "west";
+    } else if (direction == "stationary") {
+        return "nonstationary";
+    } 
+}
+
 function characterClass() {
     this.timer = 0; 
     this.x, this.y;
@@ -41,67 +55,57 @@ function characterClass() {
         console.log("Skeleton not found!");
     } 
 
+    this.pickRandomDirection = function() {
+
+       
+
+        const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
+
+        // picks out a random direction that is not opposite direction to previous direction
+        let direction = DIRECTIONS[Math.floor(5 * Math.random())];
+        while (direction == oppositeDirectionOf(this.prevDirection)) {
+            direction = DIRECTIONS[Math.floor(5 * Math.random())];
+        }
+
+        this.walkNorth = false;
+        this.walkSouth = false;
+        this.walkWest = false;
+        this.walkEast = false;
+
+        switch (direction) {
+            case "north":
+                this.walkNorth = true;
+                this.prevDirection = "north";
+                break;
+            case "south":
+                this.walkSouth = true;
+                this.prevDirection = "south";
+                break;
+            case "west":
+                this.walkWest = true;
+                this.prevDirection = "west";
+                break;
+            case "east":
+                this.walkEast = true;
+                this.prevDirection = "east";
+                break;
+            case "stationary":
+                this.walkNorth = false;
+                this.walkSouth = false;
+                this.walkWest = false;
+                this.walkEast = false;
+                break;
+        } // end of switch
+    } // end of func
+
+
     this.move = function() {
         var nextX = this.x;
         var nextY = this.y;
 
         this.timer = (this.timer + 1) % (this.ticksPerFrame * 6);
 
-        this.pickRandomDirection = function() {
-
-            function oppositeDirectionOf(direction) {
-                if (direction == "north") {
-                    return "south";
-                } else if (direction == "south") {
-                    return "north";
-                } else if (direction == "west") {
-                    return "east";
-                } else if (direction == "east") {
-                    return "west";
-                } else if (direction == "stationary") {
-                    return "nonstationary";
-                } 
-            }
-
-            const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
-
-            // picks out a random direction that is not opposite direction to previous direction
-            let direction = DIRECTIONS[Math.floor(5 * Math.random())];
-            while (direction == oppositeDirectionOf(this.prevDirection)) {
-                direction = DIRECTIONS[Math.floor(5 * Math.random())];
-            }
-    
-            this.walkNorth = false;
-            this.walkSouth = false;
-            this.walkWest = false;
-            this.walkEast = false;
-    
-            switch (direction) {
-                case "north":
-                    this.walkNorth = true;
-                    this.prevDirection = "north";
-                    break;
-                case "south":
-                    this.walkSouth = true;
-                    this.prevDirection = "south";
-                    break;
-                case "west":
-                    this.walkWest = true;
-                    this.prevDirection = "west";
-                    break;
-                case "east":
-                    this.walkEast = true;
-                    this.prevDirection = "east";
-                    break;
-                case "stationary":
-                    this.walkNorth = false;
-                    this.walkSouth = false;
-                    this.walkWest = false;
-                    this.walkEast = false;
-                    break;
-            } // end of switch
-        } // end of func
-
+        
         if (this.timer == 0) {
             this.pickRandomDirection();
         }

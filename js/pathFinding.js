@@ -98,8 +98,9 @@ function hValCal(atC,atR, toC,toR, multWeight) { /////
 
 function PathfindingNextStep() {
     var tentativeDistance=0;
+    var safetyLimit = 10000;
 
-      if(unvisitedList.length > 0) { //// "while Q is not empty:"
+      while(unvisitedList.length > 0 && safetyLimit-- > 0) { //// "while Q is not empty:"
         //// "u := vertex in Q with min dist[u]"
         var currentTile = null;
         var ctDistWithH; ///// a* with hVal heuristic added
@@ -134,20 +135,21 @@ function PathfindingNextStep() {
         }
       } 
       
-      else { // all nodes have been accounted for, work backward from end's tiles for path
+      //else { // all nodes have been accounted for, work backward from end's tiles for path
              
         if (endTile!=null) {
           // walk backward from destination to create the path
           var previousTile = endTile.cameFrom;
           
           for (var pathIndex = endTile.distance; pathIndex>1; pathIndex--) {
-            PathFindingPathToTake.push(previousTile);
-            previousTile.setTile(PATH);
+            console.log(previousTile.tilIdx);
+            PathFindingPathToTake.push(previousTile.tilIdx);
+            previousTile.setTile(PATH);PathFindingPathToTake
             previousTile = previousTile.cameFrom;
           }
         }
         pathfindingNow = false;
-      }
+      //}
 }
 
 function arrayContains(arr, obj) {
