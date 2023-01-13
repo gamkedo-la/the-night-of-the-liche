@@ -128,7 +128,8 @@ function characterClass() {
             } else if (currentR > goalR){
                 this.setDirection("north");
             } else {
-                console.log("Reached Goal!")
+                console.log("Reached Goal! " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
+                this.myPathList.pop(); //this should remove the list down by 1.
             }
         } else {
             this.myPathList = generatePathFromTo(this,player);
