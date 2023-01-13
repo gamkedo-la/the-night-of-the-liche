@@ -57,8 +57,6 @@ function characterClass() {
 
     this.pickRandomDirection = function() {
 
-       
-
         const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
 
         // picks out a random direction that is not opposite direction to previous direction
@@ -108,6 +106,7 @@ function characterClass() {
         
         if (this.timer == 0) {
             this.pickRandomDirection();
+            generatePathFromTo(this, player);
         }
 
         if (this.walkNorth) {

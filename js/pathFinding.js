@@ -189,3 +189,15 @@ function removePathfindingType(typeToRemove){
     }
   } 
 } // end of for eachTil
+
+function generatePathFromTo(from, to){
+  removePathfindingType(SOURCE);
+  var sourceIndex = getTileTypeAtPixelCoord(from.x, from.y);
+  grid[sourceIndex].setTile(SOURCE);
+  removePathfindingType(DEST);
+  var destinationIndex = getTileTypeAtPixelCoord(to.x, to.y);
+  grid[destinationIndex].setTile(DEST);
+  // updatehVals();
+  SetupPathfindingGridData();
+  PathfindingNextStep();
+}
