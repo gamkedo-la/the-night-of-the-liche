@@ -4,7 +4,7 @@ var alchemistIntro3Play = false;
 
 alchemistClass.prototype = new characterClass();
 function alchemistClass() {
-    this.height = 48;
+    this.wandering = true;
     this.width = 48;
 
     this.reset = function() {

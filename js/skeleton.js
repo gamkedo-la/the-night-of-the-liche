@@ -1,5 +1,7 @@
 skeletonClass.prototype = new characterClass();
 function skeletonClass() {
+
+    this.trackingPlayer = true;
     
     this.superclassReset = this.reset; 
     this.reset = function() {

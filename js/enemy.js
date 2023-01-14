@@ -32,6 +32,8 @@ function characterClass() {
     this.voiceReady = true;
     this.voiceTimer = 0;
     this.myPathList = [];
+    this.wandering = false;
+    this.trackingPlayer = false;
 
     this.walkNorth = false;
     this.walkSouth = false;
@@ -108,11 +110,11 @@ function characterClass() {
         this.timer = (this.timer + 1) % (this.ticksPerFrame * 6);
 
         
-        /* if (this.timer == 0) {
+        if (this.wandering && this.timer == 0) {
             this.pickRandomDirection();
-        } */
+        } 
 
-        if(this.myPathList.length > 0){
+        if(this.myPathList.length > 0 && this.trackingPlayer){
             var goalTile = this.myPathList[this.myPathList.length-1];
             console.log(goalTile)
             var goalC = idxToCol(goalTile);

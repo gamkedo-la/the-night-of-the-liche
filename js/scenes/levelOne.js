@@ -85,7 +85,7 @@ function getLevelOneLayers () {
 
 function levelOneMoveAll () {
 	player.move();
-	//alchemist.move();
+	alchemist.move();
 	skeleton.move();
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
