@@ -59,6 +59,7 @@ var pathingFindingSource = KEY_V;
 var pathingFindingDestination = KEY_B;
 var evaluatePathFinding = KEY_C;
 var showPathToTake = KEY_P;
+var showDarkness = KEY_O;
 
 function setupInput() {
 	document.addEventListener('keydown', keyPressed);
@@ -117,6 +118,10 @@ function keyPressed(evt) {
             for (var i=0; i<PathFindingPathToTake.length; i++) {
                 console.log(PathFindingPathToTake[i].tilIdx);
             }
+        }
+
+        if(evt.keyCode == showDarkness){
+            isNighttime = !isNighttime;
         }
 
         if(evt.keyCode == evaluatePathFinding){
