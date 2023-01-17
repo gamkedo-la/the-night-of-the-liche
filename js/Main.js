@@ -8,6 +8,7 @@ var skeleton = new skeletonClass(); // VJM 1/7/23: need to make skeletons based 
 
 // Game State //
 
+var isNighttime = true; // if this is true, we drawDarkness()
 var menuScreen = true;
 var isInShop = false;
 var inGame = false;
@@ -104,6 +105,8 @@ function drawAll() {
 
 			drawLevelSpecifics();
 
+            if (isNighttime) drawDarkness(); // experimental glow around player with blackness all around
+
 			if(displayPlayerThoughts){
 				drawPlayerThoughts();
 			}
@@ -119,6 +122,12 @@ function drawAll() {
 		} else {
 			console.log("No Game State");
 		}
+}
+
+// experimental glow around player with blackness all around
+// this is a really cheap and simple way of doing this using one image
+function drawDarkness() {
+    canvasContext.drawImage(darknessPic,player.centerX-1000,player.centerY-1000);
 }
 
 function drawLevelSpecifics () {
