@@ -50,7 +50,7 @@ function swordClass() {
 			document.getElementById("debugText").innerHTML = "Successful hit "+ thisEnemy.myName+" for 1 damage point!";
 			this.damage = this.damage - 1;
 			thisEnemy.health = thisEnemy.health - 1;
-			if(thisEnemy == goblin) {
+		/*	if(thisEnemy == goblin) {
 				goblinHurtSound.play();
 			} else if (thisEnemy == skeleton || thisEnemy == skeleton2) {
 				skeletonHurtSound.play();
@@ -58,7 +58,7 @@ function swordClass() {
 				zombieHurtSound.play();
 			} else if (thisEnemy == bat1 || thisEnemy == bat2) {
 				batHurtSound.play();
-			}
+			}*/
 		}
 	}		
 		
@@ -139,7 +139,7 @@ function swordClass() {
 		
 		if(this.swordLife > 0) {
 			swordAlive = false;
-			colorRect(swordXLocation, swordYLocation, swordWidth, swordLength, "gray" );
+		//	colorRect(swordXLocation, swordYLocation, swordWidth, swordLength, "gray" );
 		}
 	}
 	

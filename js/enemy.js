@@ -116,23 +116,23 @@ function characterClass() {
 
         if(this.myPathList.length > 0 && this.trackingPlayer){
             var goalTile = this.myPathList[this.myPathList.length-1];
-            console.log(goalTile)
+        //    console.log(goalTile)
             var goalC = idxToCol(goalTile);
             var goalR = idxToRow(goalTile);
             var currentC = Math.floor(this.x/TILE_H);
             var currentR = Math.floor(this.y/TILE_W);
             if(currentC < goalC){
                 this.setDirection("east");
-                console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
+           //     console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
             } else if (currentC > goalC){
                 this.setDirection("west");
-                console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
+           //     console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
             } else if(currentR < goalR){
                 this.setDirection("south");
-                console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
+           //     console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
             } else if (currentR > goalR){
                 this.setDirection("north");
-                console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
+          //      console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
             } else {
                 console.log("Reached Goal! " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
                 this.myPathList.pop(); //this should remove the list down by 1.

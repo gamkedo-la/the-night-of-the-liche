@@ -34,6 +34,7 @@ function WarriorClass() {
     this.height = 48;
     this.ticksPerFrame = 5;
     this.playerMove = false;
+    this.swordSwung = false;
 
     this.keyHeld_WalkNorth = false;
     this.keyHeld_WalkSouth = false;
@@ -106,6 +107,9 @@ function WarriorClass() {
             this.sy = 52*3;
             if(this.sword = true){
                 this.sy = 52*7;
+                if(this.swordSwung){
+                    this.sx = 52*8;
+                }
             }
             this.moving = true;
         }
@@ -116,6 +120,9 @@ function WarriorClass() {
             this.sy = 52*0;
             if(this.sword = true){
                 this.sy = 52*4;
+                if(this.swordSwung){
+                    this.sx = 52*8;
+                }
             }
         }
         if (this.keyHeld_WalkWest) {
@@ -125,6 +132,9 @@ function WarriorClass() {
             this.sy = 52*1;
             if(this.sword = true){
                 this.sy = 52*5;
+                if(this.swordSwung){
+                    this.sx = 52*8;
+                }
             }
         }
         if (this.keyHeld_WalkEast) {
@@ -134,6 +144,9 @@ function WarriorClass() {
             this.sy = 52*2;
             if(this.sword = true){
                 this.sy = 52*6;
+                if(this.swordSwung){
+                    this.sx = 52*8;
+                }
             }
         }
 
@@ -204,6 +217,8 @@ function WarriorClass() {
     this.swordSwing = function() {
         if (this.mySword.isSwordReadyToSwing()) {
             this.mySword.shootFrom(this);
+            this.swordSwung = true;
+            this.frameIndex = 8;
         }
     }
 
@@ -223,6 +238,15 @@ function WarriorClass() {
                 } else {
                     this.frameIndex = 0;
                 }
+            } else if (this.swordSwung){
+                console.log("Sword Swung")
+                if (this.frameIndex < this.numberOfFrames - 1) {
+                    this.frameIndex += 1;
+                } else {
+                    this.frameIndex = 0;
+                    this.swordSwung = false;
+                }
+            
             } else {
                 if(this.frameIndex < 6) {
                     this.frameIndex += 1;
