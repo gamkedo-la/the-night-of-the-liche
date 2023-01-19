@@ -145,7 +145,7 @@ function WarriorClass() {
             if(this.sword = true){
                 this.sy = 52*6;
                 if(this.swordSwung){
-                    this.sx = 52*8;
+                    this.frameIndex = 6;
                 }
             }
         }
@@ -239,8 +239,7 @@ function WarriorClass() {
                     this.frameIndex = 0;
                 }
             } else if (this.swordSwung){
-                console.log("Sword Swung")
-                if (this.frameIndex < this.numberOfFrames - 1) {
+                if (this.frameIndex < 13) {
                     this.frameIndex += 1;
                 } else {
                     this.frameIndex = 0;
