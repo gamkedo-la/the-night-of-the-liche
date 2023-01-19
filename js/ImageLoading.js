@@ -129,8 +129,8 @@ function loadImages() {
 			{tileType: TILE_GARDEN_BL,  theFile: "ground.png", locX: 0, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GARDEN_BOTTOM,  theFile: "ground.png", locX: 50, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GARDEN_BR,  theFile: "ground.png", locX: 100, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			//OPEN
-			//OPEN
+			{tileType: TILE_LAVANDER,  theFile: "ground.png", locX: 150, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_RED_FLOWER,  theFile: "ground.png", locX: 200, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			//OPEN
 			{tileType: TILE_POND_BL,  theFile: "ground.png", locX: 350, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
