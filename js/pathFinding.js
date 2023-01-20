@@ -192,10 +192,10 @@ function removePathfindingType(typeToRemove){
 
 function generatePathFromTo(from, to){
   removePathfindingType(SOURCE);
-  var sourceIndex = getTileTypeAtPixelCoord(from.x, from.y);
+  var sourceIndex = getTileTypeAtPixelCoord(from.x + from.width/2, from.y + from.height/2); // enemy X,Y is top left corner
   grid[sourceIndex].setTile(SOURCE);
   removePathfindingType(DEST);
-  var destinationIndex = getTileTypeAtPixelCoord(to.x, to.y);
+  var destinationIndex = getTileTypeAtPixelCoord(to.x, to.y); // player X,Y is center
   grid[destinationIndex].setTile(DEST);
   // updatehVals();
   SetupPathfindingGridData();
