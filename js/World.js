@@ -77,6 +77,8 @@ const TILE_LARGE_ROCK_1 = 48;
 const TILE_LARGE_ROCK_2 = 49;
 const TILE_LAVANDER = 50;
 const TILE_RED_FLOWER = 51;
+const TILE_LARGE_ROCK_3 = 52;
+const TILE_LARGE_ROCK_4 = 53;
 
 //Walls 101 through 200
 const TILE_WALL1_TOPLEFT = 101;

@@ -185,8 +185,10 @@ function loadImages() {
 			{tileType: TILE_SMALL_ROCK_4,  theFile: "rocks.png", locX: 48, locY: 0, width: 16, height: 16, offSetX: 0, offSetY: 0},
 			{tileType: TILE_SMALL_ROCK_5,  theFile: "rocks.png", locX: 60, locY: 0, width: 16, height: 16, offSetX: 0, offSetY: 0},
 			//Row 2:  Rocks Sprite Sheet
-			{tileType: TILE_LARGE_ROCK_1,  theFile: "rocks.png", locX: 0, locY: 16, width: 32, height: 32, offSetX: 0, offSetY: 0},
-			{tileType: TILE_LARGE_ROCK_2,  theFile: "rocks.png", locX: 32, locY: 16, width: 32, height: 32, offSetX: 0, offSetY: 0},
+			{tileType: TILE_LARGE_ROCK_1,  theFile: "rocks.png", locX: 0, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_LARGE_ROCK_2,  theFile: "rocks.png", locX: 50, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_LARGE_ROCK_3,  theFile: "rocks.png", locX: 0, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_LARGE_ROCK_4,  theFile: "rocks.png", locX: 50, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 
 			//*************************************************************** */
 			//Row 1:  Fence Sprite Sheet
