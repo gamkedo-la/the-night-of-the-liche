@@ -230,6 +230,10 @@ function drawRoom() {
 
 			var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
 			var tileKindHere = roomGrid[arrayIndex];
+			if(tileKindHere == TILE_SKELETON){
+				console.log("Add Skeleton")
+				addSkeleton();
+			}
 			var useImg = worldPics[tileKindHere];
 			var spriteX = worldPics[tileKindHere].locX;
 			var spriteY = worldPics[tileKindHere].locY;
@@ -237,6 +241,8 @@ function drawRoom() {
 			var spriteHeight = worldPics[tileKindHere].height;
 			var spriteOffSetX = worldPics[tileKindHere].offSetX + drawTileX;
 			var spriteOffSetY = worldPics[tileKindHere].offSetY + drawTileY;
+
+
 
 			canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteHeight, spriteOffSetX, spriteOffSetY, spriteWidth, spriteHeight);
 			//img, sx, sy, swidth, sheight, x, y, width, height);

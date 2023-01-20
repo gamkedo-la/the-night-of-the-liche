@@ -1,3 +1,10 @@
+var skeletonList = [];
+
+function addSkeleton(){
+	var tempSkeleton = new skeletonClass();
+	skeletonList.push(tempSkeleton);
+}
+
 skeletonClass.prototype = new characterClass();
 function skeletonClass() {
 
