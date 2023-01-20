@@ -6,7 +6,7 @@ function getLevelOneLayers () {
   return {
 		//background are tiles like dirt, grass, water, and farm land.  It's not meant to be interactive with
 		background: [
-		  //0	 1			         5					    10    				    15                       20
+		  //0	 1			         5					     10    				      15                       20
 			1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, // 0
 			1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,   1,   1,   1,   1,   1,   1, 
 			1,   2,   2,   2,   2,   2,   2, 107, 107,   2,   2,   2,   2,   2,   1,   1,   1,   1,   1,   1,   1,
@@ -14,7 +14,7 @@ function getLevelOneLayers () {
 			1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,  13,  14,  14,  14,  15,   1, 
 			1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,  13,  14,  14,  14,  15,   1, //5
 			1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,  16,  17,  17,  17,  18,   1,
-			1,   1, 404,   1,   1,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,   1,   1,   1,
+			1,   1,   1,   1,   1,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,   1,   1,   1,
 			1,  10,  11,  11,  12,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,   1,   1,   1,
 			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  30,  31,  32, 
 			1,  13,  14,  14,  15, 402,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  33,  34,  35, //10
@@ -22,7 +22,7 @@ function getLevelOneLayers () {
 			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  36,  37,  38,
 			1,  16,  17,  17,  18,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1,
 		    1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, 
-		    1,   1,   1,   1,   1, 403,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, //15	
+		    1,   1,   1,   1,   1, 404,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, //15	
 		   14,  14,  14,  14,  14,   1,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   1,   1,   1,
 		   14,  39,  40,  41,  14,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
 		   14,  43,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
@@ -31,7 +31,7 @@ function getLevelOneLayers () {
 		],
 		// interactive is where interaction occurs.  These are where majority of the tiles will be listed.
 		interactive: [
-			//    1					 5				         10    				      15					   20
+			//    1					 5				          10    				   15					    20
 			42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
 			42, 101, 102, 102, 102, 102, 102, 103, 101, 102, 102, 102, 102, 103,  42,  42,  42,  42,  42,  42,  42,//1 
 			42, 106, 107, 107, 107, 107, 107, 123, 121, 107, 107, 107, 107, 108,  42, 201, 207, 208, 207, 202,  42,
@@ -56,7 +56,7 @@ function getLevelOneLayers () {
 		],
 		//foreground layer is where overlays occur.  Player walks through the door and top layer will be above the player.
 		foreground: [
-			//        1					 5						 10    				      15					        20
+			//    1					 5						  10    				   15					    20
 			42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
 			42,  42,  42,  42,  42,  42,  42,  42,  42, 151,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, //1
 			42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, 152,  42,  42,  42,  42,  42,  42,  42,  42,  42,
@@ -85,7 +85,7 @@ function getLevelOneLayers () {
 
 function levelOneMoveAll () {
 	player.move();
-	alchemist.move();
+	//alchemist.move();
 	skeleton.move();
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
@@ -100,7 +100,7 @@ function levelOneDrawAll () {
 	canvasContext.translate(-camPanX,-camPanY);
 	drawRoom();
 	player.draw();
-	alchemist.draw();
+	//alchemist.draw();
 	skeleton.draw();
 	drawTopLayer();
 	drawRoof(timeSinceInShop / 15);

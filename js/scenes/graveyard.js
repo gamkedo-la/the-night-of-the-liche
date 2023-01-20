@@ -22,7 +22,7 @@ function getGraveyardLayers () {
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
-			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, 403,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
+			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, 404,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
@@ -86,7 +86,7 @@ function getGraveyardLayers () {
 
 function graveyardMoveAll () {
 	player.move();
-	alchemist.move();
+	//alchemist.move();
 	//skeleton.move();
 	if(pathfindingNow) {
 		PathfindingNextStep();
@@ -99,7 +99,7 @@ function graveyardDrawAll () {
 	canvasContext.translate(-camPanX,-camPanY);
 	drawRoom();
 	player.draw();
-	alchemist.draw();
+	//alchemist.draw();
 	//skeleton.draw();
 }
 

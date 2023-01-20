@@ -2,7 +2,7 @@
 
 var canvas, canvasContext;
 var player = new WarriorClass();
-var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
+//var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
 var skeleton = new skeletonClass(); // VJM 1/7/23: need to make skeletons based on the map.  Also, make them in a list.
 
 
@@ -45,7 +45,7 @@ function nextLevel() {
 function loadLevel(whichLevel) {
 	roomGrid = whichLevel.layers.background
 	player.reset(playerPic, "Red warrior");
-	alchemist.reset();
+	//alchemist.reset();
 	skeleton.reset(skeletonPic);
     SetupPathfindingGridData();
 }
@@ -61,7 +61,7 @@ function updateAll() {
 }
 
 function checkCollisions(){
-	player.checkWarriorandSwordCollisionAgainst(alchemist);
+//	player.checkWarriorandSwordCollisionAgainst(alchemist);
 	player.checkWarriorandSwordCollisionAgainst(skeleton);
 }
 

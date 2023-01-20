@@ -50,12 +50,12 @@ function characterClass() {
                     roomGrid[arrayIndex] = TILE_GRASS;
                     this.x = eachCol * TILE_W + TILE_W / 2;
                     this.y = eachRow * TILE_H + TILE_H / 2;
-					console.log("Skeleton created")
+					console.log("Character created")
                     return;
                 } 
             } 
         } 
-        console.log("Skeleton not found!");
+        console.log("Character not found!");
     } 
     this.setDirection = function(toDir){
         this.walkNorth = false;
@@ -167,9 +167,9 @@ function characterClass() {
         }
 
         if (this.walkNorth || this.walkSouth || this.walkWest || this.walkEast) {
-            this.alchemistMove = true;
+          //  this.alchemistMove = true;
         } else {
-            this.alchemistMove = false;
+          //  this.alchemistMove = false;
         }
 
         var walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
