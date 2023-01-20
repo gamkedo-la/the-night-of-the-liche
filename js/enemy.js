@@ -32,8 +32,11 @@ function characterClass() {
     this.voiceReady = true;
     this.voiceTimer = 0;
     this.myPathList = [];
+    this.standStill = false;
     this.wandering = false;
     this.trackingPlayer = false;
+    this.trackingDistanceX = 5;
+    this.trackingDistanceY = 5;
 
     this.walkNorth = false;
     this.walkSouth = false;
@@ -109,12 +112,30 @@ function characterClass() {
 
         this.timer = (this.timer + 1) % (this.ticksPerFrame * 6);
 
-        
-        if (this.wandering && this.timer == 0) {
-            this.pickRandomDirection();
-        } 
+        var enemyDistXFromPlayerX = Math.floor(Math.abs(player.x/TILE_W - this.x/TILE_W));
+        var enemyDistYFromPlayerY = Math.floor(Math.abs(player.y/TILE_H - this.y/TILE_H));
+        console.log("X: " + enemyDistXFromPlayerX + " Y: " + enemyDistYFromPlayerY);
+        if(enemyDistXFromPlayerX < this.trackingDistanceX && enemyDistXFromPlayerX > 1
+            && enemyDistYFromPlayerY < this.trackingDistanceY && enemyDistYFromPlayerY > 1){
+            this.trackingPlayer = true;
+            this.wandering = false;
+            this.standStill = false;
+        } else if (enemyDistXFromPlayerX + enemyDistYFromPlayerY <= 1){
+            this.trackingPlayer = false;
+            this.wandering = false;
+            this.standStill = true;
+        } else {
+            this.trackingPlayer = false;
+            this.wandering = true;
+            this.standStill = false;
+        }
+        console.log("Tracking: " + this.trackingPlayer + " Wandering: " + this.wandering);
 
-        if(this.myPathList.length > 0 && this.trackingPlayer){
+        if (this.wandering && this.timer == 0) {
+            this.speed = 2;
+            this.pickRandomDirection();
+        } else if(this.myPathList.length > 0 && this.trackingPlayer){
+            this.speed = 4;
             var goalTile = this.myPathList[this.myPathList.length-1];
         //    console.log(goalTile)
             var goalC = idxToCol(goalTile);
@@ -137,6 +158,8 @@ function characterClass() {
                 console.log("Reached Goal! " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
                 this.myPathList.pop(); //this should remove the list down by 1.
             }
+        } else if (this.standStill) {
+            this.speed = 0;
         } else {
             this.myPathList = generatePathFromTo(this,player);
         }
