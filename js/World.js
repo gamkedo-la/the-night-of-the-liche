@@ -230,10 +230,6 @@ function drawRoom() {
 
 			var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
 			var tileKindHere = roomGrid[arrayIndex];
-			if(tileKindHere == TILE_SKELETON){
-				console.log("Add Skeleton")
-				addSkeleton();
-			}
 			var useImg = worldPics[tileKindHere];
 			var spriteX = worldPics[tileKindHere].locX;
 			var spriteY = worldPics[tileKindHere].locY;

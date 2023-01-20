@@ -29,7 +29,7 @@ function imageLoadingDoneSoStartGame() {
 	setupInput();
 	
 	loadLevel(LEVELS[levelList[currentLevelIndex]])
-	//SetupPathfindingGridData();  //// WIP for pathfinding
+	//SetupPathfindingGridData();  //// WIP for pathfinding	
 }
 
 function nextLevel() {
@@ -44,6 +44,14 @@ function loadLevel(whichLevel) {
 	roomGrid = whichLevel.layers.background
 	player.reset(playerPic, "Red warrior");
 	//alchemist.reset();
+
+	for(var i = 0; i < LEVELS[levelList[currentLevelIndex].length]; i++){
+		var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
+		var tileKindHere = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[arrayIndex];
+		if(tileKindHere == TILE_GOBLIN){
+			addGoblin();
+		}
+	}
 	for (var i = 0; i < skeletonList.length; i++) {  		
 		skeletonList[i].reset(skeletonPic);
 	} 
