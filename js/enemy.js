@@ -114,7 +114,7 @@ function characterClass() {
 
         var enemyDistXFromPlayerX = Math.floor(Math.abs(player.x/TILE_W - this.x/TILE_W));
         var enemyDistYFromPlayerY = Math.floor(Math.abs(player.y/TILE_H - this.y/TILE_H));
-        console.log("X: " + enemyDistXFromPlayerX + " Y: " + enemyDistYFromPlayerY);
+   //     console.log("X: " + enemyDistXFromPlayerX + " Y: " + enemyDistYFromPlayerY);
         if(enemyDistXFromPlayerX < this.trackingDistanceX && enemyDistXFromPlayerX > 1
             && enemyDistYFromPlayerY < this.trackingDistanceY && enemyDistYFromPlayerY > 1){
             this.trackingPlayer = true;
@@ -129,7 +129,7 @@ function characterClass() {
             this.wandering = true;
             this.standStill = false;
         }
-        console.log("Tracking: " + this.trackingPlayer + " Wandering: " + this.wandering);
+    //    console.log("Tracking: " + this.trackingPlayer + " Wandering: " + this.wandering);
 
         if (this.wandering && this.timer == 0) {
             this.speed = 2;

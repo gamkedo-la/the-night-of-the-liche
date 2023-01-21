@@ -2,6 +2,7 @@
 
 var canvas, canvasContext;
 var player = new WarriorClass();
+
 //var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
 
 // Game State //
@@ -42,14 +43,13 @@ function nextLevel() {
 
 function loadLevel(whichLevel) {
 	roomGrid = whichLevel.layers.background
-	player.reset(playerPic, "Red warrior");
+	player.reset(playerPic, "Mimi");
 	//alchemist.reset();
-
-	for(var i = 0; i < LEVELS[levelList[currentLevelIndex].length]; i++){
-		var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
-		var tileKindHere = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[arrayIndex];
-		if(tileKindHere == TILE_GOBLIN){
-			addGoblin();
+	console.log(roomGrid)
+	for (var i = 0; i < roomGrid.length; i++){
+		if(roomGrid[i] == TILE_SKELETON){
+			console.log("found skeleton")
+			addSkeleton(); // temporary
 		}
 	}
 	for (var i = 0; i < skeletonList.length; i++) {  		
@@ -71,7 +71,7 @@ function updateAll() {
 function checkCollisions(){
 //	player.checkWarriorandSwordCollisionAgainst(alchemist);
 	for (var i = 0; i < skeletonList.length; i++) {  		
-		player.checkWarriorandSwordCollisionAgainst(skeleton[i]);
+	//	player.checkWarriorandSwordCollisionAgainst(skeleton[i]);
 	} 
 	
 }

@@ -50,7 +50,6 @@ function BackgroundMusicClass(filenameWithPath){
 			musicSound = null;
 		}
 		musicSound = new Audio("sound/"+filenameWithPath+audioFormat);
-		console.log("sound/"+filenameWithPath+audioFormat)
 		musicSound.loop = true;
 		musicSound.play();
 	}
