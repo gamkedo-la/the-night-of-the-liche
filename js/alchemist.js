@@ -2,6 +2,13 @@ var alchemistIntro1Play = true;
 var alchemistIntro2Play = false;
 var alchemistIntro3Play = false;
 
+var alchemistList = [];
+
+function addAlchemist(){
+	var tempAlchemist = new alchemistClass();
+	alchemistList.push(tempAlchemist);
+}
+
 alchemistClass.prototype = new characterClass();
 function alchemistClass() {
     this.wandering = true;

@@ -46,14 +46,18 @@ function loadLevel(whichLevel) {
 	player.reset(playerPic, "Mimi");
 	//alchemist.reset();
 	console.log(roomGrid)
-	for (var i = 0; i < roomGrid.length; i++){
+	for (var i = 0; i < roomGrid.length; i++){ //search for characters to create classes
 		if(roomGrid[i] == TILE_SKELETON){
-			console.log("found skeleton")
-			addSkeleton(); // temporary
+			addSkeleton(); 
+		} else if (roomGrid[i] == TILE_ALCHEMIST){
+			addAlchemist();
 		}
 	}
 	for (var i = 0; i < skeletonList.length; i++) {  		
-		skeletonList[i].reset(skeletonPic);
+		skeletonList[i].reset();
+	} 
+	for (var i = 0; i < alchemistList.length; i++) {  		
+		alchemistList[i].reset();
 	} 
     SetupPathfindingGridData();
 }

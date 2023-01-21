@@ -19,7 +19,7 @@ function getLevelOneLayers () {
 			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  30,  31,  32, 
 			1,  13,  14,  14,  15, 402,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  33,  34,  35, //10
 			1,  13,  14,  14,  15, 404,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  33,  34,  35,
-			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  36,  37,  38,
+			1,  13,  14,  14,  15, 403,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  36,  37,  38,
 			1,  16,  17,  17,  18,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1,
 		    1,   1,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, 
 		    1,   1,   1,   1,   1, 404,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, //15	
@@ -89,6 +89,9 @@ function levelOneMoveAll () {
 	for (var i = 0; i < skeletonList.length; i++) {		
 		skeletonList[i].move();
 	} 
+	for (var i = 0; i < alchemistList.length; i++) {		
+		alchemistList[i].move();
+	} 
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
 	}*/
@@ -105,6 +108,9 @@ function levelOneDrawAll () {
 	//alchemist.draw();
 	for (var i = 0; i < skeletonList.length; i++) {		
 		skeletonList[i].draw();
+	} 
+	for (var i = 0; i < alchemistList.length; i++) {		
+		alchemistList[i].draw();
 	} 
 	drawTopLayer();
 	drawRoof(timeSinceInShop / 15);

@@ -21,6 +21,8 @@ function WarriorClass() {
     this.name = "Untitled warrior";
     this.keysHeld = 0;
     this.goldpieces = 10;
+    this.lavanderHeld = 0;
+    this.redFlowerHeld = 0;
     this.health = 1;
     this.maxHealth = 3;
     this.waitTime = 0;
