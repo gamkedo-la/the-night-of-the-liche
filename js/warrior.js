@@ -164,18 +164,46 @@ function WarriorClass() {
 
         if (direction == "north") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX + (this.width / 2), nextY);
+            if (!walkIntoTileIndex) {
+                const newMapName = getNextMapAtPixelCoord(nextX + (this.width / 2), nextY);
+                if (newMapName) {
+                    // WIP
+                    // loadAreaByName(newMapName);
+                }
+            }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + (this.width / 2), nextY);
         }
         if (direction == "south") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX + (this.width / 2), nextY + this.height);
+            if (!walkIntoTileIndex) {
+                const newMapName = getNextMapAtPixelCoord(nextX + (this.width / 2), nextY + this.height);
+                if (newMapName) {
+                    // WIP
+                    // loadAreaByName(newMapName);
+                }
+            }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + (this.width / 2), nextY + this.height);
         }
         if (direction == "west") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY + (this.height / 2));
+            if (!walkIntoTileIndex) {
+                const newMapName = getNextMapAtPixelCoord(nextX, nextY + (this.height / 2));
+                if (newMapName) {
+                    // WIP
+                    // loadAreaByName(newMapName);
+                }
+            }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX, nextY + (this.height / 2));
         }
         if (direction == "east") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX + this.width, nextY + (this.height / 2));
+            if (!walkIntoTileIndex) {
+                const newMapName = getNextMapAtPixelCoord(nextX + this.width, nextY + (this.height / 2));
+                if (newMapName) {
+                    // WIP
+                    // loadAreaByName(newMapName);
+                }
+            }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
 

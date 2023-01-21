@@ -95,6 +95,27 @@ function graveyardMoveAll () {
 	cameraFollow();	
 }
 
+function graveyardGetNextMap (direction) {
+	let nextMap = null
+	switch (direction) {
+		case 'north':
+		case 'up':
+			nextMap = 'levelOne';
+			break
+		case 'south':
+		case 'down':
+			break
+		case 'west':
+		case 'left':
+			break
+		case 'east':
+		case 'right':
+			break
+	}
+
+	return nextMap;
+}
+
 function graveyardDrawAll () {
 	canvasContext.translate(-camPanX,-camPanY);
 	drawRoom();

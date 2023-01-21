@@ -12,6 +12,7 @@ const LEVELS = {
 	levelOne: {
 		layers: getLevelOneLayers(),
 		moveAll: levelOneMoveAll,
+		getNextMap: levelOnegetNextMap,
 		drawAll: levelOneDrawAll,
 		playerThoughts: levelOnePlayerThoughts,
 		playerThoughtEndTime: levelOnePlayerThoughtEndDisplayTime
@@ -19,6 +20,7 @@ const LEVELS = {
 	graveyard: {
 		layers: getGraveyardLayers(),
 		moveAll: graveyardMoveAll,
+		getNextMap: graveyardGetNextMap,
 		drawAll: graveyardDrawAll,
 		playerThoughts: graveyardPlayerThoughts,
 		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
@@ -200,6 +202,23 @@ function getTileTypeAtPixelCoord(atX, atY) {
 
 	return undefined;
 } // end of warriorWorldHandling func
+
+function getNextMapAtPixelCoord(atX, atY) {
+	var warriorWorldCol = Math.floor(atX / TILE_W);
+	var warriorWorldRow = Math.floor(atY / TILE_H);
+
+	if (warriorWorldCol < 0) {
+		return LEVELS[levelList[currentLevelIndex]].getNextMap('west');
+	} else if (warriorWorldRow < 0) {
+		return LEVELS[levelList[currentLevelIndex]].getNextMap('north');
+	} else if (warriorWorldCol >= ROOM_COLS) {
+		return LEVELS[levelList[currentLevelIndex]].getNextMap('east');
+	} else if (warriorWorldRow >= ROOM_ROWS) {
+		return LEVELS[levelList[currentLevelIndex]].getNextMap('south');
+	}
+
+	return null;
+}
 
 function getTileTypeAtMGPixelCoord(atX, atY) {
 	var warriorWorldCol = Math.floor(atX / TILE_W);

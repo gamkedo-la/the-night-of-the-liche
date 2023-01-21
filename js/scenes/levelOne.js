@@ -99,6 +99,27 @@ function levelOneMoveAll () {
 	cameraFollow();	
 }
 
+function levelOnegetNextMap (direction) {
+	let nextMap = null
+	switch (direction) {
+		case 'north':
+		case 'up':
+			break
+		case 'south':
+		case 'down':
+			nextMap = 'graveyard';
+			break
+		case 'west':
+		case 'left':
+			break
+		case 'east':
+		case 'right':
+			break
+	}
+
+	return nextMap;
+}
+
 function levelOneDrawAll () {
 	if (timeSinceInShop < 15) timeSinceInShop++;
 
