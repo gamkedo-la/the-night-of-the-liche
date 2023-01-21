@@ -31,19 +31,104 @@ function isWorldTypeWalkable(walkIntoTileType){  //Walk Speed through it, and 0 
     case TILE_GARDEN_BL:
     case TILE_GARDEN_BOTTOM:
     case TILE_GARDEN_BR:
-        return 3.0;
+    case TILE_GARDEN_TL:
+    case TILE_GARDEN_TOP:
+    case TILE_GARDEN_TR:
+    case TILE_GARDEN_LEFTSIDE:
+    case TILE_GARDEN:
+    case TILE_GARDEN_RIGHTSIDE:
+    case TILE_GARDEN_BL:
+    case TILE_GARDEN_BOTTOM:
+    case TILE_GARDEN_BR:
+    case TILE_VEGETABLE1:
+    case TILE_VEGETABLE2:
+    case TILE_VEGETABLE3:
+    case TILE_VEGETABLE4:
+    case TILE_VEGETABLE5:
+    case TILE_VEGETABLE6:
+    case TILE_SMALL_ROCK_1:
+    case TILE_SMALL_ROCK_2:
+    case TILE_SMALL_ROCK_3:
+    case TILE_SMALL_ROCK_4:
+    case TILE_SMALL_ROCK_5:
+    case TILE_GRASSTODIRT_TL:
+    case TILE_GRASSTODIRT_TOP:
+    case TILE_GRASSTODIRT_TR:
+    case TILE_GRASSTODIRT_LEFTSIDE:
+    case TILE_GRASSTODIRT_RIGHTSIDE: 
+    case TILE_GRASSTODIRT_BL:
+    case TILE_GRASSTODIRT_BOTTOM:
+    case TILE_GRASSTODIRT_BR:
+    case TILE_LAVANDER:
+    case TILE_RED_FLOWER:
+        return 3.5;
     case TILE_GRASS:
         return 4.0;
     case TILE_WALL1_DOOR_TOP:
     case TILE_WALL1_DOOR_BOTTOM:
     case TILE_WALL3_DOOR_BOTTOM:
+    case TILE_WALL3_DOOR_TOP:
         return 4.0;
-    case TILE_WALL1_TOP:  
+    case TILE_POND_TL:
+    case TILE_POND_TOP:
+    case TILE_POND_TR:
+    case TILE_POND_LEFTSIDE:
+    case TILE_POND:
+    case TILE_POND_RIGHTSIDE:
+    case TILE_POND_BL:
+    case TILE_POND_BOTTOM:
+    case TILE_POND_BR:
+    case TILE_LARGE_ROCK_1:
+    case TILE_LARGE_ROCK_2:
+    case TILE_LARGE_ROCK_3:
+    case TILE_LARGE_ROCK_4:
+    case TILE_WALL1_TOPLEFT:
+    case TILE_WALL1_TOP:
+    case TILE_WALL1_TOPRIGHT:
+    case TILE_WALL1_LEFT:
+    case TILE_WALL1_RIGHT:
+    case TILE_WALL1_BOTTOMLEFT:
+    case TILE_WALL1_BOTTOM:
+    case TILE_WALL1_BOTTOMRIGHT:
+    case TILE_WALL1_LEFTSIDE_TOP:
+    case TILE_WALL1_LEFTSIDE_BOTTOM:
+    case TILE_WALL1_RIGHTSIDE_TOP:
+    case TILE_WALL1_RIGHTSIDE_BOTTOM:
+    case TILE_WALL3_TOP:
+    case TILE_WALL3_BOTTOM:
+    case TILE_WALL2_TOP:
+    case TILE_WALL2_BOTTOM:
+    case TILE_WALL2_RIGHT:
+    case TILE_WALL2_TOPRIGHT:
+    case TILE_WALL2_BOTTOMRIGHT:
+    case TILE_WALL2_LEFT:
+    case TILE_WALL2_TOPLEFT:
+    case TILE_WALL2_BOTTOMLEFT:
+    case TILE_WINDOW_1:
+    case TILE_FIRE_PLACE:
+    case TILE_NIGHT_STAND:
+    case TILE_BROKEN_WAGONWHEEL:
+    case TILE_FENCE1_LS_POST:
+    case TILE_FENCE1_LTCORNER:
+    case TILE_FENCE1_RTCORNER:
+    case TILE_FENCE1_RS_POST:
+    case TILE_FENCE1_LS:
+    case TILE_FENCE1_RS:
+    case TILE_FENCE1_LBCORNER:
+    case TILE_FENCE1_BOTTOM:
+    case TILE_FENCE1_BOTTOM_POST:
+    case TILE_FENCE1_RBCORNER:
+    case TILE_ALTER:
+    case TILE_CHAIR1:
+    case TILE_CHAIR2:
+    case TILE_KITCHENTABLE:
+    case TILE_BED1:
+    case TILE_SHRUB1:
     case TILE_BOOKSELF:
+
     default:
         return 0.0;
   } // end of switch
-
 }
 
 function GridElement() {
