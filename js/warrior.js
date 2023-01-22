@@ -287,6 +287,7 @@ function WarriorClass() {
 
         this.sx = this.frameIndex * this.width;
 
+        canvasContext.drawImage(shadowPic, 0, 0, 25, 25, this.x+12, this.y+31, 25, 25);            
         canvasContext.drawImage(this.myplayerPic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);
         /*		colorRect(this.x,this.y, 5,5, "white") 
         		colorRect(this.x,this.y+this.height, 5,5, "white")
@@ -294,7 +295,9 @@ function WarriorClass() {
         		colorRect(this.x+this.width,this.y+this.height, 5,5, "white")
         				
         		colorRect(this.centerX,this.centerY, 5, 5, 'white') */
-               
+           
+
+                shadowPic
         this.mySword.draw();
 
         this.myArrow.draw();

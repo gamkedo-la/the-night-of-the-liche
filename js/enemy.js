@@ -286,7 +286,7 @@ function characterClass() {
         }
 
         this.sx = this.frameIndex * this.width;
-
+        canvasContext.drawImage(shadowPic, 0, 0, 25, 25, this.x+12, this.y+31, 25, 25); 
         canvasContext.drawImage(this.characterPic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);
     }
 }

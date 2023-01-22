@@ -8,6 +8,7 @@ var alchemistPic = document.createElement("img");
 var thoughtBubblePic = document.createElement("img");
 var heartPic = document.createElement("img");
 var darknessPic = document.createElement("img");
+var shadowPic = document.createElement("img");
 
 var worldPics = [];
 
@@ -283,6 +284,7 @@ function loadImages() {
             {varName: thoughtBubblePic, theFile: "thoughtBubble.png"},
 			{varName: heartPic, theFile: "hearts.png"},
 			{varName: darknessPic, theFile: "darkness.png"},
+			{varName: shadowPic, theFile: "shadow.png"},
 
 		];
 			
