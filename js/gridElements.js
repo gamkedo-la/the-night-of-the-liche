@@ -131,6 +131,7 @@ function isWorldTypeWalkable(walkIntoTileType){  //Walk Speed through it, and 0 
     case TILE_BED1:
     case TILE_SHRUB1:
     case TILE_BOOKSELF:
+    case TILE_LOG_PILE:
 
     default:
         return 0.0;

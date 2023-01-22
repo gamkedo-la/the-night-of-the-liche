@@ -87,6 +87,7 @@ const TILE_RED_MUSHROOM = 56;
 const TILE_YELLOW_MUSHROOM = 57;
 const TILE_LARGE_ROCK_3 = 60;
 const TILE_LARGE_ROCK_4 = 61;
+const TILE_LOG_PILE = 62;
 
 //Walls 101 through 200
 const TILE_WALL1_TOPLEFT = 101;

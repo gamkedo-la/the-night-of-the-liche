@@ -151,7 +151,7 @@ function loadImages() {
 			{tileType: TILE_GRASSTODIRT_LEFTSIDE,  theFile: "ground.png", locX: 0, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRASS,  theFile: "ground.png", locX: 50, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRASSTODIRT_RIGHTSIDE,  theFile: "ground.png", locX: 100, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			//OPEN
+			{tileType: TILE_LOG_PILE,  theFile: "ground.png", locX: 150, locY: 200, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			//OPEN
 			//OPEN
