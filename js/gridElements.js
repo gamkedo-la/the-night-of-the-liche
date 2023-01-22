@@ -61,6 +61,12 @@ function isWorldTypeWalkable(walkIntoTileType){  //Walk Speed through it, and 0 
     case TILE_GRASSTODIRT_BR:
     case TILE_LAVANDER:
     case TILE_RED_FLOWER:
+    case TILE_YELLOW_FLOWER:
+    case TILE_BLUE_FLOWER:
+    case TILE_GIANT_MUSHROOM: 
+    case TILE_RED_MUSHROOM:
+    case TILE_YELLOW_MUSHROOM:
+    case TILE_WHITE_FLOWER:  
         return 3.5;
     case TILE_GRASS:
         return 4.0;

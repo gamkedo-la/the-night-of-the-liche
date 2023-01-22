@@ -120,7 +120,7 @@ function loadImages() {
 			{tileType: TILE_GARDEN_RIGHTSIDE,  theFile: "ground.png", locX: 100, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_VEGETABLE5,  theFile: "ground.png", locX: 150, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_VEGETABLE6,  theFile: "ground.png", locX: 200, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			//OPEN
+			{tileType: TILE_WHITE_FLOWER,  theFile: "ground.png", locX: 250, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			{tileType: TILE_POND_LEFTSIDE,  theFile: "ground.png", locX: 350, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_POND,  theFile: "ground.png", locX: 400, locY: 50, width: 50, height: 50, offSetX: 0, offSetY: 0},
@@ -131,8 +131,8 @@ function loadImages() {
 			{tileType: TILE_GARDEN_BR,  theFile: "ground.png", locX: 100, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_LAVANDER,  theFile: "ground.png", locX: 150, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_RED_FLOWER,  theFile: "ground.png", locX: 200, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			//OPEN
-			//OPEN
+			{tileType: TILE_BLUE_FLOWER,  theFile: "ground.png", locX: 250, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_YELLOW_FLOWER,  theFile: "ground.png", locX: 300, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_POND_BL,  theFile: "ground.png", locX: 350, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_POND_BOTTOM,  theFile: "ground.png", locX: 400, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_POND_BR,  theFile: "ground.png", locX: 450, locY: 100, width: 50, height: 50, offSetX: 0, offSetY: 0},
@@ -140,9 +140,9 @@ function loadImages() {
 			{tileType: TILE_GRASSTODIRT_TL,  theFile: "ground.png", locX: 0, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRASSTODIRT_TOP,  theFile: "ground.png", locX: 50, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRASSTODIRT_TR,  theFile: "ground.png", locX: 100, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			//OPEN
-			//OPEN
-			//OPEN
+			{tileType: TILE_GIANT_MUSHROOM,  theFile: "ground.png", locX: 150, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_RED_MUSHROOM,  theFile: "ground.png", locX: 200, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_YELLOW_MUSHROOM,  theFile: "ground.png", locX: 250, locY: 150, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			//OPEN
 			//OPEN
 			//OPEN
