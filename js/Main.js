@@ -6,7 +6,7 @@ var player = new WarriorClass();
 //var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
 
 // Game State //
-const NIGHT_DARKNESS_OPACITY = 0.9; // 1 = full black
+const NIGHT_DARKNESS_OPACITY = 0.85; // 1 = full black
 
 var isNighttime = true; // if this is true, we drawDarkness()
 var menuScreen = true;
