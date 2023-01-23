@@ -142,7 +142,8 @@ function drawAll() {
 // experimental glow around player with blackness all around
 // this is a really cheap and simple way of doing this using one image
 function drawDarkness() {
-    canvasContext.drawImage(darknessPic,player.centerX-1000,player.centerY-1000);
+    canvasContext.drawImage(darknessPic,player.x+24-1000,player.y+24-1000);
+    // hmm... not centered on player anymore?
 }
 
 function drawLevelSpecifics () {

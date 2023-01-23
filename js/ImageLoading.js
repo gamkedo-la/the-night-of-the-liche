@@ -7,6 +7,7 @@ var skeletonPic = document.createElement('img');
 var alchemistPic = document.createElement("img");
 var thoughtBubblePic = document.createElement("img");
 var heartPic = document.createElement("img");
+var Pic = document.createElement("img");
 var darknessPic = document.createElement("img");
 var shadowPic = document.createElement("img");
 
