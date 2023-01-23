@@ -6,6 +6,7 @@ var player = new WarriorClass();
 //var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
 
 // Game State //
+const NIGHT_DARKNESS_OPACITY = 0.9; // 1 = full black
 
 var isNighttime = true; // if this is true, we drawDarkness()
 var menuScreen = true;
@@ -142,8 +143,9 @@ function drawAll() {
 // experimental glow around player with blackness all around
 // this is a really cheap and simple way of doing this using one image
 function drawDarkness() {
+    canvasContext.globalAlpha = NIGHT_DARKNESS_OPACITY;
     canvasContext.drawImage(darknessPic,player.x+24-1000,player.y+24-1000);
-    // hmm... not centered on player anymore?
+    canvasContext.globalAlpha = 1;
 }
 
 function drawLevelSpecifics () {
