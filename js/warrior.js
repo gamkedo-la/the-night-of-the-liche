@@ -251,8 +251,8 @@ function WarriorClass() {
                 console.log("Red Mushroom: " + this.redMushroomHeld);
                 break;
             case TILE_YELLOW_MUSHROOM:
-                this.yellowFlowerHeld++;
-                console.log("Yellow Flower: " + this.yellowFlowerHeld);
+                this.yellowMushroomHeld++;
+                console.log("Yellow Mushroom: " + this.yellowMushroomHeld);
 			//	roomGrid[walkIntoTileIndex] = TILE_ROAD;
 			    break;
             case TILE_LAVANDER:
