@@ -23,6 +23,12 @@ function WarriorClass() {
     this.goldpieces = 10;
     this.lavanderHeld = 0;
     this.redFlowerHeld = 0;
+    this.blueFlowerHeld = 0;
+    this.yellowFlowerHeld = 0;
+    this.whiteFlowerHeld = 0;
+    this.giantMushroomHeld = 0;
+    this.redMushroomHeld = 0;
+    this.yellowMushroomHeld = 0;
     this.health = 1;
     this.maxHealth = 3;
     this.waitTime = 0;
@@ -219,7 +225,45 @@ function WarriorClass() {
             this.y = nextY;  
         }
 
-		
+        switch(walkIntoTileType) {
+			case TILE_RED_FLOWER:
+                this.redFlowerHeld++;
+                console.log("Red Flower: " + this.redFlowerHeld);
+                break;
+            case TILE_BLUE_FLOWER:
+                this.blueFlowerHeld++;
+                console.log("Blue Flower: " + this.blueFlowerHeld);
+                break;
+            case TILE_YELLOW_FLOWER:
+                this.yellowFlowerHeld++;
+                console.log("Yellow Flower: " + this.yellowFlowerHeld);
+                break;
+            case TILE_WHITE_FLOWER:
+                this.whiteFlowerHeld++;
+                console.log("White Flower: " + this.whiteFlowerHeld);
+                break;
+            case TILE_GIANT_MUSHROOM:
+                this.giantMushroomHeld++;
+                console.log("Giant Mushroom: " + this.giantMushroomHeld);
+                break;
+            case TILE_RED_MUSHROOM:
+                this.redMushroomHeld++;
+                console.log("Red Mushroom: " + this.redMushroomHeld);
+                break;
+            case TILE_YELLOW_MUSHROOM:
+                this.yellowFlowerHeld++;
+                console.log("Yellow Flower: " + this.yellowFlowerHeld);
+			//	roomGrid[walkIntoTileIndex] = TILE_ROAD;
+			    break;
+            case TILE_LAVANDER:
+                this.lavanderHeld++;
+                console.log("Lavander Flower: " + this.lavanderHeld);
+            //	roomGrid[walkIntoTileIndex] = TILE_ROAD;
+                break
+            default:
+            break;
+        } // END OF SWITCH CASE	
+
         this.previousTileType = walkIntoTileType;
         this.mySword.move();
         this.myArrow.move();
