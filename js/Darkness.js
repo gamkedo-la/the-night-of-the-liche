@@ -23,7 +23,14 @@ function drawDarkness() {
 
     // cut holes in the darkness where lights are
     darknessCTX.globalCompositeOperation = "destination-out"; // cut alpha
+
+    // around the player
     darknessCTX.drawImage(lightGlowPic,player.x-128+24-camPanX,player.y-128+24-camPanY);
+
+    // and all monsters and NPCs (for now)
+	for (me of skeletonList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
+	for (me of alchemistList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
+	for (me of spiritList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
     
     // draw the darkness over top of the scene
     canvasContext.globalAlpha = NIGHT_DARKNESS_OPACITY; //FIXME: the above blackness is 100% opaque not sure why
