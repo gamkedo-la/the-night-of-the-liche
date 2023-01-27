@@ -52,6 +52,8 @@ function loadLevel(whichLevel) {
 			addSkeleton(); 
 		} else if (roomGrid[i] == TILE_ALCHEMIST){
 			addAlchemist();
+		} else if (roomGrid[i] == TILE_SPIRIT){
+			addSpirit();
 		}
 	}
 	for (var i = 0; i < skeletonList.length; i++) {  		
@@ -59,6 +61,9 @@ function loadLevel(whichLevel) {
 	} 
 	for (var i = 0; i < alchemistList.length; i++) {  		
 		alchemistList[i].reset();
+	} 
+	for (var i = 0; i < spiritList.length; i++) {  		
+		spiritList[i].reset();
 	} 
     SetupPathfindingGridData();
 }

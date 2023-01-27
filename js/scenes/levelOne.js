@@ -15,7 +15,7 @@ function getLevelOneLayers () {
 			1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,  13,  14,  14,  14,  15,   1, //5
 			1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,  16,  17,  17,  17,  18,   1,
 			1,   1,   1,   1,   1,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,   1,   1,   1,
-			1,  10,  11,  11,  12,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,   1,   1,   1,
+			1,  10,  11,  11,  12, 405,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,   1,   1,   1,
 			1,  13,  14,  14,  15,   1,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  30,  31,  32, 
 			1,  13,  14,  14,  15, 402,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  33,  34,  35, //10
 			1,  13,  14,  14,  15, 404,   3,   1,   2,   2,   2,   2,   2,   2,   1,   1,   1,   3,  33,  34,  35,
@@ -92,6 +92,9 @@ function levelOneMoveAll () {
 	for (var i = 0; i < alchemistList.length; i++) {		
 		alchemistList[i].move();
 	} 
+	for (var i = 0; i < spiritList.length; i++) {		
+		spiritList[i].move();
+	} 
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
 	}*/
@@ -132,6 +135,9 @@ function levelOneDrawAll () {
 	} 
 	for (var i = 0; i < alchemistList.length; i++) {		
 		alchemistList[i].draw();
+	} 
+	for (var i = 0; i < spiritList.length; i++) {		
+		spiritList[i].draw();
 	} 
 	drawTopLayer();
 	drawRoof(timeSinceInShop / 15);

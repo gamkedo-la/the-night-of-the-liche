@@ -5,6 +5,7 @@ var playerPic = document.createElement("img");
 var swordPic = document.createElement("img");
 var skeletonPic = document.createElement('img');
 var alchemistPic = document.createElement("img");
+var spiritPic = document.createElement("img");
 var thoughtBubblePic = document.createElement("img");
 var heartPic = document.createElement("img");
 var Pic = document.createElement("img");
@@ -288,6 +289,7 @@ function loadImages() {
 			{varName: darknessPic, theFile: "darkness.png"},
 			{varName: shadowPic, theFile: "shadow.png"},
             {varName: questGUIPic, theFile: "questGUI.png"},
+			{varName: spiritPic, theFile: "spirit.png"},
 
 		];
 			
