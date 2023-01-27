@@ -49,6 +49,7 @@ function WarriorClass() {
     this.keyHeld_WalkWest = false;
     this.keyHeld_WalkEast = false;
     this.keyHeld_Sword = false;
+    this.keyHeld_PickUp = false;
 
     this.controlKeyUp;
     this.controlKeyRight;
@@ -56,13 +57,14 @@ function WarriorClass() {
     this.controlKeyLeft;
     this.controlKeySword;
 
-    this.setupInput = function(upKey, rightKey, downKey, leftKey, swordKey, arrowKey) {
+    this.setupInput = function(upKey, rightKey, downKey, leftKey, swordKey, arrowKey, pickUpKey) {
         this.controlKeyUp = upKey;
         this.controlKeyRight = rightKey;
         this.controlKeyDown = downKey;
         this.controlKeyLeft = leftKey;
         this.controlKeySword = swordKey;
         this.controlKeyArrow = arrowKey;
+        this.controlKeyPickUp = pickUpKey;
     }
 
     this.releaseKeys = function() {
@@ -71,6 +73,7 @@ function WarriorClass() {
         this.keyHeld_WalkWest = false;
         this.keyHeld_WalkEast = false;
         this.keyHeld_Sword = false;
+        this.keyHeld_PickUp = false;
     }
 
     this.reset = function(whichImage, warriorName) {
@@ -227,38 +230,59 @@ function WarriorClass() {
 
         switch(walkIntoTileType) {
 			case TILE_RED_FLOWER:
-                this.redFlowerHeld++;
-                console.log("Red Flower: " + this.redFlowerHeld);
+                if(this.keyHeld_PickUp){    
+                    this.redFlowerHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                    console.log("Red Flower: " + this.redFlowerHeld);
+                }
                 break;
             case TILE_BLUE_FLOWER:
-                this.blueFlowerHeld++;
-                console.log("Blue Flower: " + this.blueFlowerHeld);
+                if(this.keyHeld_PickUp){
+                    this.blueFlowerHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                    console.log("Blue Flower: " + this.blueFlowerHeld);
+                }
                 break;
             case TILE_YELLOW_FLOWER:
-                this.yellowFlowerHeld++;
-                console.log("Yellow Flower: " + this.yellowFlowerHeld);
+                if(this.keyHeld_PickUp){
+                    this.yellowFlowerHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                    console.log("Yellow Flower: " + this.yellowFlowerHeld);
+                }       
                 break;
             case TILE_WHITE_FLOWER:
-                this.whiteFlowerHeld++;
-                console.log("White Flower: " + this.whiteFlowerHeld);
+                if(this.keyHeld_PickUp){
+                    this.whiteFlowerHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                    console.log("White Flower: " + this.whiteFlowerHeld);
+                }
                 break;
             case TILE_GIANT_MUSHROOM:
-                this.giantMushroomHeld++;
-                console.log("Giant Mushroom: " + this.giantMushroomHeld);
+                if(this.keyHeld_PickUp){    
+                    this.giantMushroomHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                    console.log("Giant Mushroom: " + this.giantMushroomHeld);
+                }
                 break;
             case TILE_RED_MUSHROOM:
-                this.redMushroomHeld++;
-                console.log("Red Mushroom: " + this.redMushroomHeld);
+                if(this.keyHeld_PickUp){
+                    this.redMushroomHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                    console.log("Red Mushroom: " + this.redMushroomHeld);
+                }
                 break;
             case TILE_YELLOW_MUSHROOM:
-                this.yellowMushroomHeld++;
-                console.log("Yellow Mushroom: " + this.yellowMushroomHeld);
-			//	roomGrid[walkIntoTileIndex] = TILE_ROAD;
-			    break;
+                if(this.keyHeld_PickUp){
+                    this.yellowMushroomHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                }
+                break;
             case TILE_LAVANDER:
-                this.lavanderHeld++;
-                console.log("Lavander Flower: " + this.lavanderHeld);
-            //	roomGrid[walkIntoTileIndex] = TILE_ROAD;
+                if(this.keyHeld_PickUp){
+                    this.lavanderHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
+                    console.log("Lavander Flower: " + this.lavanderHeld);
+                }
                 break
             default:
             break;

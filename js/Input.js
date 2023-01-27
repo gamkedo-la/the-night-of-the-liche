@@ -68,7 +68,7 @@ function setupInput() {
     document.addEventListener("mousedown", handleMouseClick);
     document.addEventListener("mouseup", mousereleased); 
 
-	player.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A);
+	player.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A, KEY_X);
 };
 
 function keySet(keyEvent, player, setTo) {
@@ -84,6 +84,9 @@ function keySet(keyEvent, player, setTo) {
 	if(keyEvent.keyCode == player.controlKeyDown) {
 		player.keyHeld_WalkSouth = setTo;
 	}	
+    if(keyEvent.keyCode == player.controlKeyPickUp){
+        player.keyHeld_PickUp = setTo;
+    }
 }
 
 function keyPressed(evt) {
@@ -131,7 +134,6 @@ function keyPressed(evt) {
 		if(evt.keyCode == player.controlKeyArrow) {
 			player.shotArrow(); 
 		}
-
 	}
     evt.preventDefault(); // without this, arrow keys scroll the browser!
 }
