@@ -14,6 +14,9 @@ const LEVELS = {
 		moveAll: levelOneMoveAll,
 		getNextMap: levelOnegetNextMap,
 		drawAll: levelOneDrawAll,
+		skeletonList: levelOneSkeletonList,
+		alchemistList: levelOneAlchemistList,
+		spiritList: levelOneSpiritList,
 		playerThoughts: levelOnePlayerThoughts,
 		playerThoughtEndTime: levelOnePlayerThoughtEndDisplayTime
 	},
@@ -22,6 +25,9 @@ const LEVELS = {
 		moveAll: graveyardMoveAll,
 		getNextMap: graveyardGetNextMap,
 		drawAll: graveyardDrawAll,
+		skeletonList: graveyardSkeletonList,
+		alchemistList: graveyardAlchemistList,
+		spiritList: graveyardSpiritList,
 		playerThoughts: graveyardPlayerThoughts,
 		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
 	}

@@ -47,35 +47,68 @@ function nextLevel() {
 	loadLevel(LEVELS[levelList[currentLevelIndex]])
 }
 
-function loadLevel(whichLevel) {
+function loadLevel(whichLevel, resetPlayerPos = true) {
 	roomGrid = whichLevel.layers.background
-	player.reset(playerPic, "Mimi");
+	if(resetPlayerPos) player.reset(playerPic, "Mimi");
+	skeletonList.length = 0
+	alchemistList.length = 0
+	spiritList.length = 0
+
 	//alchemist.reset();
 	console.log(roomGrid)
-	for (var i = 0; i < roomGrid.length; i++){ //search for characters to create classes
-		if(roomGrid[i] == TILE_SKELETON){
-			addSkeleton(); 
-		} else if (roomGrid[i] == TILE_ALCHEMIST){
-			addAlchemist();
-		} else if (roomGrid[i] == TILE_SPIRIT){
-			addSpirit();
+	if (LEVELS[levelList[currentLevelIndex]].skeletonList) {
+		skeletonList = [...LEVELS[levelList[currentLevelIndex]].skeletonList]
+		alchemistList = [...LEVELS[levelList[currentLevelIndex]].alchemistList]
+		spiritList = [...LEVELS[levelList[currentLevelIndex]].spiritList]
+	} else {
+		for (var i = 0; i < roomGrid.length; i++){ //search for characters to create classes
+			if(roomGrid[i] == TILE_SKELETON){
+				addSkeleton(); 
+			} else if (roomGrid[i] == TILE_ALCHEMIST){
+				addAlchemist();
+			} else if (roomGrid[i] == TILE_SPIRIT){
+				addSpirit();
+			}
 		}
+		for (var i = 0; i < skeletonList.length; i++) {  		
+			skeletonList[i].reset();
+		} 
+		for (var i = 0; i < alchemistList.length; i++) {  		
+			alchemistList[i].reset();
+		} 
+		for (var i = 0; i < spiritList.length; i++) {  		
+			spiritList[i].reset();
+		} 
 	}
-	for (var i = 0; i < skeletonList.length; i++) {  		
-		skeletonList[i].reset();
-	} 
-	for (var i = 0; i < alchemistList.length; i++) {  		
-		alchemistList[i].reset();
-	} 
-	for (var i = 0; i < spiritList.length; i++) {  		
-		spiritList[i].reset();
-	} 
-    SetupPathfindingGridData();
+
+	SetupPathfindingGridData();
 }
 
-function loadAreaByName (name) {
-	currentLevelIndex = levelList.findIndex(level => level === name) || 0
-	loadLevel(LEVELS[levelList[currentLevelIndex]])
+function loadAreaByName (name, direction) {
+	LEVELS[levelList[currentLevelIndex]].skeletonList = [...skeletonList]
+	LEVELS[levelList[currentLevelIndex]].alchemistList = [...alchemistList]
+	LEVELS[levelList[currentLevelIndex]].spiritList = [...spiritList]
+
+	currentLevelIndex = levelList.findIndex(level => level === name) || 0;
+	switch (direction) {
+		case 'north':
+		case 'up':
+			player.y = (ROOM_ROWS - 1) * TILE_H; //LEVELS[levelList[currentLevelIndex]].layers.background
+			break;
+		case 'south':
+		case 'down':
+			player.y = 0;
+			break;
+		case 'east':
+		case 'right':
+			player.x = 0;
+			break;
+		case 'west':
+		case 'left':
+			player.x = (ROOM_COLS - 1) * TILE_W;
+			break;
+	}
+	loadLevel(LEVELS[levelList[currentLevelIndex]], false);
 }
 
 function updateAll() {
@@ -146,7 +179,9 @@ function drawAll() {
 			displayKeyInputs();
 			displayHealth();
 			drawPlayerCard();
-			drawSkeletonCard();
+			if (skeletonList && skeletonList.length > 0) {
+				drawSkeletonCard();
+			}
 		} else {
 			console.log("No Game State");
 		}

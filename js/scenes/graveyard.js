@@ -11,7 +11,7 @@ function getGraveyardLayers () {
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
-			13,   1,   1, 402,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
+			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
 			13,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,  15, 
@@ -123,6 +123,10 @@ function graveyardDrawAll () {
 	//alchemist.draw();
 	//skeleton.draw();
 }
+
+let graveyardSkeletonList = null;
+let graveyardAlchemistList = null;
+let graveyardSpiritList = null;
 
 const graveyardPlayerThoughts = [
 	// See levelOne.js for proper format

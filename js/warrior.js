@@ -177,7 +177,7 @@ function WarriorClass() {
                 const newMapName = getNextMapAtPixelCoord(nextX + (this.width / 2), nextY);
                 if (newMapName) {
                     // WIP
-                    // loadAreaByName(newMapName);
+                    loadAreaByName(newMapName, direction);
                 }
             }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + (this.width / 2), nextY);
@@ -188,7 +188,7 @@ function WarriorClass() {
                 const newMapName = getNextMapAtPixelCoord(nextX + (this.width / 2), nextY + this.height);
                 if (newMapName) {
                     // WIP
-                    // loadAreaByName(newMapName);
+                    loadAreaByName(newMapName, direction);
                 }
             }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + (this.width / 2), nextY + this.height);
@@ -199,7 +199,7 @@ function WarriorClass() {
                 const newMapName = getNextMapAtPixelCoord(nextX, nextY + (this.height / 2));
                 if (newMapName) {
                     // WIP
-                    // loadAreaByName(newMapName);
+                    // loadAreaByName(newMapName, direction);
                 }
             }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX, nextY + (this.height / 2));
@@ -210,7 +210,7 @@ function WarriorClass() {
                 const newMapName = getNextMapAtPixelCoord(nextX + this.width, nextY + (this.height / 2));
                 if (newMapName) {
                     // WIP
-                    // loadAreaByName(newMapName);
+                    // loadAreaByName(newMapName, direction);
                 }
             }
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));

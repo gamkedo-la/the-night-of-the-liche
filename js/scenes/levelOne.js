@@ -143,6 +143,10 @@ function levelOneDrawAll () {
 	drawRoof(timeSinceInShop / 15);
 }
 
+let levelOneSkeletonList = null;
+let levelOneAlchemistList = null;
+let levelOneSpiritList = null;
+
 const levelOnePlayerThoughts = [
 	{
 		startTime: 25,
