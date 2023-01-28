@@ -1,7 +1,10 @@
 // Characters //
 
 var canvas, canvasContext;
+var playerCardCanvas, playerCardCanvasContext;
+var skeletonCardCanvas, skeletonCardContext;
 var player = new WarriorClass();
+
 
 //var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
 
@@ -15,6 +18,10 @@ var timeSinceInShop = 0;
 window.onload = function() {
 	canvas = document.getElementById('gameCanvas');
 	canvasContext = canvas.getContext('2d');
+	playerCardCanvas = document.getElementById('playerCanvas');
+	playerCardCanvasContext = playerCardCanvas.getContext('2d');
+	skeletonCardCanvas = document.getElementById('playerCanvas');
+	skeletonCardContext = skeletonCardCanvas.getContext('2d');
 	
 	colorRect(0,0, canvas.width,canvas.height, 'orange'); // startup page
 	colorText("Loading Images... please wait", 400, 300, 'black');	
@@ -138,6 +145,8 @@ function drawAll() {
 			displayQuests();
 			displayKeyInputs();
 			displayHealth();
+			drawPlayerCard();
+			drawSkeletonCard();
 		} else {
 			console.log("No Game State");
 		}
@@ -145,4 +154,39 @@ function drawAll() {
 
 function drawLevelSpecifics () {
 	LEVELS[levelList[currentLevelIndex]].drawAll();
+}
+
+function drawPlayerCard(){  // VJM:  WIP, trying to put together the raw concept
+	playerCardCanvasContext.fillStyle = 'white'; //background
+	playerCardCanvasContext.fillRect(0,0,300,300); 
+	playerCardCanvasContext.drawImage(player.myplayerPic, 240, 0, 48, 52, 0, 0, 100, 100); //player image
+	playerCardCanvasContext.fillStyle = 'black'; //character information
+	playerCardCanvasContext.fillText("Max Health: " + player.maxHealth, 100, 10);
+	playerCardCanvasContext.fillText("Inventory", 10, 120);
+	playerCardCanvasContext.beginPath(); //inventory
+	let xPos;
+	let yPos = 140;
+	let boxWidth = 50;
+	let boxHeight = 50;
+	for (i=0; i<5; i++){
+		for (ii=0; ii<3; ii++){
+		xPos = (i*boxWidth)+25;
+		yPos = (ii*boxHeight)+130;
+		playerCardCanvasContext.strokeStyle = 'black';
+		playerCardCanvasContext.lineWidth = "3";
+		playerCardCanvasContext.rect(xPos, yPos, boxWidth, boxHeight);
+		playerCardCanvasContext.stroke();
+		}
+	}
+}
+
+
+function drawSkeletonCard(){  // VJM:  WIP, trying to put together the raw concept
+	skeletonCardContext.fillStyle = 'red'; //background
+	skeletonCardContext.fillRect(0,0,300,300); 
+	skeletonCardContext.drawImage(skeletonList[0].characterPic, 0, 0, 50, 50, 0, 0, 100, 100); //player image
+	skeletonCardContext.fillStyle = 'black'; //character information
+	skeletonCardContext.fillText("Max Health: " + skeletonList[0].maxHealth, 100, 10);
+	skeletonCardContext.fillText("Inventory", 10, 120);
+	skeletonCardContext.beginPath(); //inventory
 }
