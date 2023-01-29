@@ -20,7 +20,7 @@ window.onload = function() {
 	canvasContext = canvas.getContext('2d');
 	playerCardCanvas = document.getElementById('playerCanvas');
 	playerCardCanvasContext = playerCardCanvas.getContext('2d');
-	skeletonCardCanvas = document.getElementById('playerCanvas');
+	skeletonCardCanvas = document.getElementById('skeletonCanvas');
 	skeletonCardContext = skeletonCardCanvas.getContext('2d');
 	
 	colorRect(0,0, canvas.width,canvas.height, 'orange'); // startup page
@@ -212,6 +212,12 @@ function drawPlayerCard(){  // VJM:  WIP, trying to put together the raw concept
 		playerCardCanvasContext.rect(xPos, yPos, boxWidth, boxHeight);
 		playerCardCanvasContext.stroke();
 		}
+	}
+	for(i=0; i<player.inventoryList.length; i++){
+		//console.log(player.inventoryList[0])
+		/*if(player.inventoryList == player.lavanderHeld){
+			playerCardCanvasContext.drawImage(player.myplayerPic, 240, 0, 48, 52, 0, 0, 100, 100); //player image
+		}*/
 	}
 }
 

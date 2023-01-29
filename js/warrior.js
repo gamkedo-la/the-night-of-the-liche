@@ -18,9 +18,8 @@ function WarriorClass() {
     this.rightArm = this.x - 25;
     this.speed = 0;
     this.myplayerPic = playerPic; // which picture to use
-    this.name = "Untitled warrior";
-    this.keysHeld = 0;
-    this.goldpieces = 10;
+    this.name = "Mary";
+    this.inventoryList = [];
     this.lavanderHeld = 0;
     this.redFlowerHeld = 0;
     this.blueFlowerHeld = 0;
@@ -79,11 +78,7 @@ function WarriorClass() {
     this.reset = function(whichImage, warriorName) {
         this.name = warriorName;
         this.myplayerPic;
-        this.yellowKeysHeld = 0;
-        this.greenKeysHeld = 0;
-        this.blueKeysHeld = 0;
-        this.redKeysHeld = 0;
-        this.health = 1;
+        this.health = 3;
         this.maxHealth = 3;
         this.updateReadout();
 
@@ -326,6 +321,17 @@ function WarriorClass() {
         }
     }
 
+    
+    this.displayInventory = function() {
+        if(this.lavanderHeld > 0){
+            var lavederDisplay = [
+             //   {lavederToShow:  true, lavernderQty: this.lavanderHeld}
+             1
+            ]
+            this.inventoryList[lavederDisplay].push;
+        }
+    }
+
     this.draw = function() {
         this.tickCount++;
         if (this.tickCount > this.ticksPerFrame) {
@@ -369,5 +375,17 @@ function WarriorClass() {
         this.mySword.draw();
 
         this.myArrow.draw();
+
+        //this.displayInventory();
+
+        /*this.lavanderHeld = 0;
+        this.redFlowerHeld = 0;
+        this.blueFlowerHeld = 0;
+        this.yellowFlowerHeld = 0;
+        this.whiteFlowerHeld = 0;
+        this.giantMushroomHeld = 0;
+        this.redMushroomHeld = 0;
+        this.yellowMushroomHeld = 0;
+*/
     }
 }
