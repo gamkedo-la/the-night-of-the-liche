@@ -4,7 +4,7 @@ function instantCamFollow() {
 }
 
 function cameraFollow() {
-	var cameraFocusCenterX = camPanX + canvas.width / 2;
+	var cameraFocusCenterX = camPanX + (canvas.width-SIDEBAR_WIDTH) / 2;
 	var cameraFocusCenterY = camPanY + canvas.height / 2;
 
 	var playerDistFromCameraFocusX = Math.abs(player.x - cameraFocusCenterX);
@@ -31,7 +31,7 @@ function cameraFollow() {
 	if (camPanY < 0) {
 		camPanY = 0;
 	}
-	var maxPanRight = ROOM_COLS * TILE_W - canvas.width;
+	var maxPanRight = ROOM_COLS * TILE_W - (canvas.width-SIDEBAR_WIDTH);
 	var maxPanTop = ROOM_ROWS * TILE_H - canvas.height;
 	if (camPanX > maxPanRight) {
 		camPanX = maxPanRight;

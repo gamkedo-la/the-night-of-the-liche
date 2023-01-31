@@ -4,6 +4,8 @@ var canvas, canvasContext;
 var playerCardCanvas, playerCardCanvasContext;
 var skeletonCardCanvas, skeletonCardContext;
 var player = new WarriorClass();
+const SIDEBAR_WIDTH = 300;
+
 
 
 //var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
@@ -182,6 +184,8 @@ function drawAll() {
 			if (skeletonList && skeletonList.length > 0) {
 				drawSkeletonCard();
 			}
+			canvasContext.drawImage(playerCardCanvas, canvas.width - SIDEBAR_WIDTH, 0);
+			canvasContext.drawImage(skeletonCardCanvas, canvas.width - SIDEBAR_WIDTH, playerCardCanvas.height);
 		} else {
 			console.log("No Game State");
 		}
