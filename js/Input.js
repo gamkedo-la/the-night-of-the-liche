@@ -68,6 +68,7 @@ function setupInput() {
     document.addEventListener("mousedown", handleMouseClick);
     document.addEventListener("mouseup", mousereleased); 
 
+    // These will be used for: upKey, rightKey, downKey, leftKey, swordKey, arrowKey, pickUpKey.
 	player.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A, KEY_X);
 };
 
