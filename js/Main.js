@@ -70,7 +70,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 				addAlchemist();
 			} else if (roomGrid[i] == TILE_SPIRIT){
 				addSpirit();
-			}
+            } 
 		}
 		for (var i = 0; i < skeletonList.length; i++) {  		
 			skeletonList[i].reset();
@@ -82,6 +82,18 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 			spiritList[i].reset();
 		} 
 	}
+
+    // look for torches, fireplaces, etc in the foreground layer
+    // console.log("Looking for light sources in a foreground of length "+whichLevel.layers.foreground.length);
+    for (var i = 0; i < whichLevel.layers.foreground.length; i++){
+        if (whichLevel.layers.foreground[i] == TILE_FIRE_PLACE){
+            // console.log("FOUND A FIREPLACE!");
+            let px = idxToCol(i)*TILE_W;
+            let py = idxToRow(i)*TILE_H;
+            addLightsource(px,py+50,64);
+        }        
+    }
+
 
 	SetupPathfindingGridData();
 }
