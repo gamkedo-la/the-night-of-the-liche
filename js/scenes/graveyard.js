@@ -127,6 +127,7 @@ function graveyardDrawAll () {
 let graveyardSkeletonList = null;
 let graveyardAlchemistList = null;
 let graveyardSpiritList = null;
+let graveyardAnimationList = null;
 
 const graveyardPlayerThoughts = [
 	// See levelOne.js for proper format

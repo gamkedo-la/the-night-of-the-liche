@@ -164,6 +164,7 @@ const TILE_PLAYERSTART = 402;
 const TILE_ALCHEMIST = 403;
 const TILE_SKELETON = 404;
 const TILE_SPIRIT = 405;
+const TILE_CANDLE = 406;
 
 var grid = []; // array of GridElement instances, gets initialized based on tileGrid
 const NOTHING = 0;

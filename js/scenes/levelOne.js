@@ -33,7 +33,7 @@ function getLevelOneLayers () {
 		interactive: [
 			//    1					 5				          10    				   15					    20
 			42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,
-			42, 101, 102, 102, 102, 102, 102, 103, 101, 102, 102, 102, 102, 103,  42,  42,  42,  42,  42,  42,  42,//1 
+			42, 101, 102, 406, 102, 406, 102, 103, 101, 102, 102, 102, 102, 103,  42,  42,  42,  42,  42,  42,  42,//1 
 			42, 106, 107, 107, 107, 107, 107, 123, 121, 107, 107, 107, 107, 108,  42, 201, 207, 208, 207, 202,  42,
 			42, 104,  42,  42,  42,  42,  42, 124, 122,  42,  42,  42,  42, 105,  42, 200,  20,  19,  20, 203,  42,
 			42, 104,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42,  42, 105,  42, 204,  21,  20,  19, 205,  42,
@@ -139,6 +139,9 @@ function levelOneDrawAll () {
 	for (var i = 0; i < spiritList.length; i++) {		
 		spiritList[i].draw();
 	} 
+	for (var i = 0; i < animationList.length; i++) {		
+		animationList[i].draw();
+	} 
 	drawTopLayer();
 	drawRoof(timeSinceInShop / 15);
 }
@@ -146,6 +149,7 @@ function levelOneDrawAll () {
 let levelOneSkeletonList = null;
 let levelOneAlchemistList = null;
 let levelOneSpiritList = null;
+let levelOneAnimationList = null;
 
 const levelOnePlayerThoughts = [
 	{

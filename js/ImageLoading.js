@@ -12,6 +12,7 @@ var Pic = document.createElement("img");
 var shadowPic = document.createElement("img");
 var questGUIPic = document.createElement("img");
 var lightGlowPic = document.createElement("img");
+var candlePic = document.createElement('img');
 
 var worldPics = [];
 
@@ -290,6 +291,7 @@ function loadImages() {
             {varName: questGUIPic, theFile: "questGUI.png"},
 			{varName: spiritPic, theFile: "spirit.png"},
             {varName: lightGlowPic, theFile: "light_glow.png"},
+			{varName: candlePic, theFile: "household.png"},
 
 		];
 			

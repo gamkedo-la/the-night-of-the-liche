@@ -55,6 +55,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 	skeletonList.length = 0
 	alchemistList.length = 0
 	spiritList.length = 0
+	animationList.length = 0
 
 	//alchemist.reset();
 	console.log(roomGrid)
@@ -62,6 +63,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 		skeletonList = [...LEVELS[levelList[currentLevelIndex]].skeletonList]
 		alchemistList = [...LEVELS[levelList[currentLevelIndex]].alchemistList]
 		spiritList = [...LEVELS[levelList[currentLevelIndex]].spiritList]
+		animationList = [...LEVELS[levelList[currentLevelIndex]].animationList]
 	} else {
 		for (var i = 0; i < roomGrid.length; i++){ //search for characters to create classes
 			if(roomGrid[i] == TILE_SKELETON){
@@ -70,6 +72,17 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 				addAlchemist();
 			} else if (roomGrid[i] == TILE_SPIRIT){
 				addSpirit();
+			} else if (whichLevel.layers.interactive[i] == TILE_CANDLE){
+			//} else if (roomGrid[i] == TILE_CANDLE){
+				whichLevel.layers.interactive[i] = TILE_WALL1_TOP;
+				let rowIdx = Math.floor(i/ROOM_COLS);
+				let colIdx = i%ROOM_COLS;
+				let px = idxToCol(i)*TILE_W;
+				let py = idxToRow(i)*TILE_H;
+				//let px = colIdx * TILE_W;
+				//let py = (rowIdx) * TILE_H;
+				addAnimation({pic:candlePic, frames:6, x:px, y:py, height: 100});
+				addLightsource(px,py+30,48);
             } 
 		}
 		for (var i = 0; i < skeletonList.length; i++) {  		
