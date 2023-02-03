@@ -16,6 +16,8 @@ function drawDarkness() {
         darknessCTX = darknessCanvas.getContext('2d');
     }
     
+    darknessCTX.globalAlpha = 1;
+
     darknessCTX.globalCompositeOperation = "source-over"; // normal drawing
     darknessCTX.clearRect(0,0,darknessCanvas.width,darknessCanvas.height); // empty
     darknessCTX.fillStyle = darknessColour; // see-through black
@@ -31,6 +33,16 @@ function drawDarkness() {
 	for (me of skeletonList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
 	for (me of alchemistList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
 	for (me of spiritList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
+	
+    // flickering light sources
+    for (me of lightsourceList) {
+        // flicker
+        darknessCTX.globalAlpha = Math.sin(performance.now()/100)/4+0.75;
+        // wobble
+        let wobx = Math.sin(performance.now()*0.01234)*6;
+        let woby = Math.sin(performance.now()*0.02345)*6;
+        darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX+wobx,me.y-128+24-camPanY+woby);
+    }
     
     // draw the darkness over top of the scene
     canvasContext.globalAlpha = NIGHT_DARKNESS_OPACITY; //FIXME: the above blackness is 100% opaque not sure why
@@ -43,3 +55,10 @@ function drawDarkness() {
     // canvasContext.globalAlpha = 1;
 }
 
+// a list of light sources - extra glws added by level tiles
+var lightsourceList = [];
+// used in level loading similar to adding a monster
+function addLightsource(x,y,size) {
+    console.log("adding a light source at :"+x+","+y);
+    lightsourceList.push({x:x,y:y,size:size});
+}
