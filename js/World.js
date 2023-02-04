@@ -290,7 +290,6 @@ function drawRoom() {
 		for(var eachCol = 0; eachCol < ROOM_COLS; eachCol++) {
 
 			var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
-			// var tileKindHere = levelOneML[arrayIndex];
 			var tileKindHere = (LEVELS[levelList[currentLevelIndex]].layers.interactive)[arrayIndex];
 			var useImg = worldPics[tileKindHere];
 			var spriteX = worldPics[tileKindHere].locX;

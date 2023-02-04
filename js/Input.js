@@ -60,6 +60,7 @@ var pathingFindingDestination = KEY_B;
 var evaluatePathFinding = KEY_C;
 var showPathToTake = KEY_P;
 var showDarkness = KEY_O;
+var showIngredientInventory = KEY_I;
 
 function setupInput() {
 	document.addEventListener('keydown', keyPressed);
@@ -122,6 +123,10 @@ function keyPressed(evt) {
             for (var i=0; i<PathFindingPathToTake.length; i++) {
                 console.log(PathFindingPathToTake[i].tilIdx);
             }
+        }
+
+        if(evt.keyCode == showIngredientInventory){
+            displayIngredientInventory = !displayIngredientInventory;
         }
 
         if(evt.keyCode == showDarkness){

@@ -226,20 +226,47 @@ function drawPlayerCard(){  // VJM:  WIP, trying to put together the raw concept
 	playerCardCanvasContext.drawImage(player.myplayerPic, 240, 0, 48, 52, 0, 0, 100, 100); //player image
 	playerCardCanvasContext.fillStyle = 'black'; //character information
 	playerCardCanvasContext.fillText("Max Health: " + player.maxHealth, 100, 10);
-	playerCardCanvasContext.fillText("Inventory", 10, 120);
+	
 	playerCardCanvasContext.beginPath(); //inventory
 	let xPos;
 	let yPos = 140;
 	let boxWidth = 50;
 	let boxHeight = 50;
-	for (i=0; i<5; i++){
-		for (ii=0; ii<3; ii++){
-		xPos = (i*boxWidth)+25;
-		yPos = (ii*boxHeight)+130;
-		playerCardCanvasContext.strokeStyle = 'black';
-		playerCardCanvasContext.lineWidth = "3";
-		playerCardCanvasContext.rect(xPos, yPos, boxWidth, boxHeight);
-		playerCardCanvasContext.stroke();
+	if(displayIngredientInventory){
+		playerCardCanvasContext.fillText("Ingredient Inventory", 10, 120);
+		for (i=0; i<5; i++){
+			for (ii=0; ii<3; ii++){
+			xPos = (i*boxWidth)+25;
+			yPos = (ii*boxHeight)+130;
+			playerCardCanvasContext.strokeStyle = 'black';
+			playerCardCanvasContext.lineWidth = "3";
+			playerCardCanvasContext.rect(xPos, yPos, boxWidth, boxHeight);
+			playerCardCanvasContext.stroke();
+			}
+		}
+		if(player.lavanderHeld > 0){
+			playerCardCanvasContext.drawImage(worldPics[50], 150,100, 50, 50, 25, 130, 50, 50);
+		}
+		if(player.redFlowerHeld > 0){
+			playerCardCanvasContext.drawImage(worldPics[50], 200,100, 50, 50, 75, 130, 50, 50);
+		}
+		if(player.blueFlowerHeld > 0){
+			playerCardCanvasContext.drawImage(worldPics[50], 250,100, 50, 50, 125, 130, 50, 50);
+		}
+		if(player.yellowFlowerHeld > 0){
+			playerCardCanvasContext.drawImage(worldPics[50], 300,100, 50, 50, 175, 130, 50, 50);
+		}
+		if(player.whiteFlowerHeld > 0){
+			playerCardCanvasContext.drawImage(worldPics[50], 250, 50, 50, 50, 225, 130, 50, 50);
+		}
+		if(player.giantMushroomHeld > 0){
+			playerCardCanvasContext.drawImage(worldPics[50], 150,150, 50, 50, 25, 180, 50, 50);
+		}
+		if(player.redMushroomHeld > 0){
+			playerCardCanvasContext.drawImage(worldPics[50], 200,150, 50, 50, 75, 180, 50, 50);
+		}
+		if(player.yellowMushroomHeld){
+			playerCardCanvasContext.drawImage(worldPics[50], 250,150, 50, 50, 125, 180, 50, 50);
 		}
 	}
 	for(i=0; i<player.inventoryList.length; i++){

@@ -1,5 +1,6 @@
 var playerMoveSpeed = 3.0;
 var direction = "south";
+var displayIngredientInventory = true;
 
 function WarriorClass() {
     this.noClipping = false;
