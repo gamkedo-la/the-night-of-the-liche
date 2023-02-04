@@ -31,11 +31,9 @@ const LEVELS = {
 		playerThoughts: graveyardPlayerThoughts,
 		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
 	}
-	// levelTwo: getLevelTwoLayers() // this doesn't exist yet, but this is how it would be added
 }
 
 var currentLevelIndex = 0
-// presumably 'levelTwo' will exist eventually too, could also changes these to be 'town', 'forest', 'graveyard', etc
 var levelList = Object.keys(LEVELS)
 
 var roomGrid = [];
@@ -158,6 +156,7 @@ const TILE_BLANK = 42;
 const TILE_ALTER = 66;
 const TILE_CHAIR1 = 67;
 const TILE_CHAIR2 = 68;
+const TILE_GRAVE2 = 69;
 const TILE_KITCHENTABLE = 400;
 const TILE_BED1 = 401;
 const TILE_PLAYERSTART = 402;

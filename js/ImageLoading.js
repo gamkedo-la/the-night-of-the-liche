@@ -278,19 +278,19 @@ function loadImages() {
 			{tileType: TILE_BED1,  theFile: "bed1.png", locX: 0, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: 10},
 			{tileType: TILE_SHRUB1,  theFile: "shrub1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_BLANK,  theFile: "blank.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-
+			{tileType: TILE_GRAVE2, theFile: "grave2.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 
 			//characters and misc
 			{varName: playerPic, theFile: "player.png"},
 			{varName: alchemistPic, theFile: "alchemist.png"},
 			{varName: skeletonPic, theFile: "skeleton.png"},
 			{varName: titlepagePic, theFile: "background.png"},
-            {varName: thoughtBubblePic, theFile: "thoughtBubble.png"},
+			{varName: thoughtBubblePic, theFile: "thoughtBubble.png"},
 			{varName: heartPic, theFile: "hearts.png"},
 			{varName: shadowPic, theFile: "shadow.png"},
-            {varName: questGUIPic, theFile: "questGUI.png"},
+			{varName: questGUIPic, theFile: "questGUI.png"},
 			{varName: spiritPic, theFile: "spirit.png"},
-            {varName: lightGlowPic, theFile: "light_glow.png"},
+			{varName: lightGlowPic, theFile: "light_glow.png"},
 			{varName: candlePic, theFile: "household.png"},
 
 		];
