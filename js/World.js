@@ -160,6 +160,7 @@ const TILE_ALTER = 66;
 const TILE_CHAIR1 = 67;
 const TILE_CHAIR2 = 68;
 const TILE_GRAVE2 = 69;
+const TILE_GRAVE3 = 70;
 const TILE_KITCHENTABLE = 400;
 const TILE_BED1 = 401;
 const TILE_PLAYERSTART = 402;
