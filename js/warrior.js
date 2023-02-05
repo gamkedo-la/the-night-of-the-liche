@@ -1,6 +1,7 @@
 var playerMoveSpeed = 3.0;
 var direction = "south";
 var displayIngredientInventory = true;
+var displayPotions = false;
 
 function WarriorClass() {
     this.noClipping = false;
@@ -29,6 +30,9 @@ function WarriorClass() {
     this.giantMushroomHeld = 0;
     this.redMushroomHeld = 0;
     this.yellowMushroomHeld = 0;
+    this.redPepperHeld = 0;
+    this.orangePepperHeld = 0;
+    this.califlowerHeld = 0;
     this.health = 1;
     this.maxHealth = 3;
     this.waitTime = 0;
@@ -229,42 +233,36 @@ function WarriorClass() {
                 if(this.keyHeld_PickUp){    
                     this.redFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                    console.log("Red Flower: " + this.redFlowerHeld);
                 }
                 break;
             case TILE_BLUE_FLOWER:
                 if(this.keyHeld_PickUp){
                     this.blueFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                    console.log("Blue Flower: " + this.blueFlowerHeld);
                 }
                 break;
             case TILE_YELLOW_FLOWER:
                 if(this.keyHeld_PickUp){
                     this.yellowFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                    console.log("Yellow Flower: " + this.yellowFlowerHeld);
                 }       
                 break;
             case TILE_WHITE_FLOWER:
                 if(this.keyHeld_PickUp){
                     this.whiteFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                    console.log("White Flower: " + this.whiteFlowerHeld);
                 }
                 break;
             case TILE_GIANT_MUSHROOM:
                 if(this.keyHeld_PickUp){    
                     this.giantMushroomHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                    console.log("Giant Mushroom: " + this.giantMushroomHeld);
                 }
                 break;
             case TILE_RED_MUSHROOM:
                 if(this.keyHeld_PickUp){
                     this.redMushroomHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                    console.log("Red Mushroom: " + this.redMushroomHeld);
                 }
                 break;
             case TILE_YELLOW_MUSHROOM:
@@ -277,9 +275,26 @@ function WarriorClass() {
                 if(this.keyHeld_PickUp){
                     this.lavanderHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                    console.log("Lavander Flower: " + this.lavanderHeld);
                 }
-                break
+                break;
+            case TILE_VEGETABLE2:
+                if(this.keyHeld_PickUp){
+                    this.redPepperHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_VEGETABLE1;
+                }
+                break;
+            case TILE_VEGETABLE6:
+                if(this.keyHeld_PickUp){
+                    this.orangePepperHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_VEGETABLE5;
+                }
+                break;
+            case TILE_VEGETABLE4:
+                if(this.keyHeld_PickUp){
+                    this.califlowerHeld++;
+                    (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_VEGETABLE3;
+                }
+                break;
             default:
             break;
         } // END OF SWITCH CASE	

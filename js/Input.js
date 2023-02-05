@@ -127,6 +127,7 @@ function keyPressed(evt) {
 
         if(evt.keyCode == showIngredientInventory){
             displayIngredientInventory = !displayIngredientInventory;
+            displayPotions = !displayPotions;
         }
 
         if(evt.keyCode == showDarkness){

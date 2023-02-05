@@ -155,7 +155,7 @@ function characterClass() {
                 this.setDirection("north");
           //      console.log("Searching: " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
             } else {
-                console.log("Reached Goal! " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
+            //    console.log("Reached Goal! " + this.myPathList.length + " G:" + goalC + "," + goalR + " C:" + currentC + "," + currentR) ;
                 this.myPathList.pop(); //this should remove the list down by 1.
             }
         } else if (this.standStill) {
