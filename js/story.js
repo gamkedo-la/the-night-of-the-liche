@@ -22,11 +22,11 @@ function thoughtBubble(txt,x,y) {
     }
 }
 
-function drawPlayerThoughts (){
+function drawPlayerThoughts (offsetx=0,offsety=0){
     displayTimer++;
     for (const playerThought of LEVELS[levelList[currentLevelIndex]].playerThoughts) {
         if (displayTimer > playerThought.startTime && displayTimer < playerThought.endTime) {
-            thoughtBubble(playerThought.thought,player.x,player.y);
+            thoughtBubble(playerThought.thought,player.x+offsetx,player.y+offsety);
             break;
         }
     }

@@ -58,9 +58,9 @@ function drawDarkness() {
 // a list of light sources - extra glws added by level tiles
 var lightsourceList = [];
 // used in level loading similar to adding a monster
-function addLightsource(x,y,size) {
+function addLightsource(x,y,size=48,rgba="rgba(255,255,255,1)") {
     console.log("adding a light source at :"+x+","+y);
-    lightsourceList.push({x:x,y:y,size:size});
+    lightsourceList.push({x:x,y:y,size:size,rgba:rgba});
 }
 
 function resetLightsources() {

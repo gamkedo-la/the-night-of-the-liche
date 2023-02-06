@@ -190,30 +190,25 @@ function drawAll() {
 		} else if (isInShop){
 			drawShop();
 		} else if (inGame){
-			canvasContext.save();
 
+            canvasContext.save();
 			drawLevelSpecifics();
-
-			if(displayPlayerThoughts){
-				drawPlayerThoughts();
-			}
-			if(displayPathfinding){
-				drawTiles();
-			}
-
+			if (displayPathfinding) drawTiles();
 			canvasContext.restore();
 
             if (isNighttime) drawDarkness(); // experimental glow around player with blackness all around
+			if (displayPlayerThoughts) drawPlayerThoughts(-camPanX,-camPanY); // drawn above darkness
 
 			displayQuests();
 			displayKeyInputs();
 			displayHealth();
 			drawPlayerCard();
-			if (skeletonList && skeletonList.length > 0) {
-				drawSkeletonCard();
-			}
-			canvasContext.drawImage(playerCardCanvas, canvas.width - SIDEBAR_WIDTH, 0);
+
+			if (skeletonList && skeletonList.length > 0) drawSkeletonCard();
+
+            canvasContext.drawImage(playerCardCanvas, canvas.width - SIDEBAR_WIDTH, 0);
 			canvasContext.drawImage(skeletonCardCanvas, canvas.width - SIDEBAR_WIDTH, playerCardCanvas.height);
+            
 		} else {
 			console.log("No Game State");
 		}
