@@ -62,3 +62,8 @@ function addLightsource(x,y,size) {
     console.log("adding a light source at :"+x+","+y);
     lightsourceList.push({x:x,y:y,size:size});
 }
+
+function resetLightsources() {
+    console.log("removing all light glows used by the darkness effect");
+    lightsourceList = [];
+}

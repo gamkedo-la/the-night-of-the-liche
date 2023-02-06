@@ -56,6 +56,9 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 	alchemistList.length = 0
 	spiritList.length = 0
 	animationList.length = 0
+    
+    // reset the light source list in the Darkness.js effect
+    resetLightsources();
 
 	//alchemist.reset();
 	console.log(roomGrid)
