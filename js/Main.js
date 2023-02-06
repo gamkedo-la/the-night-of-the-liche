@@ -85,7 +85,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 				//let px = colIdx * TILE_W;
 				//let py = (rowIdx) * TILE_H;
 				addAnimation({pic:candlePic, frames:6, x:px, y:py, height: 100});
-				addLightsource(px,py+30,48);
+				addLightsource(px,py+30,24,1,1,0.7); // small yellow light
             } 
 		}
 		for (var i = 0; i < skeletonList.length; i++) {  		
@@ -106,7 +106,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
             // console.log("FOUND A FIREPLACE!");
             let px = idxToCol(i)*TILE_W;
             let py = idxToRow(i)*TILE_H;
-            addLightsource(px,py+50,64);
+            addLightsource(px,py+50,80,1,0.5,0); // orange light
         }        
     }
 
@@ -208,7 +208,7 @@ function drawAll() {
 
             canvasContext.drawImage(playerCardCanvas, canvas.width - SIDEBAR_WIDTH, 0);
 			canvasContext.drawImage(skeletonCardCanvas, canvas.width - SIDEBAR_WIDTH, playerCardCanvas.height);
-            
+
 		} else {
 			console.log("No Game State");
 		}

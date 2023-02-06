@@ -12,6 +12,9 @@ var Pic = document.createElement("img");
 var shadowPic = document.createElement("img");
 var questGUIPic = document.createElement("img");
 var lightGlowPic = document.createElement("img");
+var REDlightGlowPic = document.createElement("img");
+var GREENlightGlowPic = document.createElement("img");
+var BLUElightGlowPic = document.createElement("img");
 var candlePic = document.createElement('img');
 
 var worldPics = [];
@@ -292,6 +295,9 @@ function loadImages() {
 			{varName: questGUIPic, theFile: "questGUI.png"},
 			{varName: spiritPic, theFile: "spirit.png"},
 			{varName: lightGlowPic, theFile: "light_glow.png"},
+			{varName: REDlightGlowPic, theFile: "red_glow.png"},
+			{varName: GREENlightGlowPic, theFile: "green_glow.png"},
+			{varName: BLUElightGlowPic, theFile: "blue_glow.png"},
 			{varName: candlePic, theFile: "household.png"},
 
 		];
