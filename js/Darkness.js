@@ -61,7 +61,7 @@ function drawDarkness() {
 
     // add a blue glow around spirits
     if (USE_COLOURED_LIGHTS) {
-        darknessCTX.globalCompositeOperation = "lighten";
+        darknessCTX.globalCompositeOperation = "multiply";
         darknessCTX.globalAlpha = 0.5;
         for (me of spiritList) {
             darknessCTX.drawImage(BLUElightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
