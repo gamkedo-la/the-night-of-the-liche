@@ -17,6 +17,7 @@ const LEVELS = {
 		skeletonList: levelOneSkeletonList,
 		alchemistList: levelOneAlchemistList,
 		spiritList: levelOneSpiritList,
+		animationList: levelOneAnimationList,
 		playerThoughts: levelOnePlayerThoughts,
 		playerThoughtEndTime: levelOnePlayerThoughtEndDisplayTime
 	},
@@ -28,6 +29,7 @@ const LEVELS = {
 		skeletonList: graveyardSkeletonList,
 		alchemistList: graveyardAlchemistList,
 		spiritList: graveyardSpiritList,
+		animationList: graveyardAnimationList,
 		playerThoughts: graveyardPlayerThoughts,
 		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
 	}
