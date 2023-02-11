@@ -94,7 +94,7 @@ function levelOneMoveAll () {
 	} 
 	for (var i = 0; i < spiritList.length; i++) {		
 		spiritList[i].move();
-	} 
+	}
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
 	}*/

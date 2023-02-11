@@ -282,8 +282,10 @@ function loadImages() {
 			{tileType: TILE_BED1,  theFile: "bed1.png", locX: 0, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: 10},
 			{tileType: TILE_SHRUB1,  theFile: "shrub1.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_BLANK,  theFile: "blank.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_GRAVE2, theFile: "grave2.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
-			{tileType: TILE_GRAVE3, theFile: "grave2.png", locX: 50, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRAVE1, theFile: "grave2.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRAVE2, theFile: "grave2.png", locX: 50, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRAVE3, theFile: "grave2.png", locX: 100, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_GRAVE4, theFile: "grave2.png", locX: 150, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 
 			//characters and misc
 			{varName: playerPic, theFile: "player.png"},

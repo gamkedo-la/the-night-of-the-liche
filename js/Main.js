@@ -97,7 +97,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 		} 
 		for (var i = 0; i < spiritList.length; i++) {  		
 			spiritList[i].reset();
-		} 
+		}
 	}
 
     // look for torches, fireplaces, etc in the foreground layer
@@ -119,6 +119,7 @@ function loadAreaByName (name, direction) {
 	LEVELS[levelList[currentLevelIndex]].skeletonList = [...skeletonList]
 	LEVELS[levelList[currentLevelIndex]].alchemistList = [...alchemistList]
 	LEVELS[levelList[currentLevelIndex]].spiritList = [...spiritList]
+	LEVELS[levelList[currentLevelIndex]].animationList = [...animationList]
 
 	currentLevelIndex = levelList.findIndex(level => level === name) || 0;
 	switch (direction) {

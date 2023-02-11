@@ -17,6 +17,7 @@ const LEVELS = {
 		skeletonList: levelOneSkeletonList,
 		alchemistList: levelOneAlchemistList,
 		spiritList: levelOneSpiritList,
+		animationList: levelOneAnimationList,
 		playerThoughts: levelOnePlayerThoughts,
 		playerThoughtEndTime: levelOnePlayerThoughtEndDisplayTime
 	},
@@ -28,6 +29,7 @@ const LEVELS = {
 		skeletonList: graveyardSkeletonList,
 		alchemistList: graveyardAlchemistList,
 		spiritList: graveyardSpiritList,
+		animationList: graveyardAnimationList,
 		playerThoughts: graveyardPlayerThoughts,
 		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
 	}
@@ -159,8 +161,10 @@ const TILE_BLANK = 42;
 const TILE_ALTER = 66;
 const TILE_CHAIR1 = 67;
 const TILE_CHAIR2 = 68;
-const TILE_GRAVE2 = 69;
-const TILE_GRAVE3 = 70;
+const TILE_GRAVE1 = 69;
+const TILE_GRAVE2 = 70;
+const TILE_GRAVE3 = 71;
+const TILE_GRAVE4 = 72;
 const TILE_KITCHENTABLE = 400;
 const TILE_BED1 = 401;
 const TILE_PLAYERSTART = 402;
