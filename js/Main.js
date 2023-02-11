@@ -1,17 +1,18 @@
-// Characters //
+// THE NIGHT OF THE LICHE
+// a Hometeam GameDev Production led by Vince
 
 var canvas, canvasContext;
 var playerCardCanvas, playerCardCanvasContext;
 var skeletonCardCanvas, skeletonCardContext;
-var player = new WarriorClass();
 const SIDEBAR_WIDTH = 300;
 
-
-
+// Characters //
+var player = new WarriorClass();
 //var alchemist = new alchemistClass();  //VJM 1/7/23:  need to make this based on the map
 
 // Game State //
 var isNighttime = true; // if this is true, we drawDarkness()
+var isRaining = true; // set to false to stop the rain
 var menuScreen = true;
 var isInShop = false;
 var inGame = false;
@@ -197,6 +198,7 @@ function drawAll() {
 			canvasContext.restore();
 
             if (isNighttime) drawDarkness(); // experimental glow around player with blackness all around
+            if (isRaining) drawRain(-camPanX,-camPanY);
 			if (displayPlayerThoughts) drawPlayerThoughts(-camPanX,-camPanY); // drawn above darkness
 
 			displayQuests();

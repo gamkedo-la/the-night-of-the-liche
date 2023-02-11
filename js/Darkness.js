@@ -49,6 +49,7 @@ function drawDarkness() {
         if (USE_COLOURED_LIGHTS) {
             // three (r,g,b) layers are required for coloured lights without requiring temp canvases
             // console.log("COLOURED LIGHT: "+me.r+","+me.g+","+me.b);
+            //darknessCTX.globalCompositeOperation = "lighten"; // for an interesting effect try 'lighter'
             darknessCTX.globalCompositeOperation = "lighten"; // for an interesting effect try 'lighter'
             darknessCTX.globalAlpha = alphaFlicker * me.r;
             darknessCTX.drawImage(REDlightGlowPic,x,y);
@@ -61,7 +62,7 @@ function drawDarkness() {
 
     // add a blue glow around spirits
     if (USE_COLOURED_LIGHTS) {
-        darknessCTX.globalCompositeOperation = "multiply";
+        darknessCTX.globalCompositeOperation = "luminosity";
         darknessCTX.globalAlpha = 0.5;
         for (me of spiritList) {
             darknessCTX.drawImage(BLUElightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
@@ -71,8 +72,8 @@ function drawDarkness() {
         }
     }
 
-    darknessCTX.globalCompositeOperation = "source-over"; // reset to normal drawing mode
-    darknessCTX.globalCompositeOperation = "multiply"; // hmmm
+    //darknessCTX.globalCompositeOperation = "source-over"; // reset to normal drawing mode?
+    darknessCTX.globalCompositeOperation = "multiply"; // hmmm luninosity?
     
     // draw the darkness over top of the scene
     canvasContext.globalAlpha = NIGHT_DARKNESS_OPACITY; //FIXME: the above blackness is 100% opaque not sure why
