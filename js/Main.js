@@ -17,6 +17,7 @@ var menuScreen = true;
 var isInShop = false;
 var inGame = false;
 var timeSinceInShop = 0;
+var isPaused = false;
 
 window.onload = function() {
 	canvas = document.getElementById('gameCanvas');
@@ -144,6 +145,8 @@ function loadAreaByName (name, direction) {
 }
 
 function updateAll() {
+	if (isPaused) return;
+
 	moveAll();
 	drawAll();
 }

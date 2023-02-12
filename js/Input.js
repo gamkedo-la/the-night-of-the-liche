@@ -100,6 +100,9 @@ function keyPressed(evt) {
 	    if (evt.ctrlKey && evt.shiftKey) {
 		activateCheatCode(evt.keyCode);
 	    }
+        if (evt.keyCode == KEY_S) {
+            isPaused = !isPaused;
+        }
         if(evt.keyCode == pauseMusic){
             backgroundMusic.startOrStopMusic();
         }
