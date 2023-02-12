@@ -145,7 +145,12 @@ function keyPressed(evt) {
 			player.shotArrow();
 		}
 	}
-    evt.preventDefault(); // without this, arrow keys scroll the browser!
+
+    // Without this, arrow keys scroll the browser!
+    // Allow other browser keyboard shortcuts to work.
+    if ([KEY_LEFT_ARROW, KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW].find((k) => k == evt.keyCode)) {
+        evt.preventDefault();
+    }
 }
 
 function keyReleased(evt) {
