@@ -191,40 +191,13 @@ function keyPressed(evt) {
 			player.shotArrow();
 		}
 
-        if(evt.keyCode == pauseMusic){
-            backgroundMusic.startOrStopMusic();
-        }
-        if(evt.keyCode == showPathFinding){
-            displayPathfinding = !displayPathfinding;
-        }
-        if(evt.keyCode == pathingFindingDestination){
-            removePathfindingType(DEST);
-            grid[tileOverIdx].setTile(DEST);
-           // updatehVals();
-           SetupPathfindingGridData();
-        }
-        if(evt.keyCode == pathingFindingSource){
-            removePathfindingType(SOURCE);
-            grid[tileOverIdx].setTile(SOURCE);
-        }
-        if(evt.keyCode == showPathToTake){
-            for (var i=0; i<PathFindingPathToTake.length; i++) {
-                console.log(PathFindingPathToTake[i].tilIdx);
+        GLOBAL_KEYBIND_MAP.forEach((k) => {
+            const keybind = GLOBAL_KEYBIND_MAP[k];
+            if(evt.keyCode == keybind.code){
+                evt.preventDefault();
+                keybind.action();
             }
-        }
-        if(evt.keyCode == showIngredientInventory){
-            displayIngredientInventory = !displayIngredientInventory;
-            displayPotions = !displayPotions;
-        }
-        if(evt.keyCode == showDarkness){
-            isNighttime = !isNighttime;
-        }
-        if(evt.keyCode == evaluatePathFinding){
-            PathfindingNextStep();
-        }
-        if(evt.keyCode == pauseGame) {
-            isPaused = !isPaused;
-        }
+        });
 	}
 
     // Without this, arrow keys scroll the browser!
