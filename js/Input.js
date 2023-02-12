@@ -61,6 +61,7 @@ var evaluatePathFinding = KEY_C;
 var showPathToTake = KEY_P;
 var showDarkness = KEY_O;
 var showIngredientInventory = KEY_I;
+var pauseGame = KEY_S;
 
 function setupInput() {
 	document.addEventListener('keydown', keyPressed);
@@ -98,20 +99,21 @@ function keyPressed(evt) {
 		keySet(evt, player, true);
 		// Hold down ctrl + shift and press a letter to activate a cheat
 	    if (evt.ctrlKey && evt.shiftKey) {
-		activateCheatCode(evt.keyCode);
+		    activateCheatCode(evt.keyCode);
 	    }
-        if (evt.keyCode == KEY_S) {
-            isPaused = !isPaused;
-        }
+        if(evt.keyCode == player.controlKeySword) {
+			player.swordSwing();
+		}
+        if(evt.keyCode == player.controlKeyArrow) {
+			player.shotArrow();
+		}
+
         if(evt.keyCode == pauseMusic){
             backgroundMusic.startOrStopMusic();
         }
         if(evt.keyCode == showPathFinding){
             displayPathfinding = !displayPathfinding;
         }
-        if(evt.keyCode == player.controlKeySword) {
-			player.swordSwing();
-		}
         if(evt.keyCode == pathingFindingDestination){
             removePathfindingType(DEST);
             grid[tileOverIdx].setTile(DEST);
@@ -127,23 +129,19 @@ function keyPressed(evt) {
                 console.log(PathFindingPathToTake[i].tilIdx);
             }
         }
-
         if(evt.keyCode == showIngredientInventory){
             displayIngredientInventory = !displayIngredientInventory;
             displayPotions = !displayPotions;
         }
-
         if(evt.keyCode == showDarkness){
             isNighttime = !isNighttime;
         }
-
         if(evt.keyCode == evaluatePathFinding){
             PathfindingNextStep();
         }
-
-		if(evt.keyCode == player.controlKeyArrow) {
-			player.shotArrow();
-		}
+        if(evt.keyCode == pauseGame) {
+            isPaused = !isPaused;
+        }
 	}
 
     // Without this, arrow keys scroll the browser!
