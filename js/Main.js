@@ -189,6 +189,10 @@ function drawAll() {
 			colorText("Move Right - Right Arrow", 170, 350, "white");
 			colorText("Move Up - Up Arrow", 170, 375, "white");
 			colorText("Sword Attack - Space bar", 170, 400, "white");
+			colorText("Arrow Attack - A", 170, 425, "white");
+			colorText("Interact/Pick Up - X", 170, 450, "white");
+			colorText("Music (pause/unpause) - M", 170, 475, "white");
+			colorText("Pathfinding (show/hide) - P", 170, 500, "white");
 		} else if (isInShop){
 			drawShop();
 		} else if (inGame){
