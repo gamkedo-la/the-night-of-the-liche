@@ -192,7 +192,7 @@ function keyPressed(evt) {
 		}
 
         // I think we can move this out of the inGame block later.
-        GLOBAL_KEYBIND_MAP.forEach((k) => {
+        Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
             const keybind = GLOBAL_KEYBIND_MAP[k];
             if(evt.keyCode == keybind.code){
                 evt.preventDefault();
