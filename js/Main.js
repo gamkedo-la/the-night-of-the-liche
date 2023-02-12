@@ -25,21 +25,21 @@ window.onload = function() {
 	playerCardCanvasContext = playerCardCanvas.getContext('2d');
 	skeletonCardCanvas = document.getElementById('skeletonCanvas');
 	skeletonCardContext = skeletonCardCanvas.getContext('2d');
-	
+
 	colorRect(0,0, canvas.width,canvas.height, 'orange'); // startup page
-	colorText("Loading Images... please wait", 400, 300, 'black');	
+	colorText("Loading Images... please wait", 400, 300, 'black');
 	loadImages();
 	canvas.addEventListener('mousedown',handleMouseClick);
 }
 
-function imageLoadingDoneSoStartGame() {	
+function imageLoadingDoneSoStartGame() {
 	var framesPerSecond = 30;
 	setInterval(updateAll, 1000/framesPerSecond);
-	
+
 	setupInput();
-	
+
 	loadLevel(LEVELS[levelList[currentLevelIndex]])
-	//SetupPathfindingGridData();  //// WIP for pathfinding	
+	//SetupPathfindingGridData();  //// WIP for pathfinding
 }
 
 function nextLevel() {
@@ -57,7 +57,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 	alchemistList.length = 0
 	spiritList.length = 0
 	animationList.length = 0
-    
+
     // reset the light source list in the Darkness.js effect
     resetLightsources();
 
@@ -71,7 +71,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 	} else {
 		for (var i = 0; i < roomGrid.length; i++){ //search for characters to create classes
 			if(roomGrid[i] == TILE_SKELETON){
-				addSkeleton(); 
+				addSkeleton();
 			} else if (roomGrid[i] == TILE_ALCHEMIST){
 				addAlchemist();
 			} else if (roomGrid[i] == TILE_SPIRIT){
@@ -87,15 +87,15 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 				//let py = (rowIdx) * TILE_H;
 				addAnimation({pic:candlePic, frames:6, x:px, y:py, height: 100});
 				addLightsource(px,py+30,24,1,1,0.7); // small yellow light
-            } 
+            }
 		}
-		for (var i = 0; i < skeletonList.length; i++) {  		
+		for (var i = 0; i < skeletonList.length; i++) {
 			skeletonList[i].reset();
-		} 
-		for (var i = 0; i < alchemistList.length; i++) {  		
+		}
+		for (var i = 0; i < alchemistList.length; i++) {
 			alchemistList[i].reset();
-		} 
-		for (var i = 0; i < spiritList.length; i++) {  		
+		}
+		for (var i = 0; i < spiritList.length; i++) {
 			spiritList[i].reset();
 		}
 	}
@@ -108,7 +108,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
             let px = idxToCol(i)*TILE_W;
             let py = idxToRow(i)*TILE_H;
             addLightsource(px,py+50,80,1,0.5,0); // orange light
-        }        
+        }
     }
 
 
@@ -150,17 +150,17 @@ function updateAll() {
 
 function checkCollisions(){
 //	player.checkWarriorandSwordCollisionAgainst(alchemist);
-	for (var i = 0; i < skeletonList.length; i++) {  		
+	for (var i = 0; i < skeletonList.length; i++) {
 	//	player.checkWarriorandSwordCollisionAgainst(skeleton[i]);
-	} 
-	
+	}
+
 }
 
 function moveAll() {
 	if(menuScreen) {
 		// no movement
 	} else if (isInShop) {
-		
+
 	} else if (inGame) {
 		LEVELS[levelList[currentLevelIndex]].moveAll();
 	}
@@ -177,14 +177,14 @@ function drawAll() {
 		if(menuScreen){
 			canvasContext.drawImage(titlepagePic, 0,0);  // blanks out the screen
 			canvasContext.font="30px Georgia";
-			colorText("Placeholder for Title Screen", 120, 100, "white");				
+			colorText("Placeholder for Title Screen", 120, 100, "white");
 			canvasContext.font="20px Georgia";
-			colorText("This game is still Work in Progress, but playable!", 170, 150, "white");	
-			colorText("Move from level to level by collecting keys.", 170, 200, "white");	
-			colorText("Kill monsters with your sword, and collect gold.", 170, 225, "white");	
+			colorText("This game is still Work in Progress, but playable!", 170, 150, "white");
+			colorText("Move from level to level by collecting keys.", 170, 200, "white");
+			colorText("Kill monsters with your sword, and collect gold.", 170, 225, "white");
 			colorText("Click to start", 170, 255, "white");
 			canvasContext.font="15px Georgia";
-			colorText("Move Left - Left Arrow", 170, 300, "white");	
+			colorText("Move Left - Left Arrow", 170, 300, "white");
 			colorText("Move Down - Down Arrow", 170, 325, "white");
 			colorText("Move Right - Right Arrow", 170, 350, "white");
 			colorText("Move Up - Up Arrow", 170, 375, "white");
@@ -223,7 +223,7 @@ function drawLevelSpecifics () {
 
 function drawSkeletonCard(){  // VJM:  WIP, trying to put together the raw concept
 	skeletonCardContext.fillStyle = 'red'; //background
-	skeletonCardContext.fillRect(0,0,300,300); 
+	skeletonCardContext.fillRect(0,0,300,300);
 	skeletonCardContext.drawImage(skeletonList[0].characterPic, 0, 0, 50, 50, 0, 0, 100, 100); //player image
 	skeletonCardContext.fillStyle = 'black'; //character information
 	skeletonCardContext.fillText("Max Health: " + skeletonList[0].maxHealth, 100, 10);

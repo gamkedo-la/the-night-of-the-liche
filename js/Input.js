@@ -3,39 +3,39 @@ const KEY_W = 87;
 const KEY_A = 65;
 const KEY_S = 83;
 const KEY_D = 68;
-const KEY_B = 66; 
-const KEY_C = 67; 
-const KEY_E = 69; 
-const KEY_F = 70; 
-const KEY_G = 71; 
-const KEY_H = 72; 
-const KEY_I = 73; 
-const KEY_J = 74; 
-const KEY_K = 75; 
-const KEY_L = 76; 
-const KEY_M = 77; 
-const KEY_N = 78; 
-const KEY_O = 79; 
-const KEY_P = 80; 
-const KEY_Q = 81; 
-const KEY_R = 82; 
-const KEY_T = 84; 
-const KEY_U = 85; 
-const KEY_V = 86; 
-const KEY_X = 88; 
-const KEY_Y = 89; 
+const KEY_B = 66;
+const KEY_C = 67;
+const KEY_E = 69;
+const KEY_F = 70;
+const KEY_G = 71;
+const KEY_H = 72;
+const KEY_I = 73;
+const KEY_J = 74;
+const KEY_K = 75;
+const KEY_L = 76;
+const KEY_M = 77;
+const KEY_N = 78;
+const KEY_O = 79;
+const KEY_P = 80;
+const KEY_Q = 81;
+const KEY_R = 82;
+const KEY_T = 84;
+const KEY_U = 85;
+const KEY_V = 86;
+const KEY_X = 88;
+const KEY_Y = 89;
 const KEY_Z = 90;
 
-const NUM_0 = 48; 
-const NUM_1 = 49; 
-const NUM_2 = 50; 
-const NUM_3 = 51; 
-const NUM_4 = 52; 
-const NUM_5 = 53; 
-const NUM_6 = 54; 
-const NUM_7 = 55; 
-const NUM_8 = 56; 
-const NUM_9 = 57;  
+const NUM_0 = 48;
+const NUM_1 = 49;
+const NUM_2 = 50;
+const NUM_3 = 51;
+const NUM_4 = 52;
+const NUM_5 = 53;
+const NUM_6 = 54;
+const NUM_7 = 55;
+const NUM_8 = 56;
+const NUM_9 = 57;
 
 //Arrow Keycodes
 const KEY_LEFT_ARROW =  37;
@@ -53,7 +53,7 @@ const ENTER = 13;
 var mouseX = 0;
 var mouseY = 0;
 
-var pauseMusic = KEY_M; 
+var pauseMusic = KEY_M;
 var showPathFinding = KEY_N;
 var pathingFindingSource = KEY_V;
 var pathingFindingDestination = KEY_B;
@@ -67,7 +67,7 @@ function setupInput() {
 	document.addEventListener('keyup', keyReleased);
     document.addEventListener("mousemove", mousemoved);
     document.addEventListener("mousedown", handleMouseClick);
-    document.addEventListener("mouseup", mousereleased); 
+    document.addEventListener("mouseup", mousereleased);
 
     // These will be used for: upKey, rightKey, downKey, leftKey, swordKey, arrowKey, pickUpKey.
 	player.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW, KEY_SPACEBAR, KEY_A, KEY_X);
@@ -85,7 +85,7 @@ function keySet(keyEvent, player, setTo) {
 	}
 	if(keyEvent.keyCode == player.controlKeyDown) {
 		player.keyHeld_WalkSouth = setTo;
-	}	
+	}
     if(keyEvent.keyCode == player.controlKeyPickUp){
         player.keyHeld_PickUp = setTo;
     }
@@ -107,7 +107,7 @@ function keyPressed(evt) {
             displayPathfinding = !displayPathfinding;
         }
         if(evt.keyCode == player.controlKeySword) {
-			player.swordSwing(); 
+			player.swordSwing();
 		}
         if(evt.keyCode == pathingFindingDestination){
             removePathfindingType(DEST);
@@ -139,7 +139,7 @@ function keyPressed(evt) {
         }
 
 		if(evt.keyCode == player.controlKeyArrow) {
-			player.shotArrow(); 
+			player.shotArrow();
 		}
 	}
     evt.preventDefault(); // without this, arrow keys scroll the browser!
@@ -154,16 +154,16 @@ function handleMouseClick(evt) {
 		menuScreen = false;
         inGame = true;
         backgroundMusic.loopSong("backgroundMusic");
-	} else {    
+	} else {
         if (tileOverIdx < 0 || tileOverIdx >= grid.length) { // invalid or off board
             return;
         }
-    
+
         if (tileOverIdx != -1) {
             grid[tileOverIdx].wallToggle();
     //      console.log("Tile over Idx: " + tileOverIdx);
-            mouseDragging = true; 
-            mouseSettingWalls = (grid[tileOverIdx].elementType == WALL);  
+            mouseDragging = true;
+            mouseSettingWalls = (grid[tileOverIdx].elementType == WALL);
         }
     }
 }
@@ -207,15 +207,15 @@ function mousemoved(evt) {
         tileOverIdx = rowColToArrayIndex(tileOverCol, tileOverRow);
     }
 
-    if(mouseDragging && tileOverIdx != -1) { 
-        if(mouseSettingWalls) { 
+    if(mouseDragging && tileOverIdx != -1) {
+        if(mouseSettingWalls) {
             if(grid[tileOverIdx].elementType != WALL) {
-               grid[tileOverIdx].wallToggle(); 
+               grid[tileOverIdx].wallToggle();
             }
         } else {
             if(grid[tileOverIdx].elementType == WALL) {
-               grid[tileOverIdx].wallToggle(); 
+               grid[tileOverIdx].wallToggle();
             }
         }
-    } 
+    }
 }
