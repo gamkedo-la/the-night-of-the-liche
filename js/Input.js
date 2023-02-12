@@ -63,6 +63,89 @@ var showDarkness = KEY_O;
 var showIngredientInventory = KEY_I;
 var pauseGame = KEY_S;
 
+
+var GLOBAL_KEYBIND_MAP = {
+    pauseMusic: {
+        code: KEY_M,
+        key: "M",
+        description: "Music (pause/unpause)",
+        action: () => {
+            backgroundMusic.startOrStopMusic();
+        }
+    },
+    showPathFinding: {
+        code: KEY_N,
+        key: "N",
+        description: "Pathfinding (show/hide)",
+        action: () => {
+            displayPathfinding = !displayPathfinding;
+        }
+    },
+    pathingFindingDestination: {
+        code: KEY_B,
+        key: "B",
+        description: "Destination (pathfinding)",
+        action: () => {
+            removePathfindingType(DEST);
+            grid[tileOverIdx].setTile(DEST);
+            // updatehVals();
+            SetupPathfindingGridData();
+        }
+    },
+    pathingFindingSource: {
+        code: KEY_V,
+        key: "V",
+        description: "Source (pathfinding)",
+        action: () => {
+            removePathfindingType(SOURCE);
+            grid[tileOverIdx].setTile(SOURCE);
+        }
+    },
+    showPathToTake: {
+        code: KEY_P,
+        key: "P",
+        description: "Path to take (pathfinding)",
+        action: () => {
+            for (var i=0; i<PathFindingPathToTake.length; i++) {
+                console.log(PathFindingPathToTake[i].tilIdx);
+            }
+        }
+    },
+    showIngredientInventory: {
+        code: KEY_I,
+        key: "I",
+        description: "Inventory",
+        action: () => {
+            displayIngredientInventory = !displayIngredientInventory;
+            displayPotions = !displayPotions;
+        }
+    },
+    showDarkness: {
+        code: KEY_O,
+        key: "O",
+        description: "Darkness (show/hide)",
+        action: () => {
+            isNighttime = !isNighttime;
+        }
+    },
+    evaluatePathFinding: {
+        code: KEY_C,
+        key: "C",
+        description: "Evaluate (pathfinding)",
+        action: () => {
+            PathfindingNextStep();
+        }
+    },
+    pauseGame: {
+        code: KEY_S,
+        key: "S",
+        description: "Pause Game",
+        action: () => {
+            isPaused = !isPaused;
+        }
+    },
+}
+
 function setupInput() {
 	document.addEventListener('keydown', keyPressed);
 	document.addEventListener('keyup', keyReleased);

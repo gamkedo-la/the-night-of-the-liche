@@ -194,9 +194,14 @@ function drawAll() {
 			colorText("Sword Attack - Space bar", 170, 400, "white");
 			colorText("Arrow Attack - A", 170, 425, "white");
 			colorText("Interact/Pick Up - X", 170, 450, "white");
-			colorText("Music (pause/unpause) - M", 170, 475, "white");
-			colorText("Pathfinding (show/hide) - N", 170, 500, "white");
-			colorText("Pause Game - S", 170, 520, "white");
+
+			const textX = 170;
+			let textY = 475;
+			Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
+				const keybind = GLOBAL_KEYBIND_MAP[k];
+				colorText(`${keybind.description} - ${keybind.key}`, textX, textY, "white");
+				textY += 25;
+			})
 		} else if (isInShop){
 			drawShop();
 		} else if (inGame){
