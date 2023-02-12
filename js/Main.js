@@ -196,6 +196,7 @@ function drawAll() {
 			colorText("Interact/Pick Up - X", 170, 450, "white");
 			colorText("Music (pause/unpause) - M", 170, 475, "white");
 			colorText("Pathfinding (show/hide) - P", 170, 500, "white");
+			colorText("Pause Game - S", 170, 520, "white");
 		} else if (isInShop){
 			drawShop();
 		} else if (inGame){
