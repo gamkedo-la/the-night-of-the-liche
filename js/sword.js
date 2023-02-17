@@ -47,7 +47,7 @@ function swordClass() {
 
 	this.checkhit = function() {
 		if(this.damage == 1.0) {
-			document.getElementById("debugText").innerHTML = "Successful hit "+ thisEnemy.myName+" for 1 damage point!";
+			console.log("Successful hit "+ thisEnemy.myName+" for 1 damage point!");
 			this.damage = this.damage - 1;
 			thisEnemy.health = thisEnemy.health - 1;
 		/*	if(thisEnemy == goblin) {
@@ -138,8 +138,9 @@ function swordClass() {
 		} 
 		
 		if(this.swordLife > 0) {
+			console.log('sword draw', swordXLocation, swordYLocation);
 			swordAlive = false;
-		//	colorRect(swordXLocation, swordYLocation, swordWidth, swordLength, "gray" );
+			colorRect(swordXLocation, swordYLocation, swordWidth, swordLength, "gray" );
 		}
 	}
 	

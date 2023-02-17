@@ -153,8 +153,14 @@ function updateAll() {
 
 function checkCollisions(){
 //	player.checkWarriorandSwordCollisionAgainst(alchemist);
-	for (var i = 0; i < skeletonList.length; i++) {
-	//	player.checkWarriorandSwordCollisionAgainst(skeleton[i]);
+	for (var i = 0; i < skeletonList.length; i++) {		
+		player.checkWarriorandSwordCollisionAgainst(skeletonList[i]);
+	} 
+	for (var i = 0; i < alchemistList.length; i++) {		
+		player.checkWarriorandSwordCollisionAgainst(alchemistList[i]);
+	} 
+	for (var i = 0; i < spiritList.length; i++) {		
+		player.checkWarriorandSwordCollisionAgainst(spiritList[i]);
 	}
 
 }

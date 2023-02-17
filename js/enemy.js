@@ -166,25 +166,25 @@ function characterClass() {
 
         if (this.walkNorth) {
             nextY -= this.speed;
-            direction = "north";
+            //direction = "north";
             this.sx = 0;
             this.sy = 3*this.height;
         }
         if (this.walkSouth) {
             nextY += this.speed;
-            direction = "south";
+            //direction = "south";
             this.sx = 0;
             this.sy = 0*this.height;
         }
         if (this.walkWest) {
             nextX -= this.speed;
-            direction = "west";
+            //direction = "west";
             this.sx = 0;
             this.sy = 1*this.height;
         }
         if (this.walkEast) {
             nextX += this.speed;
-            direction = "east";
+            //direction = "east";
             this.sx = 0;
             this.sy = 2*this.height;
         }

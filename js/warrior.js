@@ -306,7 +306,7 @@ function WarriorClass() {
     }
 
     this.checkWarriorandSwordCollisionAgainst = function(thisEnemy) {
-
+        
         this.centerX = this.x + this.width / 2;
         this.centerY = this.y + this.height / 2;
 
@@ -315,7 +315,7 @@ function WarriorClass() {
         }
 
         if (this.mySword.hitTest(thisEnemy)) {
-            //empty
+            console.log('sword collision check; enemy hit; take collision');
         }
 
         if (this.myArrow.hitTest(thisEnemy)) {
