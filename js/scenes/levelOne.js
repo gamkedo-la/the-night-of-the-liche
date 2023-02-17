@@ -25,7 +25,7 @@ function getLevelOneLayers () {
 		    1,   1,   1,   1,   1, 404,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   3,   1,   1,   1, //15	
 		   14,  14,  14,  14,  14,   1,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   3,   1,   1,   1,
 		   14,  39,  40,  41,  14,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
-		   14,  43,   1,   1,   1,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
+		   14,  43,   1,   1,   1, 407,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
 		   14,  43,   1,  44,  14,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, 
 		   14,  45,  46,  47,  14,   1,   3,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, //20
 		],
@@ -95,6 +95,9 @@ function levelOneMoveAll () {
 	for (var i = 0; i < spiritList.length; i++) {		
 		spiritList[i].move();
 	}
+	for (var i = 0; i < licheList.length; i++) {		
+		licheList[i].move();
+	}
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
 	}*/
@@ -138,6 +141,9 @@ function levelOneDrawAll () {
 	} 
 	for (var i = 0; i < spiritList.length; i++) {		
 		spiritList[i].draw();
+	} 
+	for (var i = 0; i < licheList.length; i++) {		
+		licheList[i].draw();
 	} 
 	for (var i = 0; i < animationList.length; i++) {		
 		animationList[i].draw();

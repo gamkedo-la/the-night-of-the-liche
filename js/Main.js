@@ -68,6 +68,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 		skeletonList = [...LEVELS[levelList[currentLevelIndex]].skeletonList]
 		alchemistList = [...LEVELS[levelList[currentLevelIndex]].alchemistList]
 		spiritList = [...LEVELS[levelList[currentLevelIndex]].spiritList]
+		licheList = [...LEVELS[levelList[currentLevelIndex]].licheList]
 		animationList = [...LEVELS[levelList[currentLevelIndex]].animationList]
 	} else {
 		for (var i = 0; i < roomGrid.length; i++){ //search for characters to create classes
@@ -77,6 +78,8 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 				addAlchemist();
 			} else if (roomGrid[i] == TILE_SPIRIT){
 				addSpirit();
+			} else if (roomGrid[i] == TILE_LICHE){
+				addLiche();
 			} else if (whichLevel.layers.interactive[i] == TILE_CANDLE){
 			//} else if (roomGrid[i] == TILE_CANDLE){
 				whichLevel.layers.interactive[i] = TILE_WALL1_TOP;
@@ -99,6 +102,9 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 		for (var i = 0; i < spiritList.length; i++) {
 			spiritList[i].reset();
 		}
+		for (var i = 0; i < licheList.length; i++) {
+			licheList[i].reset();
+		}
 	}
 
     // look for torches, fireplaces, etc in the foreground layer
@@ -120,7 +126,9 @@ function loadAreaByName (name, direction) {
 	LEVELS[levelList[currentLevelIndex]].skeletonList = [...skeletonList]
 	LEVELS[levelList[currentLevelIndex]].alchemistList = [...alchemistList]
 	LEVELS[levelList[currentLevelIndex]].spiritList = [...spiritList]
+	LEVELS[levelList[currentLevelIndex]].licheList = [...licheList]
 	LEVELS[levelList[currentLevelIndex]].animationList = [...animationList]
+	
 
 	currentLevelIndex = levelList.findIndex(level => level === name) || 0;
 	switch (direction) {
@@ -161,6 +169,9 @@ function checkCollisions(){
 	} 
 	for (var i = 0; i < spiritList.length; i++) {		
 		player.checkWarriorandSwordCollisionAgainst(spiritList[i]);
+	}
+	for (var i = 0; i < licheList.length; i++) {		
+		player.checkWarriorandSwordCollisionAgainst(licheList[i]);
 	}
 
 }

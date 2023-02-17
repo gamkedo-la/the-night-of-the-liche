@@ -172,6 +172,7 @@ const TILE_ALCHEMIST = 403;
 const TILE_SKELETON = 404;
 const TILE_SPIRIT = 405;
 const TILE_CANDLE = 406;
+const TILE_LICHE = 407;
 
 var grid = []; // array of GridElement instances, gets initialized based on tileGrid
 const NOTHING = 0;

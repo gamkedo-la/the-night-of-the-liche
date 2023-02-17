@@ -86,8 +86,6 @@ function getGraveyardLayers () {
 
 function graveyardMoveAll () {
 	player.move();
-	//alchemist.move();
-	//skeleton.move();
 	if(pathfindingNow) {
 		PathfindingNextStep();
 	}
@@ -120,8 +118,6 @@ function graveyardDrawAll () {
 	canvasContext.translate(-camPanX,-camPanY);
 	drawRoom();
 	player.draw();
-	//alchemist.draw();
-	//skeleton.draw();
 }
 
 let graveyardSkeletonList = null;
