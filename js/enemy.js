@@ -15,6 +15,7 @@ function oppositeDirectionOf(direction) {
 function characterClass() {
     this.timer = 0; 
     this.x, this.y;
+    this.direction = "east";
     this.speed = 3.0; // previously 0
     this.characterPic = skeletonPic; // which picture to use
     this.name = "Frank";
@@ -97,12 +98,12 @@ function characterClass() {
         const DIRECTIONS = ["north", "south", "west", "east", "stationary"];
 
         // picks out a random direction that is not opposite direction to previous direction
-        let direction = DIRECTIONS[Math.floor(5 * Math.random())];
-        while (direction == oppositeDirectionOf(this.prevDirection)) {
-            direction = DIRECTIONS[Math.floor(5 * Math.random())];
+        let dir = DIRECTIONS[Math.floor(5 * Math.random())];
+        while (dir == oppositeDirectionOf(this.prevDirection)) {
+            dir = DIRECTIONS[Math.floor(5 * Math.random())];
         }
 
-        this.setDirection(direction);
+        this.setDirection(dir);
     } // end of func
 
 
@@ -166,25 +167,25 @@ function characterClass() {
 
         if (this.walkNorth) {
             nextY -= this.speed;
-            //direction = "north";
+            this.direction = "north";
             this.sx = 0;
             this.sy = 3*this.height;
         }
         if (this.walkSouth) {
             nextY += this.speed;
-            //direction = "south";
+            this.direction = "south";
             this.sx = 0;
             this.sy = 0*this.height;
         }
         if (this.walkWest) {
             nextX -= this.speed;
-            //direction = "west";
+            this.direction = "west";
             this.sx = 0;
             this.sy = 1*this.height;
         }
         if (this.walkEast) {
             nextX += this.speed;
-            //direction = "east";
+            this.direction = "east";
             this.sx = 0;
             this.sy = 2*this.height;
         }
@@ -199,19 +200,19 @@ function characterClass() {
         var walkIntoTileType = TILE_WALL1_TOP;
         var walkIntoMGTileIndex = getTileTypeAtPixelCoord(nextX, nextY);
 
-        if (direction == "north") {
+        if (this.direction == "north") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX + (this.width / 2), nextY);
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + (this.width / 2), nextY);
         }
-        if (direction == "south") {
+        if (this.direction == "south") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX - (this.width / 2), nextY + this.height);
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + (this.width / 2), nextY + this.height);
         }
-        if (direction == "west") {
+        if (this.direction == "west") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX, nextY - (this.height / 2));
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX, nextY + (this.height / 2));
         }
-        if (direction == "east") {
+        if (this.direction == "east") {
             walkIntoTileIndex = getTileTypeAtPixelCoord(nextX + this.width, nextY + (this.height / 2));
             walkIntoMGTileIndex = getTileTypeAtMGPixelCoord(nextX + this.width, nextY + (this.height / 2));
         }
