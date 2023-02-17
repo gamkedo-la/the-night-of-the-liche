@@ -18,6 +18,7 @@ var isInShop = false;
 var inGame = false;
 var timeSinceInShop = 0;
 var isPaused = false;
+var leafsBlowing = true;
 
 window.onload = function() {
 	canvas = document.getElementById('gameCanvas');
@@ -227,7 +228,7 @@ function drawAll() {
 			drawLevelSpecifics();
 			if (displayPathfinding) drawTiles();
 			canvasContext.restore();
-
+			if (leafsBlowing) drawLeafs();
             if (isNighttime) drawDarkness(); // experimental glow around player with blackness all around
             if (isRaining) drawRain(-camPanX,-camPanY);
 			if (displayPlayerThoughts) drawPlayerThoughts(-camPanX,-camPanY); // drawn above darkness
