@@ -6,7 +6,7 @@ function getLevelOneLayers () {
   return {
 		//background are tiles like dirt, grass, water, and farm land.  It's not meant to be interactive with
 		background: [
-		  //0	 1			         5					     10    				      15                       20
+		//0	   1			             5					             10    				            15                       20
 			1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, // 0
 			1,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   1,   1,   1,   1,   1,   1,   1, 
 			1,   2,   2,   2,   2,   2,   2, 107, 107,   2,   2,   2,   2,   2,   1,   1,   1,   1,   1,   1,   1,

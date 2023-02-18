@@ -10,9 +10,17 @@ function thoughtBubble(txt,x,y) {
     const lh = 16;
     const margin = 10;
     
-    x-=20; // offset for the bubbles
     y-=60; // above the player's head
-    
+
+    x-=20; // offset for the bubbles
+    if (x < 0) {
+        x = 0; // prevent offscreen thoughts
+    }
+    // else if (x + w > camPanX + canvas.width / 2) {
+    //     trying to prevent going offscreen to right, this almost works
+    //     x = camPanX + (canvas.width / 2) - w;
+    // }
+
     //colorRect(x-10,y-20,w,h,'white');
     canvasContext.drawImage(thoughtBubblePic,x-1,y-20);
 
