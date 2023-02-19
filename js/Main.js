@@ -228,7 +228,6 @@ function drawAll() {
 			drawLevelSpecifics();
 			if (displayPathfinding) drawTiles();
 			canvasContext.restore();
-			if (leafsBlowing) drawLeafs();
             if (isNighttime) drawDarkness(); // experimental glow around player with blackness all around
             if (isRaining) drawRain(-camPanX,-camPanY);
 			if (displayPlayerThoughts) drawPlayerThoughts(-camPanX,-camPanY); // drawn above darkness

@@ -148,6 +148,7 @@ function levelOneDrawAll () {
 	for (var i = 0; i < animationList.length; i++) {		
 		animationList[i].draw();
 	} 
+	if (leafsBlowing) drawLeafs();
 	drawTopLayer();
 	drawRoof(timeSinceInShop / 15);
 }

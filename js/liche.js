@@ -8,7 +8,7 @@ function addLiche(){
 licheClass.prototype = new characterClass();
 function licheClass() {
     this.width = 100;
-    this.height = 100;
+    this.height = 102;
 
     this.trackingPlayer = true;
     

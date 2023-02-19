@@ -1,6 +1,7 @@
+var leafXPos = 50
+
 function drawLeafs(){
-    let windSpeed = 5;
-    let xPos = 50;
-    xPos = xPos + windSpeed
-    canvasContext.drawImage(worldPics[50], 300,250, 50, 50, 25, xPos, 350, 50); 
+    let windSpeed = 0;
+    leafXPos += windSpeed;
+    canvasContext.drawImage(worldPics[50], 300,250, 50, 50, leafXPos, 400, 50, 50); 
 }
