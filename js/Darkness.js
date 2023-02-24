@@ -26,13 +26,21 @@ function drawDarkness() {
 
     // cut holes in the darkness where lights are
     darknessCTX.globalCompositeOperation = "destination-out"; // cut alpha
+    
     // around the player
     darknessCTX.drawImage(lightGlowPic,player.x-128+24-camPanX,player.y-128+24-camPanY);
-    // and all monsters and NPCs (for now)
+    
+    // and all monsters and NPCs
 	for (me of skeletonList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
 	for (me of alchemistList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
 	for (me of spiritList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
-    // flickering light sources
+    for (me of licheList) { 
+        //darknessCTX.globalAlpha = 1 - (Math.sin(performance.now()/5)/2+0.5)*0.2; // flicker
+        darknessCTX.drawImage(lightGlowPic,me.x-128+48-camPanX,me.y-128+32-camPanY); 
+        //darknessCTX.globalAlpha = 1; 
+    }
+    
+    // and all flickering light sources
     for (me of lightsourceList) {
         // flicker
         let alphaFlicker = Math.sin(performance.now()/100)/4+0.75;
@@ -60,15 +68,25 @@ function drawDarkness() {
         }
     }
 
-    // add a blue glow around spirits
+    // add a blue/red glow around spirits
     if (USE_COLOURED_LIGHTS) {
-        darknessCTX.globalCompositeOperation = "luminosity";
-        darknessCTX.globalAlpha = 0.5;
+        // FIXME - these blend modes do not operate on the WORLD canvas
+        // only the blank spaces in the darkness: 
+        // so they don't work as expected since it's tinting emptiness
+
+        darknessCTX.globalCompositeOperation = "lighten";
+        
+        darknessCTX.globalAlpha = 0.25; // subtle colour
         for (me of spiritList) {
             darknessCTX.drawImage(BLUElightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
         }
         for (me of skeletonList) {
             darknessCTX.drawImage(REDlightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
+        }
+        for (me of licheList) {
+            darknessCTX.globalAlpha = (Math.sin(performance.now()/350)/2+0.5) * 0.333; // pulse greenish
+            darknessCTX.drawImage(GREENlightGlowPic,me.x-128+48-camPanX,me.y-128+32-camPanY);
+            darknessCTX.globalAlpha = 1;
         }
     }
 
