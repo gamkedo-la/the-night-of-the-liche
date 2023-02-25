@@ -9,20 +9,27 @@ function thoughtBubble(txt,x,y) {
     const h = 70;
     const lh = 16;
     const margin = 10;
+    let atMaxPan = camPanX >= ROOM_COLS * TILE_W - (canvas.width-SIDEBAR_WIDTH);
+    let bubbleToUse = thoughtBubblePic
     
     y-=60; // above the player's head
 
     x-=20; // offset for the bubbles
+    
     if (x < 0) {
         x = 0; // prevent offscreen thoughts
+    } else if (atMaxPan && (x + w > canvas.width - SIDEBAR_WIDTH)) {
+        const oldX = x
+        x = canvas.width - w - SIDEBAR_WIDTH;
+        if (oldX - x >= 10 && oldX - x < 90) {
+            bubbleToUse = thoughtBubblePicMiddle
+        } else if (oldX - x >= 90) {
+            bubbleToUse = thoughtBubblePicFlipped
+        }
     }
-    // else if (x + w > camPanX + canvas.width / 2) {
-    //     trying to prevent going offscreen to right, this almost works
-    //     x = camPanX + (canvas.width / 2) - w;
-    // }
 
     //colorRect(x-10,y-20,w,h,'white');
-    canvasContext.drawImage(thoughtBubblePic,x-1,y-20);
+    canvasContext.drawImage(bubbleToUse,x-1,y-20);
 
     var lines = txt.split('\n');
     for (let n=0; n<lines.length; n++) {

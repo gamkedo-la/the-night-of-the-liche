@@ -8,6 +8,8 @@ var lichePic = document.createElement('img');
 var alchemistPic = document.createElement("img");
 var spiritPic = document.createElement("img");
 var thoughtBubblePic = document.createElement("img");
+var thoughtBubblePicMiddle = document.createElement("img");
+var thoughtBubblePicFlipped = document.createElement("img");
 var heartPic = document.createElement("img");
 var Pic = document.createElement("img");
 var shadowPic = document.createElement("img");
@@ -296,6 +298,8 @@ function loadImages() {
 			{varName: skeletonPic, theFile: "skeleton.png"},
 			{varName: titlepagePic, theFile: "background.png"},
 			{varName: thoughtBubblePic, theFile: "thoughtBubble.png"},
+			{varName: thoughtBubblePicMiddle, theFile: "thoughtBubbleMiddle.png"},
+			{varName: thoughtBubblePicFlipped, theFile: "thoughtBubbleFlipped.png"},
 			{varName: heartPic, theFile: "hearts.png"},
 			{varName: shadowPic, theFile: "shadow.png"},
 			{varName: questGUIPic, theFile: "questGUI.png"},
