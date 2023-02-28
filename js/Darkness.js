@@ -74,7 +74,7 @@ function drawDarkness() {
         // only the blank spaces in the darkness: 
         // so they don't work as expected since it's tinting emptiness
 
-        darknessCTX.globalCompositeOperation = "lighten";
+        darknessCTX.globalCompositeOperation = "lighten"; // no effect
         
         darknessCTX.globalAlpha = 0.25; // subtle colour
         for (me of spiritList) {
@@ -91,17 +91,17 @@ function drawDarkness() {
     }
 
     //darknessCTX.globalCompositeOperation = "source-over"; // reset to normal drawing mode?
-    darknessCTX.globalCompositeOperation = "multiply"; // hmmm luninosity?
+    darknessCTX.globalCompositeOperation = "multiply"; // no effect
     
     // draw the darkness over top of the scene
     canvasContext.globalAlpha = NIGHT_DARKNESS_OPACITY; //FIXME: the above blackness is 100% opaque not sure why
     canvasContext.drawImage(darknessCanvas,0,0);
     canvasContext.globalAlpha = 1;
 
-    // the old way that worked
-    // canvasContext.globalAlpha = NIGHT_DARKNESS_OPACITY;
-    // canvasContext.drawImage(darknessPic,player.x+24-1000,player.y+24-1000);
-    // canvasContext.globalAlpha = 1;
+    // TODO: 
+    // now draw the light glows in additive mode
+    // using a new temp canvas called glowCanvas
+
 }
 
 // a list of light sources - extra glows added by level tiles

@@ -197,28 +197,37 @@ function health() {
 function drawAll() {
 		if(menuScreen){
 			canvasContext.drawImage(titlepagePic, 0,0);  // blanks out the screen
-			canvasContext.font="30px Georgia";
-			colorText("Placeholder for Title Screen", 120, 100, "white");
-			canvasContext.font="20px Georgia";
-			colorText("This game is still Work in Progress, but playable!", 170, 150, "white");
-			colorText("Move from level to level by collecting keys.", 170, 200, "white");
-			colorText("Kill monsters with your sword, and collect gold.", 170, 225, "white");
-			colorText("Click to start", 170, 255, "white");
-			canvasContext.font="15px Georgia";
-			colorText("Move Left - Left Arrow", 170, 300, "white");
-			colorText("Move Down - Down Arrow", 170, 325, "white");
-			colorText("Move Right - Right Arrow", 170, 350, "white");
-			colorText("Move Up - Up Arrow", 170, 375, "white");
-			colorText("Sword Attack - Space bar", 170, 400, "white");
-			colorText("Arrow Attack - A", 170, 425, "white");
-			colorText("Interact/Pick Up - X", 170, 450, "white");
+			canvasContext.drawImage(logoPic, 280,0);
 
-			const textX = 170;
-			let textY = 475;
+            const helpX = 450;
+			let helpy = 340;
+            let helph = 14;
+
+			canvasContext.font="24px Georgia";
+			//colorText("This game is still Work in Progress, but playable!", 170, 150, "white");
+			//colorText("Move from level to level by collecting keys.", 170, 200, "white");
+			//colorText("Kill monsters with your sword, and collect gold.", 170, 225, "white");
+			colorText("Click to start", helpX-1, 320-1, "red");
+			colorText("Click to start", helpX+1, 320-1, "red");
+			colorText("Click to start", helpX-1, 320+1, "red");
+			colorText("Click to start", helpX+1, 320+1, "red");
+			colorText("Click to start", helpX, 320, "white");
+
+
+			canvasContext.font="12px Georgia";
+            colorText("Move Left - Left Arrow", helpX, helpy+=helph, "white");
+			colorText("Move Down - Down Arrow", helpX, helpy+=helph, "white");
+			colorText("Move Right - Right Arrow", helpX, helpy+=helph, "white");
+			colorText("Move Up - Up Arrow", helpX, helpy+=helph, "white");
+			colorText("Sword Attack - Space bar", helpX, helpy+=helph, "white");
+			colorText("Arrow Attack - A", helpX, helpy+=helph, "white");
+			colorText("Interact/Pick Up - X", helpX, helpy+=helph, "white");
+
+            helpy+=helph;
+
 			Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
 				const keybind = GLOBAL_KEYBIND_MAP[k];
-				colorText(`${keybind.description} - ${keybind.key}`, textX, textY, "white");
-				textY += 25;
+				colorText(`${keybind.description} - ${keybind.key}`, helpX, helpy+=helph, "white");
 			})
 		} else if (isInShop){
 			drawShop();
