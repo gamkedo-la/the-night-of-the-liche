@@ -1,5 +1,6 @@
 var titlepagePic = document.createElement("img");
 var logoPic = document.createElement("img");
+var fogPic = document.createElement("img");
 var storeFrontPic = document.createElement("img");
 
 var playerPic = document.createElement("img");
@@ -299,6 +300,7 @@ function loadImages() {
 			{varName: skeletonPic, theFile: "skeleton.png"},
 			{varName: titlepagePic, theFile: "background.png"},
 			{varName: logoPic, theFile: "logo.png"},
+			{varName: fogPic, theFile: "fog.png"},
 			{varName: thoughtBubblePic, theFile: "thoughtBubble.png"},
 			{varName: thoughtBubblePicMiddle, theFile: "thoughtBubbleMiddle.png"},
 			{varName: thoughtBubblePicFlipped, theFile: "thoughtBubbleFlipped.png"},

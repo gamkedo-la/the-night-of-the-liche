@@ -194,6 +194,25 @@ function health() {
 	}
 }
 
+function drawTitlescreenFog() {
+    
+    // faintly lighten the background
+    canvasContext.globalCompositeOperation = "additive";
+    canvasContext.globalAlpha = 0.1;
+    
+    for (let now,x,y,i=0; i<50; i++) {
+        now = performance.now();
+        x = Math.cos(i*1234)*canvas.width;
+        x += Math.cos((now+i*1234)/2000)*200;
+        y = canvas.height - 280 + Math.cos((now+i*1234)/600)*40;
+        canvasContext.drawImage(fogPic,x,y);
+    }
+    
+    // reset to normal drawing mode
+    canvasContext.globalCompositeOperation = "source-over";
+    canvasContext.globalAlpha = 1;
+}
+
 function drawAll() {
 		if(menuScreen){
 			canvasContext.drawImage(titlepagePic, 0,0);  // blanks out the screen
@@ -228,7 +247,11 @@ function drawAll() {
 			Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
 				const keybind = GLOBAL_KEYBIND_MAP[k];
 				colorText(`${keybind.description} - ${keybind.key}`, helpX, helpy+=helph, "white");
-			})
+			});
+
+            // fog fx at bottom of screen
+            drawTitlescreenFog();
+
 		} else if (isInShop){
 			drawShop();
 		} else if (inGame){
