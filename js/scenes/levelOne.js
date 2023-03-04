@@ -101,6 +101,7 @@ function levelOneMoveAll () {
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
 	}*/
+	checkToAddLeafs();
 	checkCollisions();
 	cameraFollow();	
 }
@@ -148,7 +149,14 @@ function levelOneDrawAll () {
 	for (var i = 0; i < animationList.length; i++) {		
 		animationList[i].draw();
 	} 
-	if (leafsBlowing) drawLeafs();
+	if (leafsBlowing) {
+		for (var i = 0; i < leafList.length; i++) {		
+			leafList[i].draw();
+			if(leafList[i].markForRemoval){
+				leafList.splice(i, 1);
+			}
+		}
+	} 
 	drawTopLayer();
 	drawRoof(timeSinceInShop / 15);
 }

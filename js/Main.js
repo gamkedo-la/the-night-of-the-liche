@@ -106,6 +106,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 		for (var i = 0; i < licheList.length; i++) {
 			licheList[i].reset();
 		}
+		pickAmountOfLeafs();
 	}
 
     // look for torches, fireplaces, etc in the foreground layer
