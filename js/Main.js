@@ -71,6 +71,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 		spiritList = [...LEVELS[levelList[currentLevelIndex]].spiritList]
 		licheList = [...LEVELS[levelList[currentLevelIndex]].licheList]
 		animationList = [...LEVELS[levelList[currentLevelIndex]].animationList]
+		leafList = [...LEVELS[levelList[currentLevelIndex]].leafList]
 	} else {
 		for (var i = 0; i < roomGrid.length; i++){ //search for characters to create classes
 			if(roomGrid[i] == TILE_SKELETON){
@@ -92,7 +93,7 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 				//let py = (rowIdx) * TILE_H;
 				addAnimation({pic:candlePic, frames:6, x:px, y:py, height: 100});
 				addLightsource(px,py+30,24,1,1,0.7); // small yellow light
-            }
+			}
 		}
 		for (var i = 0; i < skeletonList.length; i++) {
 			skeletonList[i].reset();
@@ -130,7 +131,7 @@ function loadAreaByName (name, direction) {
 	LEVELS[levelList[currentLevelIndex]].spiritList = [...spiritList]
 	LEVELS[levelList[currentLevelIndex]].licheList = [...licheList]
 	LEVELS[levelList[currentLevelIndex]].animationList = [...animationList]
-	
+	LEVELS[levelList[currentLevelIndex]].leafList = [...leafList]	
 
 	currentLevelIndex = levelList.findIndex(level => level === name) || 0;
 	switch (direction) {

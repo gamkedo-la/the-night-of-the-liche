@@ -165,6 +165,7 @@ let levelOneSkeletonList = null;
 let levelOneAlchemistList = null;
 let levelOneSpiritList = null;
 let levelOneAnimationList = null;
+let levelOneLeafList = null;
 
 const levelOnePlayerThoughts = [
 	{

@@ -118,12 +118,37 @@ function graveyardDrawAll () {
 	canvasContext.translate(-camPanX,-camPanY);
 	drawRoom();
 	player.draw();
+
+	for (var i = 0; i < skeletonList.length; i++) {		
+		skeletonList[i].draw();
+	}
+	for (var i = 0; i < alchemistList.length; i++) {		
+		alchemistList[i].draw();
+	} 
+	for (var i = 0; i < spiritList.length; i++) {		
+		spiritList[i].draw();
+	} 
+	for (var i = 0; i < licheList.length; i++) {		
+		licheList[i].draw();
+	} 
+	for (var i = 0; i < animationList.length; i++) {		
+		animationList[i].draw();
+	} 
+	if (leafsBlowing) {
+		for (var i = 0; i < leafList.length; i++) {		
+			leafList[i].draw();
+			if(leafList[i].markForRemoval){
+				leafList.splice(i, 1);
+			}
+		}
+	} 
 }
 
 let graveyardSkeletonList = null;
 let graveyardAlchemistList = null;
 let graveyardSpiritList = null;
 let graveyardAnimationList = null;
+let graveyardLeafList = null;
 
 const graveyardPlayerThoughts = [
 	// See levelOne.js for proper format

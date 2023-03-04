@@ -31,6 +31,7 @@ function drawDarkness() {
     darknessCTX.drawImage(lightGlowPic,player.x-128+24-camPanX,player.y-128+24-camPanY);
     
     // and all monsters and NPCs
+    console.log(`Darkness SkeletonList: ${skeletonList.length}`)
 	for (me of skeletonList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
 	for (me of alchemistList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
 	for (me of spiritList) darknessCTX.drawImage(lightGlowPic,me.x-128+24-camPanX,me.y-128+24-camPanY);
