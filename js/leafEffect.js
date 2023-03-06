@@ -54,7 +54,12 @@ function leafClass(){
         }
         let windSpeed = 1;
         this.xPos += windSpeed;
-        canvasContext.drawImage(worldPics[50], this.sx,this.sy, 50, 50, this.xPos, this.yPos, 50, 50); 
-        
+        /*canvasContext.save();
+        canvaseContext.translate(this.xPos,this.yPos);
+        canvasContext.rotate(50); 
+        canvasContext.drawImage(worldPics[50], this.sx,this.sy, 50, 50, this.xPos, this.yPos, 50, 50);     
+        canvasContext.restore(); 
+        */
+        canvasContext.drawImage(worldPics[50], this.sx,this.sy, 50, 50, this.xPos, this.yPos, 50, 50);    
     }
 }
