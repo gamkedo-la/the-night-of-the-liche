@@ -17,8 +17,10 @@ body {
 	
 }
 
-#gameCanvas {
-	float: left;
+#gameCanvas, #pauseAnimationCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #reset {

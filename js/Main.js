@@ -4,6 +4,7 @@
 var canvas, canvasContext;
 var playerCardCanvas, playerCardCanvasContext;
 var skeletonCardCanvas, skeletonCardContext;
+var pauseAnimationCanvas, pauseAnimationContext;
 const SIDEBAR_WIDTH = 300;
 let HEALTH_X_OFFSET = 0;
 
@@ -19,6 +20,7 @@ var isInShop = false;
 var inGame = false;
 var timeSinceInShop = 0;
 var isPaused = false;
+var drawnPauseScreen = false;
 var leafsBlowing = true;
 
 window.onload = function() {
@@ -28,6 +30,8 @@ window.onload = function() {
 	playerCardCanvasContext = playerCardCanvas.getContext('2d');
 	skeletonCardCanvas = document.getElementById('skeletonCanvas');
 	skeletonCardContext = skeletonCardCanvas.getContext('2d');
+	pauseAnimationCanvas = document.getElementById('pauseAnimationCanvas');
+	pauseAnimationContext = pauseAnimationCanvas.getContext('2d');
 
 	colorRect(0,0, canvas.width,canvas.height, 'orange'); // startup page
 	colorText("Loading Images... please wait", 400, 300, 'black');
@@ -159,7 +163,10 @@ function loadAreaByName (name, direction) {
 }
 
 function updateAll() {
-	if (isPaused) return;
+	if (isPaused) {
+		displayPauseState();
+		return;
+	}
 
 	moveAll();
 	drawAll();

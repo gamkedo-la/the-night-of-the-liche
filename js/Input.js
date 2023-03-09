@@ -142,6 +142,9 @@ var GLOBAL_KEYBIND_MAP = {
         description: "Pause Game",
         action: () => {
             isPaused = !isPaused;
+            if ( !isPaused ) {
+                leavePauseState();
+            }
         }
     },
 }
