@@ -18,6 +18,7 @@ var isInShop = false;
 var inGame = false;
 var timeSinceInShop = 0;
 var isPaused = false;
+var drawnPauseScreen = false;
 var leafsBlowing = true;
 
 window.onload = function() {
@@ -156,7 +157,10 @@ function loadAreaByName (name, direction) {
 }
 
 function updateAll() {
-	if (isPaused) return;
+	if (isPaused) {
+		displayPauseState();
+		return;
+	}
 
 	moveAll();
 	drawAll();
