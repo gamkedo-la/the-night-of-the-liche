@@ -5,6 +5,7 @@ var canvas, canvasContext;
 var playerCardCanvas, playerCardCanvasContext;
 var skeletonCardCanvas, skeletonCardContext;
 const SIDEBAR_WIDTH = 300;
+let HEALTH_X_OFFSET = 0;
 
 // Characters //
 var player = new WarriorClass();
@@ -32,6 +33,8 @@ window.onload = function() {
 	colorText("Loading Images... please wait", 400, 300, 'black');
 	loadImages();
 	canvas.addEventListener('mousedown',handleMouseClick);
+
+	HEALTH_X_OFFSET = canvasContext.canvas.width - SIDEBAR_WIDTH - 0;
 }
 
 function imageLoadingDoneSoStartGame() {
