@@ -27,3 +27,8 @@ body {
 	width: 300px;
 	float: left;
 }
+
+#debugText {
+	background-color: white;
+	color: black;
+}
