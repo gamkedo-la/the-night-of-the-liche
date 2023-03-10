@@ -1,4 +1,4 @@
-const SWORD_LIFE = 10;
+const SWORD_LIFE = 60;
 const SWORD_SPEED = 1.0;
 var swordAlive = false;
 
