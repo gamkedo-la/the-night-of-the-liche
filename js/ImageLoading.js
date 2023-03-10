@@ -291,6 +291,7 @@ function loadImages() {
 			{tileType: TILE_GRAVE2, theFile: "grave2.png", locX: 50, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRAVE3, theFile: "grave2.png", locX: 100, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_GRAVE4, theFile: "grave2.png", locX: 150, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
+			{tileType: TILE_BUSH, theFile: "bushes.png", locX: 0, locY: 0, width: 50, height: 50, offSetX: 0, offSetY: 0},
 			{tileType: TILE_STOVE, theFile: "stove.png", locX: 0, locY: 0, width: 50, height: 100, offSetX: 0, offSetY: -25},
 
 			//characters and misc

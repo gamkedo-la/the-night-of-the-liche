@@ -168,6 +168,7 @@ const TILE_GRAVE1 = 69;
 const TILE_GRAVE2 = 70;
 const TILE_GRAVE3 = 71;
 const TILE_GRAVE4 = 72;
+const TILE_BUSH = 73;
 const TILE_KITCHENTABLE = 400;
 const TILE_BED1 = 401;
 const TILE_PLAYERSTART = 402;
