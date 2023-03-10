@@ -9,6 +9,10 @@ skeletonClass.prototype = new characterClass();
 function skeletonClass() {
 
     this.trackingPlayer = true;
+    this.attackReadyTicker = 30;
+    this.attackReady = true;
+    this.health = 4; 
+    this.alive = true;
     
     this.superclassReset = this.reset; 
     this.reset = function() {
@@ -24,5 +28,28 @@ function skeletonClass() {
                 } 
             } 
         } 
+    }
+
+    this.attack = function() {
+        if(this.attackReady == true){
+            player.health = player.health -1; 
+            console.log( "Skeleton Strikes! ... Player has ", player.health, " remaining!" )
+            // player flashes red for a moment
+            // playerHurtSound.play(); 
+            // document.getElementById("debugText").innerHTML = "Ouch! I've been attacked by a Skeleton for 1 point of damage."; 
+            this.attackReady = false;
+        }
+        else if(this.attackReady == false) {  
+            this.attackReadyCounter();
+        }
+    }
+    
+    this.attackReadyCounter = function() {
+        if(this.attackReadyTicker > 0){ 
+            this.attackReadyTicker--;
+        } else if(this.attackReadyTicker <= 0){
+            this.attackReadyTicker = 60; //amount of time between bites
+            this.attackReady = true;
+        }
     }  
 }

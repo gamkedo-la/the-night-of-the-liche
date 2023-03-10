@@ -269,7 +269,9 @@ function characterClass() {
             //VJM 1/7/23:  Need to code the player can't pass through skeleton and vice versa
             //VJM 1/7/23:  Need to code Skeleton to attack at a close range
             //VJM 1/7/23:  Need to improve code to collide from different sides and not the center of the player
-            console.log("collision with player from skeleton")
+            console.log("collision with player from ENEMY")
+            this.attack();
+
        };
     };
 
