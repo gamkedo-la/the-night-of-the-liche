@@ -3,6 +3,7 @@ var animationList = [];
 function addAnimation(spec={}){
 	var anim = new animationClass(spec);
 	animationList.push(anim);
+    return anim;
 }
 
 function animationClass(spec={}) {

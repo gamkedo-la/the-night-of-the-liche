@@ -22,6 +22,7 @@ var GREENlightGlowPic = document.createElement("img");
 var BLUElightGlowPic = document.createElement("img");
 var candlePic = document.createElement('img');
 var rainEffectPic = document.createElement('img');
+var leaf1AnimPic = document.createElement('img');
 
 var worldPics = [];
 
@@ -314,8 +315,8 @@ function loadImages() {
 			{varName: GREENlightGlowPic, theFile: "green_glow.png"},
 			{varName: BLUElightGlowPic, theFile: "blue_glow.png"},
 			{varName: candlePic, theFile: "household.png"},
-            {varName: rainEffectPic, theFile: "rain_effect.png"},
-
+			{varName: rainEffectPic, theFile: "rain_effect.png"},
+			{varName: leaf1AnimPic, theFile: "leaf1.png"},
 		];
 			
 	picsToLoad = imageList.length;
