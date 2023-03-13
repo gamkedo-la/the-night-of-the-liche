@@ -43,6 +43,14 @@ function drawDarkness() {
     
     // and all flickering light sources
     for (me of lightsourceList) {
+
+        // dont draw lights in shop if outside
+        // TODO: find windows in shop and light them up when outside (or if a light is on inside)
+        if ( me.specialLocations == ROOF_LOCATIONS.SHOP 
+            && timeSinceInShop >= 15 ) {
+            continue;
+        }
+
         // flicker
         let alphaFlicker = Math.sin(performance.now()/100)/4+0.75;
         darknessCTX.globalAlpha = alphaFlicker;
@@ -110,9 +118,9 @@ var lightsourceList = [];
 
 // used in level loading similar to adding a monster
 // (r,g,b = red green blue) eg. 1,1,1 is white light
-function addLightsource(x,y,size=48,r=1,g=1,b=1) {
+function addLightsource(x,y,specialLocations,size=48,r=1,g=1,b=1) {
     console.log("adding a light source at :"+x+","+y);
-    lightsourceList.push({x:x,y:y,size:size,r:r,g:g,b:b});
+    lightsourceList.push({x:x,y:y,specialLocations:specialLocations,size:size,r:r,g:g,b:b});
 }
 
 // run when we change levels
