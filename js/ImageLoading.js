@@ -6,6 +6,9 @@ var storeFrontPic = document.createElement("img");
 var playerPic = document.createElement("img");
 var swordPic = document.createElement("img");
 var skeletonPic = document.createElement('img');
+
+var skeletonAttackPic = document.createElement('img');
+
 var lichePic = document.createElement('img');
 var alchemistPic = document.createElement("img");
 var spiritPic = document.createElement("img");
@@ -300,6 +303,9 @@ function loadImages() {
 			{varName: alchemistPic, theFile: "alchemist.png"},
 			{varName: lichePic, theFile: "liche.png"},
 			{varName: skeletonPic, theFile: "skeleton.png"},
+
+			{varName: skeletonAttackPic, theFile: "skeleton-attack.png"},
+
 			{varName: titlepagePic, theFile: "background.png"},
 			{varName: logoPic, theFile: "logo.png"},
 			{varName: fogPic, theFile: "fog.png"},

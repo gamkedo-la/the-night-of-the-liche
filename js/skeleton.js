@@ -29,20 +29,27 @@ function skeletonClass() {
             } 
         } 
     }
+ 
+
 
     this.attack = function() {
         if(this.attackReady == true){
+            // play attack animation
+
+            this.characterPic = skeletonAttackPic;
+            this.frameIndex = 0;
+            // play attack SFX 
+
             player.health = player.health -1; 
             console.log( "Skeleton Strikes! ... Player has ", player.health, " remaining!" )
-            // player flashes red for a moment
-            // playerHurtSound.play(); 
-            // document.getElementById("debugText").innerHTML = "Ouch! I've been attacked by a Skeleton for 1 point of damage."; 
             this.attackReady = false;
         }
         else if(this.attackReady == false) {  
             this.attackReadyCounter();
+
         }
     }
+
     
     this.attackReadyCounter = function() {
         if(this.attackReadyTicker > 0){ 
