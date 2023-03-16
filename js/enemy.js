@@ -270,7 +270,9 @@ function characterClass() {
             //VJM 1/7/23:  Need to code Skeleton to attack at a close range
             //VJM 1/7/23:  Need to improve code to collide from different sides and not the center of the player
             console.log("collision with player from ENEMY")
-            this.attack();
+            
+            // some npcs do not come with .attack()
+            if (this.attack) this.attack();// else console.log("error: enemy is missing an attack function");
 
        };
     };
