@@ -4,11 +4,12 @@ var audioFormat;
 var alchemistIntro_1 = new SoundOverlapsClass("alchemist_intro1");
 var alchemistIntro_2 = new SoundOverlapsClass("alchemist_intro2");
 var alchemistIntro_3 = new SoundOverlapsClass("alchemist_intro3");
-var sfx_footsteps = new SoundOverlapsClass("footsteps");
 var sfx_door = new SoundOverlapsClass("door");
-//var sfx_player_attack = new SoundOverlapsClass("sfx_player_attack");
-//var sfx_skeleton_attack = new SoundOverlapsClass("attsfx_skeleton_attackack");
-//var sfx_lich_attack = new SoundOverlapsClass("sfx_lich_attack");
+
+// TODO: replace these with nicer mp3s - swish.mp3 is placeholder
+var sfx_player_attack = new SoundOverlapsClass("swish");
+var sfx_skeleton_attack = new SoundOverlapsClass("swish");
+var sfx_lich_attack = new SoundOverlapsClass("swish");
 
 // Music //
 var backgroundMusic = new BackgroundMusicClass("background");

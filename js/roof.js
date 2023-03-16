@@ -57,7 +57,13 @@ function drawRoof(alpha){
                 canvasContext.globalAlpha = alpha;
                 canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteHeight, spriteOffSetX, spriteOffSetY, spriteWidth, spriteHeight);
                 canvasContext.globalAlpha = 1;
+                if (timeSinceInShop == 0) {
+                    sfx_door.play(); // open the door
+                }
             } else {
+                if (timeSinceInShop != 0) {
+                    sfx_door.play(); // close the door
+                }
                 timeSinceInShop = 0;
             }
 
