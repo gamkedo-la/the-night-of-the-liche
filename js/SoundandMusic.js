@@ -7,7 +7,8 @@ var alchemistIntro_3 = new SoundOverlapsClass("alchemist_intro3");
 var sfx_door = new SoundOverlapsClass("door");
 
 // TODO: replace these with nicer mp3s - swish.mp3 is placeholder
-var sfx_player_attack = new SoundOverlapsClass("swish");
+var sfx_sword_attack = new SoundOverlapsClass("swish");
+var sfx_arrow_attack = new SoundOverlapsClass("arrow");
 var sfx_skeleton_attack = new SoundOverlapsClass("swish");
 var sfx_lich_attack = new SoundOverlapsClass("swish");
 
@@ -32,12 +33,14 @@ function SoundOverlapsClass(filenameWithPath) {
 	
 	var altSoundTurn = false;
 	
-	this.play = function() {
+	this.play = function(volume=1) {
 		if(altSoundTurn) {
 			altSound.currentTime = 0;
+            altSound.volume = volume;
 			altSound.play();
 		} else {
 			mainSound.currentTime = 0;
+            mainSound.volume = volume;
 			mainSound.play();
 		}
 		altSoundTurn = !this.altSoundTurn;

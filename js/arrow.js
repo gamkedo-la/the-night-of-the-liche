@@ -110,6 +110,8 @@ function arrowClass() {
 			
 			
 			this.arrowLife = ARROW_LIFE;
+            
+            sfx_arrow_attack.play(0.1);
 		}
 	}
 	

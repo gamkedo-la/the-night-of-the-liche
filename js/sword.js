@@ -36,6 +36,8 @@ function swordClass() {
 		this.y = warriorAttack.y;
 		
 		this.swordLife = SWORD_LIFE;
+
+        sfx_sword_attack.play();
 	}
 	
 	this.hitTest = function(thisEnemy) {
