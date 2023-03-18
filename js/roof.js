@@ -15,6 +15,7 @@ const ROOF_COLS = 13;
 const ROOF_ROWS = 10; 
 var tileRoofX = 0;
 var tileRoofY = 0;
+var roofWasDrawnLastFrame = true;
 
 function roofRowColToArrayIndex(col, row) {
 	return col + ROOF_COLS * row;
@@ -57,8 +58,12 @@ function drawRoof(alpha){
                 canvasContext.globalAlpha = alpha;
                 canvasContext.drawImage(useImg, spriteX, spriteY, spriteWidth, spriteHeight, spriteOffSetX, spriteOffSetY, spriteWidth, spriteHeight);
                 canvasContext.globalAlpha = 1;
+                if (!roofWasDrawnLastFrame) sfx_door.play(); // open the door
+                roofWasDrawnLastFrame = true;
             } else {
+                if (roofWasDrawnLastFrame) sfx_door.play(); // close the door
                 timeSinceInShop = 0;
+                roofWasDrawnLastFrame = false;
             }
 
             drawTileX += TILE_W;

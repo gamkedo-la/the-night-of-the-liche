@@ -303,8 +303,22 @@ function WarriorClass() {
         this.mySword.move();
         this.myArrow.move();
 
+        this.playFootstepSFX(this.playerMove);
     }
 
+    this.playFootstepSFX = function(isOn=true) {
+        
+        if (!this.footstepSFX) {
+            this.footstepSFX = new Audio("sound/footsteps.mp3");
+            this.footstepSFX.loop = true;
+            this.footstepSFX.volume = 0.5; // quiet
+            this.footstepSFX.play();
+        }
+        
+        this.footstepSFX.volume = isOn ? 0.5 : 0; // mute the looped sound if stopped
+
+    }
+    
     this.checkWarriorandSwordCollisionAgainst = function(thisEnemy) {
         
         this.centerX = this.x + this.width / 2;
