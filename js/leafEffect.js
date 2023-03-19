@@ -14,7 +14,8 @@ function pickAmountOfLeafs(){
 	} 
 
     for(var i = 0; i < leafList.length; i++){
-        leafList[i].initialize();
+        let leafName = i;
+        leafList[i].initialize(leafName);
     }
 
 
@@ -33,10 +34,11 @@ function addLeaf(){
 }
 
 function leafClass(){
-    this.initialize = function(){
+    this.initialize = function(leafName){
         this.xPos = 1+Math.random()*600;
         this.yPos = 1+Math.random()*600;
         this.whichLeaf = Math.floor(1+Math.random()*3-1);
+        this.name = leafName;
         this.anim = null;
 
         if(this.whichLeaf == 0){
@@ -65,7 +67,9 @@ function leafClass(){
                 }
         
                 this.sx = this.frameIndex * this.width;
-                canvasContext.drawImage(this.pic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);    
+                if(this.name > 0){
+                    canvasContext.drawImage(this.pic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);    
+                }
             }
         } else if (this.whichLeaf == 1){
             this.sx = 350;
@@ -76,30 +80,27 @@ function leafClass(){
         this.markForRemoval = false;
     }
 
-    this.draw = function() {
+    this.move = function(){
         let windSpeed = 1;
         this.xPos += windSpeed + (Math.floor(2 * Math.random()));
         this.yPos += (Math.floor(3 * Math.random()) - 1);
+        if(this.xPos > 800){
+            // TODO: this makes the leaves fade away before they reach 
+            // the right edge of the map because of camera scrolling
+            this.markForRemoval = true;
+        }
+    }
 
+    this.draw = function() {
         if (this.whichLeaf === 0) {
             this.anim.x = this.xPos;
             this.anim.y = this.yPos;
             this.anim.draw();
         } else {
-            if(this.xPos > 800){
-                // TODO: this makes the leaves fade away before they reach 
-                // the right edge of the map because of camera scrolling
-                this.markForRemoval = true;
+            if(this.name > 0){
+                canvasContext.drawImage(worldPics[50], this.sx,this.sy, 50, 50, this.xPos, this.yPos, 50, 50);
             }
-
-
-            /*canvasContext.save();
-            canvaseContext.translate(this.xPos,this.yPos);
-            canvasContext.rotate(50); 
-            canvasContext.drawImage(worldPics[50], this.sx,this.sy, 50, 50, this.xPos, this.yPos, 50, 50);     
-            canvasContext.restore(); 
-            */
-            canvasContext.drawImage(worldPics[50], this.sx,this.sy, 50, 50, this.xPos, this.yPos, 50, 50);
         }
+ //       colorText(this.name, this.xPos, this.yPos, "black")
     }
 }

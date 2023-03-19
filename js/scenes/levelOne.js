@@ -98,6 +98,12 @@ function levelOneMoveAll () {
 	for (var i = 0; i < licheList.length; i++) {		
 		licheList[i].move();
 	}
+	for (var i = 0; i < leafList.length; i++) {		
+		leafList[i].move();
+	}
+
+
+
 	/*if(pathfindingNow) {
 		PathfindingNextStep();
 	}*/
