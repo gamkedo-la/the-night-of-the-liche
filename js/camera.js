@@ -18,7 +18,13 @@ function cameraFollow() {
 		}
 	}
 	if (playerDistFromCameraFocusY > PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_Y) {
+		
+		if(playerDistFromCameraFocusY > 250){
+			console.log("Player Distance: " + playerDistFromCameraFocusY)
+			instantCamFollow();
+		}
 		if (cameraFocusCenterY < player.y) {
+			console.log("Cam Focus Y: " + cameraFocusCenterY)
 			camPanY += playerMoveSpeed;
 		} else {
 			camPanY -= playerMoveSpeed;
@@ -39,4 +45,4 @@ function cameraFollow() {
 	if (camPanY > maxPanTop) {
 		camPanY = maxPanTop;
 	}
-}
+} 

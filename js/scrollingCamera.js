@@ -59,10 +59,6 @@
       }
     }
 
-    // instantCamFollow();
-
-    // this next code blocks the game from showing out of bounds
-    // (this isn't required, if you don't mind seeing beyond edges)
     if(camPanX < 0) {
       camPanX = 0;
     }
@@ -79,21 +75,5 @@
     }
   }
   
-  
- /* function drawOnlyBricksOnScreen() {
-    // what are the top-left most col and row visible on canvas?
-    var cameraLeftMostCol = Math.floor(camPanX / TILE_W);
-    var cameraTopMostRow = Math.floor(camPanY / TILE_H);
 
-    // how many columns and rows of tiles fit on one screenful of area?
-    var colsThatFitOnScreen = Math.floor(canvas.width / TILE_W);
-    var rowsThatFitOnScreen = Math.floor(canvas.height / TILE_H);
-
-    // finding the rightmost and bottommost tiles to draw.
-    // the +1 and + 2 on each pushes the new tile popping in off visible area
-    // +2 for columns since TILE_W doesn't divide evenly into canvas.width
-    var cameraRightMostCol = cameraLeftMostCol + colsThatFitOnScreen + 2;
-    var cameraBottomMostRow = cameraTopMostRow + rowsThatFitOnScreen + 1;
-
-  } // end of drawBricks() */
 

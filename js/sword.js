@@ -140,7 +140,7 @@ function swordClass() {
 		} 
 		
 		if(this.swordLife > 0) {
-			console.log('sword draw', swordXLocation, swordYLocation);
+			//console.log('sword draw', swordXLocation, swordYLocation);
 			swordAlive = false;
 		//	colorRect(swordXLocation, swordYLocation, swordWidth, swordLength, "gray" );
 		}
