@@ -37,7 +37,7 @@ function skeletonClass() {
             // play attack animation
 
             this.characterPic = skeletonAttackPic;
-            this.frameIndex = 0;
+            this.frameIndex = 0; 
             // play attack SFX 
 
             player.health = player.health -1; 
@@ -50,13 +50,19 @@ function skeletonClass() {
         }
     }
 
-    
+
     this.attackReadyCounter = function() {
         if(this.attackReadyTicker > 0){ 
             this.attackReadyTicker--;
         } else if(this.attackReadyTicker <= 0){
+            this.characterPic = skeletonPic;
             this.attackReadyTicker = 60; //amount of time between bites
             this.attackReady = true;
         }
+        
     }  
+
+
+
 }
+
