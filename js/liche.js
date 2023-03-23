@@ -11,6 +11,11 @@ function licheClass() {
     this.height = 102;
 
     this.trackingPlayer = true;
+    this.attackReadyTicker = 30;
+    this.attackReady = true;
+    this.health = 10; 
+    this.alive = true;
+    
     
     this.superclassReset = this.reset; 
     this.reset = function() {
@@ -26,5 +31,32 @@ function licheClass() {
                 } 
             } 
         } 
-    }  
+    }
+
+    this.attack = function() {
+        if(this.attackReady == true){
+            // play attack animation
+
+            this.characterPic = licheAttackPic;
+            this.frameIndex = 0; 
+            // play attack SFX 
+
+            player.health = player.health -1; 
+            console.log( "Skeleton Strikes! ... Player has ", player.health, " remaining!" )
+            this.attackReady = false;
+        }
+        else if(this.attackReady == false) {  
+            this.attackReadyCounter();
+        }
+    }
+
+    this.attackReadyCounter = function() {
+        if(this.attackReadyTicker > 0){ 
+            this.attackReadyTicker--;
+        } else if(this.attackReadyTicker <= 0){
+            this.characterPic = skeletonPic;
+            this.attackReadyTicker = 60; //amount of time between bites
+            this.attackReady = true;
+        }
+    }   
 }
