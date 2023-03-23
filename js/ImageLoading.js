@@ -8,6 +8,7 @@ var swordPic = document.createElement("img");
 var skeletonPic = document.createElement('img');
 
 var skeletonAttackPic = document.createElement('img');
+var licheAttackPic = document.createElement('img');
 
 var lichePic = document.createElement('img');
 var alchemistPic = document.createElement("img");
@@ -305,6 +306,7 @@ function loadImages() {
 			{varName: skeletonPic, theFile: "skeleton.png"},
 
 			{varName: skeletonAttackPic, theFile: "skeleton-attack.png"},
+			{varName: licheAttackPic, theFile: "lich-attack.png"},
 
 			{varName: titlepagePic, theFile: "background.png"},
 			{varName: logoPic, theFile: "logo.png"},
