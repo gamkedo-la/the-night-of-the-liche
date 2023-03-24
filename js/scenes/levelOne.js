@@ -127,6 +127,7 @@ function levelOnegetNextMap (direction) {
 			break
 		case 'east':
 		case 'right':
+			nextMap = 'town';
 			break
 	}
 

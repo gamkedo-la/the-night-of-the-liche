@@ -34,7 +34,20 @@ const LEVELS = {
 		leafList: graveyardLeafList,
 		playerThoughts: graveyardPlayerThoughts,
 		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
-	}
+	},
+	town: {
+		layers: getTownLayers(),
+		moveAll: townMoveAll,
+		getNextMap: townGetNextMap,
+		drawAll: townDrawAll,
+		skeletonList: townSkeletonList,
+		alchemistList: townAlchemistList,
+		spiritList: townSpiritList,
+		animationList: townAnimationList,
+		leafList: townLeafList,
+		playerThoughts: townPlayerThoughts,
+		playerThoughtEndTime: townPlayerThoughtEndDisplayTime
+	},
 }
 
 var currentLevelIndex = 0
