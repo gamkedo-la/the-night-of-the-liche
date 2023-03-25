@@ -37,7 +37,7 @@ function licheClass() {
         if(this.attackReady == true){
             // play attack animation
 
-            this.characterPic = licheAttackPic;
+            this.showAttack = true;
             this.frameIndex = 0; 
             // play attack SFX 
 
@@ -59,4 +59,30 @@ function licheClass() {
             this.attackReady = true;
         }
     }   
+
+    this.draw = function() {
+        if (this.move) {
+            this.tickCount++;
+        }
+        if (this.tickCount > this.ticksPerFrame) {
+            this.tickCount = 0;
+            if (this.frameIndex < this.numberOfFrames - 1) {
+                this.frameIndex += 1;
+            } else {
+                this.frameIndex = 0;
+            }
+        }
+
+        this.sx = this.frameIndex * this.width;
+        canvasContext.drawImage(shadowPic, 0, 0, 25, 25, this.x+12, this.y+31, 25, 25); 
+        if(this.showAttack){
+            this.characterPic = licheAttackPic;
+            if(this.frameIndex == 3){
+                this.showAttack = false;
+            }
+        } else {
+           this.characterPic = lichePic;
+        }
+        canvasContext.drawImage(this.characterPic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);
+    }
 }
