@@ -39,9 +39,20 @@ function thoughtBubble(txt,x,y) {
 
 function drawPlayerThoughts (offsetx=0,offsety=0){
     displayTimer++;
-    for (const playerThought of LEVELS[levelList[currentLevelIndex]].playerThoughts) {
+    for (let playerThought of LEVELS[levelList[currentLevelIndex]].playerThoughts) {
         if (displayTimer > playerThought.startTime && displayTimer < playerThought.endTime) {
             thoughtBubble(playerThought.thought,player.x+offsetx,player.y+offsety);
+
+            // play a voiceover on the first frame this thought is shown
+            if (!playerThought.hasPlayedVoiceover) {
+                if (playerThought.voiceover) {
+                    console.log("playing a "+playerThought.voiceover+" for: "+playerThought.thought);
+                    let playme = new Audio(playerThought.voiceover);
+                    playme.play();
+                }
+                playerThought.hasPlayedVoiceover = true; // never play again
+            }
+
             break;
         }
     }
