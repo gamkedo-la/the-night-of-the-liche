@@ -158,13 +158,13 @@ const graveyardPlayerThoughts = [
 		startTime: 25,
 		endTime: 175,
 		thought: "I've been to the graveyard many times.\nI have many ancenstors buried here.",
-		voiceover:  null // "sound/player_voiceover_1a.mp3"
+		voiceover:  "sound/graveyard_a.mp3"
 	},
 	{
 		startTime: 200,
-		endTime: 325,
+		endTime: 1000, // FIXME: speech bubble seems to go away too soon: is this value ignored?
 		thought: "But something is different now.\nColder. Darker.\nNot as still as it should be.",
-		voiceover:  null // "sound/player_voiceover_1a.mp3"
+		voiceover:  "sound/graveyard_b.mp3"
 	}
 ];
 
