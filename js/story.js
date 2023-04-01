@@ -2,6 +2,7 @@ var quest1Active = false;
 var quest1 = "Investigate missing Supply Wagons";
 
 var displayTimer = 0;
+var displayPlayerThoughtsTimer = 0;
 var displayPlayerThoughts = true;
 
 function thoughtBubble(txt,x,y) {
@@ -39,8 +40,9 @@ function thoughtBubble(txt,x,y) {
 
 function drawPlayerThoughts (offsetx=0,offsety=0){
     displayTimer++;
+    displayPlayerThoughtsTimer++;
     for (let playerThought of LEVELS[levelList[currentLevelIndex]].playerThoughts) {
-        if (displayTimer > playerThought.startTime && displayTimer < playerThought.endTime) {
+        if (displayPlayerThoughtsTimer > playerThought.startTime && displayPlayerThoughtsTimer < playerThought.endTime) {
             thoughtBubble(playerThought.thought,player.x+offsetx,player.y+offsety);
 
             // play a voiceover on the first frame this thought is shown
@@ -57,7 +59,7 @@ function drawPlayerThoughts (offsetx=0,offsety=0){
         }
     }
 
-    if (displayTimer >= LEVELS[levelList[currentLevelIndex]].playerThoughtEndTime) {
+    if (displayPlayerThoughtsTimer >= LEVELS[levelList[currentLevelIndex]].playerThoughtEndTime) {
         quest1Active = true;
         displayPlayerThoughts = false;
     }

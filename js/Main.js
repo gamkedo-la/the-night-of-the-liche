@@ -76,6 +76,12 @@ function loadLevel(whichLevel, resetPlayerPos = true) {
 
 	//alchemist.reset();
 	console.log(roomGrid)
+
+	displayPlayerThoughtsTimer = LEVELS[levelList[currentLevelIndex]].displayPlayerThoughtsTimer
+	if (displayPlayerThoughtsTimer < LEVELS[levelList[currentLevelIndex]].playerThoughtEndTime) {
+		displayPlayerThoughts = true;
+	}
+
 	if (LEVELS[levelList[currentLevelIndex]].skeletonList) {
 		skeletonList = [...LEVELS[levelList[currentLevelIndex]].skeletonList]
 		alchemistList = [...LEVELS[levelList[currentLevelIndex]].alchemistList]
@@ -143,6 +149,7 @@ function loadAreaByName (name, direction) {
 	LEVELS[levelList[currentLevelIndex]].licheList = [...licheList]
 	LEVELS[levelList[currentLevelIndex]].animationList = [...animationList]
 	LEVELS[levelList[currentLevelIndex]].leafList = [...leafList]	
+	LEVELS[levelList[currentLevelIndex]].displayPlayerThoughtsTimer = displayPlayerThoughtsTimer
 
 	currentLevelIndex = levelList.findIndex(level => level === name) || 0;
 	switch (direction) {

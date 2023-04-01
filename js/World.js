@@ -19,6 +19,7 @@ const LEVELS = {
 		spiritList: levelOneSpiritList,
 		animationList: levelOneAnimationList,
 		leafList: levelOneLeafList,
+		displayPlayerThoughtsTimer: levelOneThoughtTimer,
 		playerThoughts: levelOnePlayerThoughts,
 		playerThoughtEndTime: levelOnePlayerThoughtEndDisplayTime
 	},
@@ -32,6 +33,7 @@ const LEVELS = {
 		spiritList: graveyardSpiritList,
 		animationList: graveyardAnimationList,
 		leafList: graveyardLeafList,
+		displayPlayerThoughtsTimer: graveyardThoughtTimer,
 		playerThoughts: graveyardPlayerThoughts,
 		playerThoughtEndTime: graveyardPlayerThoughtEndDisplayTime
 	},
@@ -45,6 +47,7 @@ const LEVELS = {
 		spiritList: townSpiritList,
 		animationList: townAnimationList,
 		leafList: townLeafList,
+		displayPlayerThoughtsTimer: townThoughtTimer,
 		playerThoughts: townPlayerThoughts,
 		playerThoughtEndTime: townPlayerThoughtEndDisplayTime
 	},

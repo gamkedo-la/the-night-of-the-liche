@@ -150,16 +150,23 @@ let graveyardSpiritList = null;
 let graveyardAnimationList = null;
 let graveyardLeafList = null;
 
+let graveyardThoughtTimer = 0;
+
 const graveyardPlayerThoughts = [
 	// See levelOne.js for proper format
-	/*
 	{
 		startTime: 25,
-		endTime: 200,
-		thought: "here's a thought"
+		endTime: 175,
+		thought: "I've been to the graveyard many times.\nI have many ancenstors buried here.",
+		voiceover:  null // "sound/player_voiceover_1a.mp3"
+	},
+	{
+		startTime: 200,
+		endTime: 325,
+		thought: "But something is different now.\nColder. Darker.\nNot as still as it should be.",
+		voiceover:  null // "sound/player_voiceover_1a.mp3"
 	}
-	*/
 ];
 
 // should be the time we want to stop displaying thoughts and transition to displaying the quest
-const graveyardPlayerThoughtEndDisplayTime = 0;
+const graveyardPlayerThoughtEndDisplayTime = 325;

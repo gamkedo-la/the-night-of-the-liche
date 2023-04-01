@@ -174,30 +174,32 @@ let levelOneSpiritList = null;
 let levelOneAnimationList = null;
 let levelOneLeafList = null;
 
+let levelOneThoughtTimer = 0;
+
 const levelOnePlayerThoughts = [
 	{
 		startTime: 25,
 		endTime: 200,
 		thought: 	"It's been several weeks since the\nlast supply wagon has\nmade it to our village.",
-        voiceover:  "sound/player_voiceover_1a.mp3"
+		voiceover:  "sound/player_voiceover_1a.mp3"
 	},
 	{
 		startTime: 225,
 		endTime: 400,
 		thought: 	"I'm not one to worry,\nbut I'm starting to\nget concerned.",
-        voiceover:  "sound/player_voiceover_1b.mp3"
+		voiceover:  "sound/player_voiceover_1b.mp3"
 	},
 	{
 		startTime: 425,
 		endTime: 600,
 		thought: 	"I've been trying to make\nthe best out of my garden,\nbut I'm starting to low on food.",
-        voiceover:  "sound/player_voiceover_1c.mp3"
+		voiceover:  "sound/player_voiceover_1c.mp3"
 	},
 	{
 		startTime: 625,
 		endTime: 800,
 		thought: 	"I should head to our\nneighboring village of\nDagger Fall and investigate.",
-        voiceover:  "sound/player_voiceover_1d.mp3"
+		voiceover:  "sound/player_voiceover_1d.mp3"
 	}
 ];
 

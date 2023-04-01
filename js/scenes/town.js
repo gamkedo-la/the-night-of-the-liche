@@ -174,26 +174,32 @@ let townSpiritList = null;
 let townAnimationList = null;
 let townLeafList = null;
 
+let townThoughtTimer = 0;
+
 const townPlayerThoughts = [
 	// {
 	// 	startTime: 25,
 	// 	endTime: 200,
 	// 	thought: 	"It's been several weeks since the\nlast supply wagon has\nmade it to our village."	
+	//  voiceover:  null // "sound/player_voiceover_1a.mp3"
 	// },
 	// {
 	// 	startTime: 225,
 	// 	endTime: 400,
 	// 	thought: 	"I'm not one to worry,\nbut I'm starting to\nget concerned."
+	//  voiceover:  null // "sound/player_voiceover_1a.mp3"
 	// },
 	// {
 	// 	startTime: 425,
 	// 	endTime: 600,
 	// 	thought: 	"I've been trying to make\nthe best out of my garden,\nbut I'm starting to low on food."
+	//  voiceover:  null // "sound/player_voiceover_1a.mp3"
 	// },
 	// {
 	// 	startTime: 625,
 	// 	endTime: 800,
 	// 	thought: 	"I should head to our\nneighboring village of\nDagger Fall and investigate."
+	//  voiceover:  null // "sound/player_voiceover_1a.mp3"
 	// }
 ];
 
