@@ -111,6 +111,10 @@ function WarriorClass() {
         var nextX = this.x;
         var nextY = this.y;
 
+        if(this.health <= 0){
+            endGame();
+        }
+
         if (this.keyHeld_WalkNorth) {
             nextY -= playerMoveSpeed;
             direction = "north";

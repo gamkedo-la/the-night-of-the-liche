@@ -219,8 +219,13 @@ function handleMouseClick(evt) {
 	if(menuScreen) {
 		menuScreen = false;
         inGame = true;
+        gameOver = false;
         backgroundMusic.loopSong("backgroundMusic");
-	} else {
+    } else if (gameOver){
+        inGame = true;
+        gameOver = false;
+        //backgroundMusic.loopSong("backgroundMusic");
+    } else {
         if (tileOverIdx < 0 || tileOverIdx >= grid.length) { // invalid or off board
             return;
         }

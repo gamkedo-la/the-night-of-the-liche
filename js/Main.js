@@ -18,6 +18,7 @@ var isRaining = true; // set to false to stop the rain
 var menuScreen = true;
 var isInShop = false;
 var inGame = false;
+var gameOver = false;
 var timeSinceInShop = 0;
 var isPaused = false;
 var drawnPauseScreen = false;
@@ -200,10 +201,17 @@ function checkCollisions(){
 
 }
 
+function endGame(){
+	inGame = false;
+	gameOver = true;
+}
+
 function moveAll() {
 	if(menuScreen) {
 		// no movement
 	} else if (isInShop) {
+
+	} else if (gameOver) {
 
 	} else if (inGame) {
 		LEVELS[levelList[currentLevelIndex]].moveAll();
@@ -213,7 +221,8 @@ function moveAll() {
 //move to user interface when created
 function health() {
 	if (player.health <= 0 && !player.invulnerable) {
-		resetLevel();
+		endGame();
+		//resetLevel();
 	}
 }
 
@@ -235,6 +244,8 @@ function drawTitlescreenFog() {
     canvasContext.globalCompositeOperation = "source-over";
     canvasContext.globalAlpha = 1;
 }
+
+
 
 function drawAll() {
 		if(menuScreen){
@@ -277,6 +288,24 @@ function drawAll() {
 
 		} else if (isInShop){
 			drawShop();
+
+		} else if (gameOver){
+			canvasContext.drawImage(titlepagePic, 0,0);  // blanks out the screen
+			canvasContext.drawImage(logoPic, 280,0);
+
+			canvasContext.font="48px Georgia";
+            colorText("GAME OVER", 400, 400, "red");
+			canvasContext.font="12px Georgia";
+			colorText("Click to restart", 500, 500, "white");
+			
+			Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
+				const keybind = GLOBAL_KEYBIND_MAP[k];
+				colorText(`${keybind.description} - ${keybind.key}`, 350, 300, "white");
+			});
+
+            // fog fx at bottom of screen
+            drawTitlescreenFog();
+
 		} else if (inGame){
 
             canvasContext.save();
