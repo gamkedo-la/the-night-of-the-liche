@@ -56,7 +56,7 @@ function skeletonClass() {
             this.attackReadyTicker--;
         } else if(this.attackReadyTicker <= 0){
             this.characterPic = skeletonPic;
-            this.attackReadyTicker = 60; //amount of time between bites
+            this.attackReadyTicker = 200; //amount of time between bites
             this.attackReady = true;
         }
         
