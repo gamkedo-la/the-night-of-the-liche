@@ -13,6 +13,7 @@ function skeletonClass() {
     this.attackReady = true;
     this.health = 4; 
     this.alive = true;
+    this.myName = "Skeleton"
     
     this.superclassReset = this.reset; 
     this.reset = function() {

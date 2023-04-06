@@ -104,14 +104,14 @@ function WarriorClass() {
     } // end of warriorRest func
 
     this.updateReadout = function() {
-     //   document.getElementById("inventory").innerHTML = "Arrows: " + player.myArrow.arrowQuantity + "<br>Yellow Keys: " + this.yellowKeysHeld + "<br>Red Keys: " + this.redKeysHeld + "<br>Green Keys: " + this.greenKeysHeld + "<br>Blue Keys: " + this.blueKeysHeld + "<br>Gold Pieces: " + this.goldpieces;
+        //   document.getElementById("inventory").innerHTML = "Arrows: " + player.myArrow.arrowQuantity + "<br>Yellow Keys: " + this.yellowKeysHeld + "<br>Red Keys: " + this.redKeysHeld + "<br>Green Keys: " + this.greenKeysHeld + "<br>Blue Keys: " + this.blueKeysHeld + "<br>Gold Pieces: " + this.goldpieces;
     }
 
     this.move = function() {
         var nextX = this.x;
         var nextY = this.y;
 
-        if(this.health <= 0){
+        if (this.health <= 0) {
             endGame();
         }
 
@@ -119,11 +119,11 @@ function WarriorClass() {
             nextY -= playerMoveSpeed;
             direction = "north";
             this.sx = 0;
-            this.sy = 52*3;
-            if(this.sword = true){
-                this.sy = 52*7;
-                if(this.swordSwung){
-                    this.sx = 52*8;
+            this.sy = 52 * 3;
+            if (this.sword = true) {
+                this.sy = 52 * 7;
+                if (this.swordSwung) {
+                    this.sx = 52 * 8;
                 }
             }
             this.moving = true;
@@ -132,11 +132,11 @@ function WarriorClass() {
             nextY += playerMoveSpeed;
             direction = "south";
             this.sx = 0;
-            this.sy = 52*0;
-            if(this.sword = true){
-                this.sy = 52*4;
-                if(this.swordSwung){
-                    this.sx = 52*8;
+            this.sy = 52 * 0;
+            if (this.sword = true) {
+                this.sy = 52 * 4;
+                if (this.swordSwung) {
+                    this.sx = 52 * 8;
                 }
             }
         }
@@ -144,11 +144,11 @@ function WarriorClass() {
             nextX -= playerMoveSpeed;
             direction = "west";
             this.sx = 0;
-            this.sy = 52*1;
-            if(this.sword = true){
-                this.sy = 52*5;
-                if(this.swordSwung){
-                    this.sx = 52*8;
+            this.sy = 52 * 1;
+            if (this.sword = true) {
+                this.sy = 52 * 5;
+                if (this.swordSwung) {
+                    this.sx = 52 * 8;
                 }
             }
         }
@@ -156,10 +156,10 @@ function WarriorClass() {
             nextX += playerMoveSpeed;
             direction = "east";
             this.sx = 0;
-            this.sy = 52*2;
-            if(this.sword = true){
-                this.sy = 52*6;
-                if(this.swordSwung){
+            this.sy = 52 * 2;
+            if (this.sword = true) {
+                this.sy = 52 * 6;
+                if (this.swordSwung) {
                     this.frameIndex = 6;
                 }
             }
@@ -219,86 +219,86 @@ function WarriorClass() {
         }
 
         walkIntoTileType = getInteractionOrBackgroundTile(walkIntoTileIndex);
-        
+
         playerMoveSpeed = isWorldTypeWalkable(walkIntoTileType);
         // Override all other rules for moving when cheat mode noClipping is active
         if (this.noClipping) {
             playerMoveSpeed = 5;
         }
-        if(playerMoveSpeed > 0.0){
+        if (playerMoveSpeed > 0.0) {
             this.x = nextX;
-            this.y = nextY;  
+            this.y = nextY;
         }
 
-        switch(walkIntoTileType) {
-			case TILE_RED_FLOWER:
-                if(this.keyHeld_PickUp){    
+        switch (walkIntoTileType) {
+            case TILE_RED_FLOWER:
+                if (this.keyHeld_PickUp) {
                     this.redFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
                 }
                 break;
             case TILE_BLUE_FLOWER:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.blueFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
                 }
                 break;
             case TILE_YELLOW_FLOWER:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.yellowFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
-                }       
+                }
                 break;
             case TILE_WHITE_FLOWER:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.whiteFlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
                 }
                 break;
             case TILE_GIANT_MUSHROOM:
-                if(this.keyHeld_PickUp){    
+                if (this.keyHeld_PickUp) {
                     this.giantMushroomHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
                 }
                 break;
             case TILE_RED_MUSHROOM:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.redMushroomHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
                 }
                 break;
             case TILE_YELLOW_MUSHROOM:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.yellowMushroomHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
                 }
                 break;
             case TILE_LAVANDER:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.lavanderHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_BLANK;
                 }
                 break;
             case TILE_VEGETABLE2:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.redPepperHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_VEGETABLE1;
                 }
                 break;
             case TILE_VEGETABLE6:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.orangePepperHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_VEGETABLE5;
                 }
                 break;
             case TILE_VEGETABLE4:
-                if(this.keyHeld_PickUp){
+                if (this.keyHeld_PickUp) {
                     this.califlowerHeld++;
                     (LEVELS[levelList[currentLevelIndex]].layers.interactive)[walkIntoTileIndex] = TILE_VEGETABLE3;
                 }
                 break;
             default:
-            break;
+                break;
         } // END OF SWITCH CASE	
 
         this.previousTileType = walkIntoTileType;
@@ -308,21 +308,21 @@ function WarriorClass() {
         this.playFootstepSFX(this.playerMove);
     }
 
-    this.playFootstepSFX = function(isOn=true) {
-        
+    this.playFootstepSFX = function(isOn = true) {
+
         if (!this.footstepSFX) {
             this.footstepSFX = new Audio("sound/footsteps.mp3");
             this.footstepSFX.loop = true;
             this.footstepSFX.volume = 0.5; // quiet
             this.footstepSFX.play();
         }
-        
+
         this.footstepSFX.volume = isOn ? 0.5 : 0; // mute the looped sound if stopped
 
     }
-    
+
     this.checkWarriorandSwordCollisionAgainst = function(thisEnemy) {
-        
+
         this.centerX = this.x + this.width / 2;
         this.centerY = this.y + this.height / 2;
 
@@ -353,12 +353,12 @@ function WarriorClass() {
         }
     }
 
-    
+
     this.displayInventory = function() {
-        if(this.lavanderHeld > 0){
+        if (this.lavanderHeld > 0) {
             var lavederDisplay = [
-             //   {lavederToShow:  true, lavernderQty: this.lavanderHeld}
-             1
+                //   {lavederToShow:  true, lavernderQty: this.lavanderHeld}
+                1
             ]
             this.inventoryList[lavederDisplay].push;
         }
@@ -368,22 +368,22 @@ function WarriorClass() {
         this.tickCount++;
         if (this.tickCount > this.ticksPerFrame) {
             this.tickCount = 0;
-            if(this.playerMove){
+            if (this.playerMove) {
                 if (this.frameIndex < this.numberOfFrames - 1) {
                     this.frameIndex += 1;
                 } else {
                     this.frameIndex = 0;
                 }
-            } else if (this.swordSwung){
+            } else if (this.swordSwung) {
                 if (this.frameIndex < 13) {
                     this.frameIndex += 1;
                 } else {
                     this.frameIndex = 0;
                     this.swordSwung = false;
                 }
-            
+
             } else {
-                if(this.frameIndex < 6) {
+                if (this.frameIndex < 6) {
                     this.frameIndex += 1;
                 } else {
                     this.frameIndex = 4;
@@ -393,31 +393,31 @@ function WarriorClass() {
 
         this.sx = this.frameIndex * this.width;
 
-        canvasContext.drawImage(shadowPic, 0, 0, 25, 25, this.x+12, this.y+31, 25, 25);            
+        canvasContext.drawImage(shadowPic, 0, 0, 25, 25, this.x + 12, this.y + 31, 25, 25);
         canvasContext.drawImage(this.myplayerPic, this.sx, this.sy, this.width, this.height, this.x, this.y, this.width, this.height);
         /*		colorRect(this.x,this.y, 5,5, "white") 
-        		colorRect(this.x,this.y+this.height, 5,5, "white")
-        		colorRect(this.x+this.width,this.y, 5,5, "white")
-        		colorRect(this.x+this.width,this.y+this.height, 5,5, "white")
-        				
-        		colorRect(this.centerX,this.centerY, 5, 5, 'white') */
-           
+                colorRect(this.x,this.y+this.height, 5,5, "white")
+                colorRect(this.x+this.width,this.y, 5,5, "white")
+                colorRect(this.x+this.width,this.y+this.height, 5,5, "white")
+                        
+                colorRect(this.centerX,this.centerY, 5, 5, 'white') */
 
-                shadowPic
+
+        shadowPic
         this.mySword.draw();
 
-        this.myArrow.draw();
+        //this.myArrow.draw();
 
         //this.displayInventory();
 
         /*this.lavanderHeld = 0;
-        this.redFlowerHeld = 0;
-        this.blueFlowerHeld = 0;
-        this.yellowFlowerHeld = 0;
-        this.whiteFlowerHeld = 0;
-        this.giantMushroomHeld = 0;
-        this.redMushroomHeld = 0;
-        this.yellowMushroomHeld = 0;
+    this.redFlowerHeld = 0;
+    this.blueFlowerHeld = 0;
+    this.yellowFlowerHeld = 0;
+    this.whiteFlowerHeld = 0;
+    this.giantMushroomHeld = 0;
+    this.redMushroomHeld = 0;
+    this.yellowMushroomHeld = 0;
 */
     }
 }

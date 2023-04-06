@@ -185,7 +185,6 @@ function updateAll() {
 }
 
 function checkCollisions(){
-//	player.checkWarriorandSwordCollisionAgainst(alchemist);
 	for (var i = 0; i < skeletonList.length; i++) {		
 		player.checkWarriorandSwordCollisionAgainst(skeletonList[i]);
 	} 
@@ -198,7 +197,6 @@ function checkCollisions(){
 	for (var i = 0; i < licheList.length; i++) {		
 		player.checkWarriorandSwordCollisionAgainst(licheList[i]);
 	}
-
 }
 
 function endGame(){
