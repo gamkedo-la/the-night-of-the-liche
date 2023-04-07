@@ -253,6 +253,7 @@ function drawAll() {
 
             const helpX = 450;
 			if(showCredits) {
+				drawCredits();
 				colorText("Click anywhere for Title Screen", helpX, creditsTextLineY, "yellow");
 			} else {
 				canvasContext.drawImage(logoPic, 280,0);
@@ -349,3 +350,78 @@ function drawSkeletonCard(){  // VJM:  WIP, trying to put together the raw conce
 	skeletonCardContext.fillText("Inventory", 10, 120);
 	skeletonCardContext.beginPath(); //inventory
 }
+
+// keeping this very simple -
+function drawCredits() {
+  colorRect(0,0,canvas.width,canvas.height,"black");
+  canvasContext.fillStyle = 'white';
+  canvasContext.font = '18px Helvetica';
+  for(var i=0;i<creditsList.length;i++) {
+    canvasContext.fillText(creditsList[i], 55,80+20*i);
+  }
+}
+
+var creditsList = [
+"Vince McKeown: Project lead, core gameplay, character art with animations and facings (player, lich, alchemist, skeleton, spirit), combat, NPC AI with related pathfinding, core tile system, collisions, various tiles (grass, dirt, transitions, roof, garden, mushrooms), pickups, potion, main UI, shadows, inventory, status cards, leaves, camera movement, game over handling",
+"Kyle Knutson: Town level, various art and related animations (bomb refill, bomb set, tree, skeleton attack, wagon and crate, lich attack)",
+"Christer \"McFunkypants\" Kaitila: Thought bubbles, night mode, GUI scroll art, quest UI shading, character glow effect, animated fire lighting, rain effect, logo, rolling fog, step sounds, title background, sounds with integration (door, arrow, sword), voiceovers",
+"Tylor Allison: Animation functionality, assorted art (rock with variations, wall candle, stove, bushes), environment decoration",
+"FightEXP: Animated sprites for goblin, blacksmith, and guard with shield",
+"H Trayford: Grave art, graveyard area layout, roof fades on exit, multiple tile layer support, nonsynchronous level access, level draw data split, area change/loading, animation bug fix, thought bubble tuning, leaf movement",
+"Carson Banov: Prevention of game blocking non-gameplay inputs, pause functionality, input mapping, internal documentation",
+"Jiho Yoo: NPC wandering movement, health UI touch up, combat bug fix",
+"Jasmine Hegman: Lights culling, pause screen key tips, increased health cap, debug functionality",
+"Paul Naser: Forest ambience",
+"Chad Serrant: Hearts, broken wagon wheel",
+"Patrick McKeown: Additional sound in the woods",
+"Tor Andreas Johnsen: Noclip and invulnerability testing cheats",
+" ",
+"Game created by HomeTeamGameDev.com Outpost group members",
+];
+
+function lineWrapCredits() { // note: gets calling immediately after definition!
+  const newCut = [];
+  var maxLineChar = 122;
+  var findEnd;
+
+  for(let i = 0; i < creditsList.length; i++) {
+    const currentLine = creditsList[i];
+    for(let j = 0; j < currentLine.length; j++) {
+      /*const aChar = currentLine[j];
+      if(aChar === ":") {
+        if(i !== 0) {
+          newCut.push("\n");
+        }
+        newCut.push(currentLine.substring(0, j + 1));
+        newCut.push(currentLine.substring(j + 2, currentLine.length));
+        break;
+      } else*/ if(j === currentLine.length - 1) {
+        if((i === 0) || (i >= creditsList.length - 2)) {
+          newCut.push(currentLine);
+        } else {
+          newCut.push(currentLine.substring(0, currentLine.length));
+        }
+      }
+    }
+  }
+
+  const newerCut = [];
+  for(var i=0;i<newCut.length;i++) {
+    while(newCut[i].length > 0) {
+      findEnd = maxLineChar;
+      if(newCut[i].length > maxLineChar) {
+        for(var ii=findEnd;ii>0;ii--) {
+          if(newCut[i].charAt(ii) == " ") {
+            findEnd=ii;
+            break;
+          }
+        }
+      }
+      newerCut.push(newCut[i].substring(0, findEnd));
+      newCut[i] = newCut[i].substring(findEnd, newCut[i].length);
+    }
+  }
+
+  creditsList = newerCut;
+}
+lineWrapCredits(); // note: calling immediately as part of init, outside the function
