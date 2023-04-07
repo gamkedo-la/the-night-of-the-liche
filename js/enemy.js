@@ -38,6 +38,9 @@ function characterClass() {
     this.trackingPlayer = false;
     this.trackingDistanceX = 5;
     this.trackingDistanceY = 5;
+    this.animateDeath = false;
+    this.markForRemoval = false;
+    this.removeEnemyTimer = 0;
 
     this.walkNorth = false;
     this.walkSouth = false;
@@ -108,6 +111,10 @@ function characterClass() {
 
 
     this.move = function() {
+        if(this.animateDeath){
+            return; //kill movement
+        }
+
         var nextX = this.x;
         var nextY = this.y;
 
@@ -275,20 +282,36 @@ function characterClass() {
             if (this.attack) this.attack();// else console.log("error: enemy is missing an attack function");
 
        };
-    };
+    }
+       
+    this.checkHealth = function(){
+        if(this.health <= 0){
+            this.animateDeath = true;
+        }
+    }
 
     this.draw = function() {
-        if (this.move) {
+        if(this.move) {
             this.tickCount++;
+        }
+        if(this.animateDeath){
+            this.numberOfFrames = 12;
+            this.removeEnemyTimer++;
+            if(this.removeEnemyTimer > 300){
+                this.markForRemoval = true;
+            }
         }
         if (this.tickCount > this.ticksPerFrame) {
             this.tickCount = 0;
             if (this.frameIndex < this.numberOfFrames - 1) {
                 this.frameIndex += 1;
             } else {
-                this.frameIndex = 0;
+                if (!this.animateDeath){
+                    this.frameIndex = 0;
+                }
             }
         }
+        
 
         this.sx = this.frameIndex * this.width;
         canvasContext.drawImage(shadowPic, 0, 0, 25, 25, this.x+12, this.y+31, 25, 25); 

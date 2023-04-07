@@ -88,6 +88,10 @@ function graveyardMoveAll () {
 	player.move();
 	for (var i = 0; i < skeletonList.length; i++) {		
 		skeletonList[i].move();
+		if(skeletonList[i].markForRemoval){
+			console.log("Remove Skeleton" + i)
+			skeletonList.splice(i, 1);
+		}
 	}  
 	for (var i = 0; i < spiritList.length; i++) {		
 		spiritList[i].move();

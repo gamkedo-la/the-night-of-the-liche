@@ -49,10 +49,11 @@ function swordClass() {
 
 	this.checkhit = function() {
 		if(this.damage == 1.0) {
-			console.log("Successful hit "+ thisEnemy.myName+" for 1 damage point!");
+			console.log("Successful hit "+ thisEnemy.name+" for 1 damage point!");
 			this.damage = this.damage - 1;
 			thisEnemy.health = thisEnemy.health - 1;
-			console.log(thisEnemy.myName = " Health: " + thisEnemy.health)
+			thisEnemy.checkHealth();
+			console.log(thisEnemy.name = " Health: " + thisEnemy.health)
 		/*	if(thisEnemy == goblin) {
 				goblinHurtSound.play();
 			} else if (thisEnemy == skeleton || thisEnemy == skeleton2) {
