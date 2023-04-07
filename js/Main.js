@@ -23,6 +23,7 @@ var timeSinceInShop = 0;
 var isPaused = false;
 var drawnPauseScreen = false;
 var leafsBlowing = true;
+var showCredits = false;
 
 const ROOF_LOCATIONS = {
 	SHOP: "SHOP"
@@ -205,7 +206,7 @@ function endGame(){
 }
 
 function moveAll() {
-	if(menuScreen) {
+	if(menuScreen || showCredits) {
 		// no movement
 	} else if (isInShop) {
 
@@ -247,40 +248,46 @@ function drawTitlescreenFog() {
 
 function drawAll() {
 		if(menuScreen){
+			var creditsTextLineY = 595;
 			canvasContext.drawImage(titlepagePic, 0,0);  // blanks out the screen
-			canvasContext.drawImage(logoPic, 280,0);
 
             const helpX = 450;
-			let helpy = 340;
-            let helph = 14;
+			if(showCredits) {
+				colorText("Click anywhere for Title Screen", helpX, creditsTextLineY, "yellow");
+			} else {
+				canvasContext.drawImage(logoPic, 280,0);
+				let helpy = 340;
+	            let helph = 14;
 
-			canvasContext.font="24px Georgia";
-			//colorText("This game is still Work in Progress, but playable!", 170, 150, "white");
-			//colorText("Move from level to level by collecting keys.", 170, 200, "white");
-			//colorText("Kill monsters with your sword, and collect gold.", 170, 225, "white");
-			colorText("Click to start", helpX-1, 320-1, "red");
-			colorText("Click to start", helpX+1, 320-1, "red");
-			colorText("Click to start", helpX-1, 320+1, "red");
-			colorText("Click to start", helpX+1, 320+1, "red");
-			colorText("Click to start", helpX, 320, "white");
+				canvasContext.font="24px Georgia";
+				//colorText("This game is still Work in Progress, but playable!", 170, 150, "white");
+				//colorText("Move from level to level by collecting keys.", 170, 200, "white");
+				//colorText("Kill monsters with your sword, and collect gold.", 170, 225, "white");
+				colorText("Click to start", helpX-1, 320-1, "red");
+				colorText("Click to start", helpX+1, 320-1, "red");
+				colorText("Click to start", helpX-1, 320+1, "red");
+				colorText("Click to start", helpX+1, 320+1, "red");
+				colorText("Click to start", helpX, 320, "white");
 
 
-			canvasContext.font="12px Georgia";
-            colorText("Move Left - Left Arrow", helpX, helpy+=helph, "white");
-			colorText("Move Down - Down Arrow", helpX, helpy+=helph, "white");
-			colorText("Move Right - Right Arrow", helpX, helpy+=helph, "white");
-			colorText("Move Up - Up Arrow", helpX, helpy+=helph, "white");
-			colorText("Sword Attack - Space bar", helpX, helpy+=helph, "white");
-			colorText("Arrow Attack - A", helpX, helpy+=helph, "white");
-			colorText("Interact/Pick Up - X", helpX, helpy+=helph, "white");
+				canvasContext.font="12px Georgia";
+	            colorText("Move Left - Left Arrow", helpX, helpy+=helph, "white");
+				colorText("Move Down - Down Arrow", helpX, helpy+=helph, "white");
+				colorText("Move Right - Right Arrow", helpX, helpy+=helph, "white");
+				colorText("Move Up - Up Arrow", helpX, helpy+=helph, "white");
+				colorText("Sword Attack - Space bar", helpX, helpy+=helph, "white");
+				colorText("Arrow Attack - A", helpX, helpy+=helph, "white");
+				colorText("Interact/Pick Up - X", helpX, helpy+=helph, "white");
 
-            helpy+=helph;
+	            helpy+=helph;
 
-			Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
-				const keybind = GLOBAL_KEYBIND_MAP[k];
-				colorText(`${keybind.description} - ${keybind.key}`, helpX, helpy+=helph, "white");
-			});
+				Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
+					const keybind = GLOBAL_KEYBIND_MAP[k];
+					colorText(`${keybind.description} - ${keybind.key}`, helpX, helpy+=helph, "white");
+				});
 
+				colorText("Click here to view Credits", helpX, creditsTextLineY, "yellow");
+			}
             // fog fx at bottom of screen
             drawTitlescreenFog();
 

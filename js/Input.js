@@ -217,10 +217,14 @@ function keyReleased(evt) {
 
 function handleMouseClick(evt) {
 	if(menuScreen) {
-		menuScreen = false;
-        inGame = true;
-        gameOver = false;
-        backgroundMusic.loopSong("backgroundMusic");
+        if(mouseY>585 || showCredits) {
+            showCredits = !showCredits;
+        } else {
+    		menuScreen = false;
+            inGame = true;
+            gameOver = false;
+            backgroundMusic.loopSong("backgroundMusic");
+        }
     } else if (gameOver){
         inGame = true;
         gameOver = false;
