@@ -300,14 +300,17 @@ function drawAll() {
 			canvasContext.drawImage(logoPic, 280,0);
 
 			canvasContext.font="48px Georgia";
+            colorText("GAME OVER", 404, 404, "black");
             colorText("GAME OVER", 400, 400, "red");
 			canvasContext.font="12px Georgia";
+			colorText("Click to restart", 501, 501, "black");
 			colorText("Click to restart", 500, 500, "white");
 			
-			Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
+			// lists all inputs on top of each other - removed
+            /* Object.keys(GLOBAL_KEYBIND_MAP).forEach((k) => {
 				const keybind = GLOBAL_KEYBIND_MAP[k];
 				colorText(`${keybind.description} - ${keybind.key}`, 350, 300, "white");
-			});
+			}); */
 
             // fog fx at bottom of screen
             drawTitlescreenFog();
