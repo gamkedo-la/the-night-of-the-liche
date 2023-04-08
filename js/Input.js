@@ -226,9 +226,19 @@ function handleMouseClick(evt) {
             backgroundMusic.loopSong("backgroundMusic");
         }
     } else if (gameOver){
-        inGame = true;
+        console.log("gameover click - resetting the game");
+        menuScreen = true;
+        inGame = false;
         gameOver = false;
-        //backgroundMusic.loopSong("backgroundMusic");
+        isInShop = false;
+        showCredits = false;
+        
+        // FIXME: after this, the main menu does not react to a click the same way
+        // one of the states ,must be strange, or the player needs to refill HP etc perhaps
+        // quick bugfix for now: reload the page!!
+        location.reload();
+
+
     } else {
         if (tileOverIdx < 0 || tileOverIdx >= grid.length) { // invalid or off board
             return;
