@@ -41,6 +41,7 @@ function characterClass() {
     this.animateDeath = false;
     this.markForRemoval = false;
     this.removeEnemyTimer = 0;
+    this.hasNotAdvancedToAnimatedDeath = true;
 
     this.walkNorth = false;
     this.walkSouth = false;
@@ -295,7 +296,11 @@ function characterClass() {
             this.tickCount++;
         }
         if(this.animateDeath){
-            this.numberOfFrames = 12;
+            if(this.hasNotAdvancedToAnimatedDeath){
+                this.frameIndex = 9;
+                this.hasNotAdvancedToAnimatedDeath = false;
+            }
+            this.numberOfFrames = 14;
             this.removeEnemyTimer++;
             if(this.removeEnemyTimer > 300){
                 this.markForRemoval = true;
@@ -304,7 +309,11 @@ function characterClass() {
         if (this.tickCount > this.ticksPerFrame) {
             this.tickCount = 0;
             if (this.frameIndex < this.numberOfFrames - 1) {
-                this.frameIndex += 1;
+                if(this.animateDeath && this.frameIndex == 14){
+                    //do nothing
+                } else {
+                    this.frameIndex +=1;
+                }
             } else {
                 if (!this.animateDeath){
                     this.frameIndex = 0;
