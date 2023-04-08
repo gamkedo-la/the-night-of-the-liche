@@ -352,9 +352,9 @@ function drawSkeletonCard(){  // VJM:  WIP, trying to put together the raw conce
 	skeletonCardContext.fillStyle = 'red'; //background
 	skeletonCardContext.fillRect(0,0,300,300);
 	skeletonCardContext.drawImage(skeletonList[0].characterPic, 0, 0, 50, 50, 0, 0, 100, 100); //player image
-	skeletonCardContext.fillStyle = 'black'; //character information
-	skeletonCardContext.fillText("Max Health: " + skeletonList[0].maxHealth, 100, 10);
-	skeletonCardContext.fillText("Inventory", 10, 120);
+	//skeletonCardContext.fillStyle = 'black'; //character information
+	//skeletonCardContext.fillText("Max Health: " + skeletonList[0].maxHealth, 100, 10);
+	//skeletonCardContext.fillText("Inventory", 10, 120);
 	skeletonCardContext.beginPath(); //inventory
 }
 
