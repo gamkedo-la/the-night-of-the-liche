@@ -13,7 +13,7 @@ var sfx_skeleton_attack = new SoundOverlapsClass("swish");
 var sfx_lich_attack = new SoundOverlapsClass("swish");
 
 // Music //
-var backgroundMusic = new BackgroundMusicClass("background");
+var backgroundMusic = new BackgroundMusicClass("backgroundMusic");
 
 function setFormat(){
 	var audio = new Audio();
